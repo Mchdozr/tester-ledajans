@@ -1,0 +1,182 @@
+.milestone-one{
+	&__single{
+		position: relative;
+		margin-bottom: 30px;
+	}
+	&__icon{
+		color: $theme-color;
+		font-size: 62px;
+	}
+	&__number{
+		font-size: 36px;
+		font-weight: 700;
+		color: $headings-color;
+		margin: 20px 0 5px;
+		.symbol{
+			&.after{
+				margin-left: -5px;
+			}
+			&.before{
+				margin-right: -5px;
+			}
+		}
+	}
+	&__title{
+		background: #E9E9EF;
+		color: $headings-color;
+		position: relative;
+		display: inline-block;
+		padding: 10px 30px;
+		font-size: 18px;
+		font-weight: 600;
+		margin-top: 15px;
+		transition: all 0.5s;
+		line-height: 22px;
+		@media(max-width: 1024px){
+			font-size: 16px;
+			padding: 10px 15px;
+		}
+		&:after{
+			content: '';
+			border: 8px solid transparent;
+			border-bottom-color: #E9E9EF;
+			position: absolute;
+			bottom: 100%;
+			left: 15px;
+			z-index: 1;
+			transition: all 0.5s;
+		}
+	}
+	&__link{
+		position: absolute;
+		@include size(100%, 100%);
+		top: 0;
+		left: 0;
+		z-index: 11;
+	}
+	&__single{
+		&:hover{
+			.milestone-one__icon{
+				.icon{
+					svg, i{
+						animation: beat 1.5s ease 0s infinite;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Style 02
+.milestone-two{
+	&__single{
+		position: relative;
+		margin-bottom: 30px;
+	}
+	&__icon{
+		color: $theme-color;
+		font-size: 62px;
+	}
+	&__number{
+		font-size: 36px;
+		font-weight: 700;
+		color: $headings-color;
+		margin: 20px 0 5px;
+		.symbol{
+			&.after{
+				margin-left: -5px;
+			}
+			&.before{
+				margin-right: -5px;
+			}
+		}
+	}
+	&__title{
+		color: $headings-color;
+		position: relative;
+		display: inline-block;
+		font-size: 18px;
+		font-weight: 600;
+		margin-top: 10px;
+		transition: all 0.5s;
+		line-height: 24px;
+	}
+	&__link{
+		position: absolute;
+		@include size(100%, 100%);
+		top: 0;
+		left: 0;
+		z-index: 11;
+	}
+	&__single{
+		&:hover{
+			.milestone-two__icon{
+				svg, i{
+					animation: beat 1.5s ease 0s infinite;
+				}
+			}
+		}
+	}
+}
+
+// Style 03
+.milestone-three{
+	&__single{
+		position: relative;
+		max-width: 320px;
+		border: 1px solid $border-color;
+		padding: 40px 30px 30px;
+		box-shadow: 15px 30px 86px 0px rgba(0, 0, 0, 0.07);
+		border-radius: 0 50px 0 50px;
+      background: url('#{$image-theme-path-base}shape-one.png') no-repeat right bottom $white;
+      @media(max-width: 1200px){
+      	padding: 20px 20px 15px;
+      }
+	}
+	&__content{
+		display: flex;
+		justify-content: space-between;
+	}
+	&__icon{
+		color: $theme-color;
+		font-size: 50px;
+		margin-left: -2px;
+	}
+	&__number{
+		font-size: 45px;
+		font-weight: 700;
+		color: $headings-color;
+		margin: 20px 0 5px;
+		@media(max-width: 1200px){
+			font-size: 36px;
+		}
+		.symbol{
+			
+		}
+	}
+	&__title{
+		position: relative;
+		display: inline-block;
+		font-size: 18px;
+		font-weight: 500;
+		margin-top: 10px;
+		transition: all 0.5s;
+		line-height: 22px;
+	}
+	&__link{
+		position: absolute;
+		@include size(100%, 100%);
+		top: 0;
+		left: 0;
+		z-index: 11;
+	}
+	&__single{
+		&:hover{
+			.milestone-two__icon{
+				svg, i{
+					animation: beat 1.5s ease 0s infinite;
+				}
+			}
+		}
+	}
+}

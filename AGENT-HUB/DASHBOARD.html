@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="refresh" content="5" />
+  <title>Agent Live Dashboard</title>
+  <style>
+    body { background:#0b1020; color:#e5e7eb; font-family:Inter,Arial,sans-serif; margin:0; }
+    .wrap { max-width:1200px; margin:20px auto; padding:0 16px; }
+    h1 { margin:0 0 4px; }
+    .meta { color:#94a3b8; margin-bottom:16px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-bottom:16px; }
+    .card { background:#111827; border:1px solid #1f2937; border-radius:14px; padding:12px; }
+    .card-head { display:flex; align-items:center; gap:8px; }
+    .dot { width:10px; height:10px; border-radius:999px; box-shadow:0 0 10px currentColor; animation:pulse 1.6s infinite; }
+    .panel { background:#111827; border:1px solid #1f2937; border-radius:14px; padding:12px; margin-bottom:12px; }
+    ul { margin:8px 0 0; padding-left:18px; }
+    li { margin:6px 0; line-height:1.35; }
+    .role { color:#60a5fa; font-weight:700; margin-right:6px; }
+    .arena { position:relative; height:170px; border-radius:14px; background:linear-gradient(180deg,#0f172a,#111827); border:1px solid #1f2937; overflow:hidden; margin-bottom:12px; }
+    .arena::before { content:""; position:absolute; left:0; right:0; bottom:0; height:28px; background:#1e293b; }
+    .agent { position:absolute; bottom:22px; left:10px; animation-delay:calc(var(--i) * -1.1s); }
+    .agent .name { font-size:11px; color:#93c5fd; margin-bottom:4px; text-shadow:0 0 6px rgba(59,130,246,.6); }
+    .agent .body { width:18px; height:26px; border-radius:6px; background:#64748b; box-shadow:0 0 10px rgba(100,116,139,.5); border:1px solid rgba(255,255,255,.25); }
+    .agent.idle { animation:none; }
+    .agent.idle .body { background:#64748b; box-shadow:0 0 10px rgba(100,116,139,.5); }
+    .agent.talking .body { background:#22c55e; box-shadow:0 0 12px rgba(34,197,94,.7); }
+    .agent.sending .body { background:#38bdf8; box-shadow:0 0 12px rgba(56,189,248,.7); }
+    .agent.debating .body { background:#f59e0b; box-shadow:0 0 12px rgba(245,158,11,.7); }
+    .agent.alert .body { background:#ef4444; box-shadow:0 0 12px rgba(239,68,68,.8); }
+    .agent.talking { animation-name:bob; animation-duration:1.2s; animation-iteration-count:infinite; animation-timing-function:ease-in-out; }
+    .agent.sending { animation-name:walk,bob; animation-duration:8s,1s; animation-iteration-count:infinite,infinite; animation-timing-function:linear,ease-in-out; }
+    .agent.debating { animation-name:walk-fast,bob; animation-duration:5.5s,.7s; animation-iteration-count:infinite,infinite; animation-timing-function:linear,ease-in-out; }
+    .agent.alert { animation-name:walk-fast,bob; animation-duration:5s,.6s; animation-iteration-count:infinite,infinite; animation-timing-function:linear,ease-in-out; }
+    @keyframes pulse { 0% {opacity:0.4} 50% {opacity:1} 100% {opacity:0.4} }
+    @keyframes walk { 0% { transform:translateX(0px); } 50% { transform:translateX(980px); } 100% { transform:translateX(0px); } }
+    @keyframes walk-fast { 0% { transform:translateX(0px); } 50% { transform:translateX(980px); } 100% { transform:translateX(0px); } }
+    @keyframes bob { 0% { margin-bottom:0; } 50% { margin-bottom:6px; } 100% { margin-bottom:0; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Agent Live Dashboard</h1>
+    <div class="meta">Son yenileme: 2026-08-03 12:11:31 TR | Mod: report-only</div>
+    <div class="grid">
+      
+            <div class="card">
+              <div class="card-head">
+                <span class="dot" style="background:#64748b;"></span>
+                <h3>⚪ tech-seo</h3>
+              </div>
+              <p><b>Faz:</b> YOK</p>
+              <p><b>Blocker:</b> -</p>
+              <p><b>Son update:</b> -</p>
+            </div>
+            
+            <div class="card">
+              <div class="card-head">
+                <span class="dot" style="background:#64748b;"></span>
+                <h3>⚪ gsc</h3>
+              </div>
+              <p><b>Faz:</b> YOK</p>
+              <p><b>Blocker:</b> -</p>
+              <p><b>Son update:</b> -</p>
+            </div>
+            
+            <div class="card">
+              <div class="card-head">
+                <span class="dot" style="background:#64748b;"></span>
+                <h3>⚪ content</h3>
+              </div>
+              <p><b>Faz:</b> YOK</p>
+              <p><b>Blocker:</b> -</p>
+              <p><b>Son update:</b> -</p>
+            </div>
+            
+            <div class="card">
+              <div class="card-head">
+                <span class="dot" style="background:#64748b;"></span>
+                <h3>⚪ internal-link</h3>
+              </div>
+              <p><b>Faz:</b> YOK</p>
+              <p><b>Blocker:</b> -</p>
+              <p><b>Son update:</b> -</p>
+            </div>
+            
+            <div class="card">
+              <div class="card-head">
+                <span class="dot" style="background:#64748b;"></span>
+                <h3>⚪ serp-watch</h3>
+              </div>
+              <p><b>Faz:</b> YOK</p>
+              <p><b>Blocker:</b> -</p>
+              <p><b>Son update:</b> -</p>
+            </div>
+            
+    </div>
+    <div class="panel">
+      <h2>Agent Arena (Canlı Hareket)</h2>
+      <div class="arena">
+        
+            <div class="agent sprite idle" style="--i:0;">
+              <div class="name">tech-seo</div>
+              <div class="body"></div>
+            </div>
+            
+            <div class="agent sprite idle" style="--i:1;">
+              <div class="name">gsc</div>
+              <div class="body"></div>
+            </div>
+            
+            <div class="agent sprite idle" style="--i:2;">
+              <div class="name">content</div>
+              <div class="body"></div>
+            </div>
+            
+            <div class="agent sprite idle" style="--i:3;">
+              <div class="name">internal-link</div>
+              <div class="body"></div>
+            </div>
+            
+            <div class="agent sprite idle" style="--i:4;">
+              <div class="name">serp-watch</div>
+              <div class="body"></div>
+            </div>
+            
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Ajanlar Arası Sohbet Akışı</h2>
+      <ul><li><span class='role'>system</span> Yeni diyalog satırı bekleniyor.</li></ul>
+    </div>
+    <div class="panel">
+      <h2>Orchestrator Son Loglar</h2>
+      <ul><li>Log bekleniyor...</li></ul>
+    </div>
+  </div>
+</body>
+</html>

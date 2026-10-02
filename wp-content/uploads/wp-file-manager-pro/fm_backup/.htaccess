@@ -1,0 +1,11 @@
+# Deny direct access to all files in this directory.
+# This is a defense-in-depth measure only; it has no effect on
+# non-Apache web servers (e.g. Nginx) and must not be relied upon
+# as the sole protection for these files.
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>

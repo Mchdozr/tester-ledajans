@@ -1,0 +1,69 @@
+<!-- 
+  LEDAJANS SiteNavigationElement Schema (JSON-LD)
+  Ana menü yapısını tanımlar. WordPress Header/Footer scriptleri bölümüne eklenecek.
+  Google'ın site yapısını anlamasına yardımcı olur.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SiteNavigationElement",
+      "name": "Ana Sayfa",
+      "url": "https://ledajans.com/"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "name": "LED Ekran",
+      "url": "https://ledajans.com/led-ekran/",
+      "hasPart": [
+        {
+          "@type": "SiteNavigationElement",
+          "name": "İç Mekan LED Ekran",
+          "url": "https://ledajans.com/ic-mekan-led-ekran/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Dış Mekan LED Ekran",
+          "url": "https://ledajans.com/dis-mekan-led-ekran/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Rental LED Ekran",
+          "url": "https://ledajans.com/rental-ekran/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "COB Smart Screen",
+          "url": "https://ledajans.com/cob-ekran/"
+        }
+      ]
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "name": "Projeler",
+      "url": "https://ledajans.com/projeler/"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "name": "Blog",
+      "url": "https://ledajans.com/blog/"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "name": "Teknik Destek",
+      "url": "https://ledajans.com/teknik-destek/"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "name": "Hakkımızda",
+      "url": "https://ledajans.com/hakkimizda/"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "name": "İletişim",
+      "url": "https://ledajans.com/iletisim/"
+    }
+  ]
+}
+</script>

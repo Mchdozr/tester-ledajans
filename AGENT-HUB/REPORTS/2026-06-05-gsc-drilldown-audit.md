@@ -1,0 +1,847 @@
+CSV satir: 390
+
+## YARARLI (17)
+- https://ledajans.com/stadyum-led-ekran/ [200]
+  title: Stadyum LED Ekran - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/p3-9-ic-mekan-rental-led-ekran/ [200]
+  title: P3.9 ¦ Mekan Rental LED Ekran - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/portfolio-02/ [200]
+  title: Portfolio 02 - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/p1-87-cob-led-ekran/ [200]
+  title: P1.87 COB LED Ekran - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/p2-9-dis-mekan-rental-led-ekran/ [200]
+  title: P2.9 D²■ Mekan Rental LED Ekran - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/p1-9-ic-mekan-rental-led-ekran/ [200]
+  title: P1.9 ¦ Mekan Rental LED Ekran - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/dis-mekan-led-ekran [200]
+  title: D²■ Mekan LED Ekran | Outdoor IP65 P4-P10 - LEDAJANS
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/portfolio-03/ [200]
+  title: Portfolio 03 - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/projeler/ [200]
+  title: LED Ekran Projeleri | LEDAJANS
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/h2-5-6000-hz-ic-mekan-rgb-panel/ [200]
+  title: H2.5 6000Hz ¦ Mekan RGB Panel | Teknik Ízellikler ve Fiyat
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/h1-53-ic-mekan-rgb-led-panel/ [200]
+  title: H1.53 ¦ Mekan RGB LED Panel - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/kontrol-kartlari/ [200]
+  title: LED Kontrol Kartlar² | Huidu, Colorlight, Novastar - LEDAJANS
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/iletisim [200]
+  title: ¦leti■im | LED Ekran Teklif ve Dan²■manl²k - LEDAJANS
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/wp-content/uploads/2024/09/HD-R712SpecificationV2.1.pdf [200]
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/cob-ekran [200]
+  title: COB LED Ekran & Smart Screen | Yeni Nesil Teknoloji - LEDAJANS
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/comments/feed/ [200]
+  title: LED Ekran û RGB Panel û LED G÷r³nt³ Sistemleri iin yorumlar
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+- https://ledajans.com/led-tabela [200]
+  title: LED Tabela Rehberi: Dijital Tabela Cesitleri ve Fiyatlari [2026]
+  not: urun/rehber niyeti var; kalite ve ic linkle indexlenmeli
+
+## KONTROL (11)
+- https://ledajans.com/wp-json/ [200]
+  not: manuel niyet kontrolu gerekli
+- https://ledajans.com/wp-json/pum/v1 [200]
+  not: manuel niyet kontrolu gerekli
+- https://ledajans.com/wp-content/plugins/popup-maker/ [200]
+  not: manuel niyet kontrolu gerekli
+- https://ledajans.com/wp-content/plugins/revslider/ [200]
+  not: manuel niyet kontrolu gerekli
+- https://ledajans.com/sitemap_index.xml [200]
+  not: manuel niyet kontrolu gerekli
+- https://ledajans.com/wp-content/uploads/2024/08/P1.86-dokuman.pdf [200]
+  not: manuel niyet kontrolu gerekli
+- https://ledajans.com/wp-content/uploads/2024/09/p4-outdoor-3840-hz-1.pdf [200]
+  not: manuel niyet kontrolu gerekli
+- https://ledajans.com/wp-content/uploads/2024/09/Taurus-Series-Multimedia-Player-TB60-Specifications-V1.0.2.pdf [200]
+  not: manuel niyet kontrolu gerekli
+- https://ledajans.com/wp-content/uploads/2024/09/Taurus-Series-Multimedia-Player-TB40-Specifications-V1.0.12.pdf [200]
+  not: manuel niyet kontrolu gerekli
+- https://ledajans.com/wp-content/uploads/2024/09/P25-outdoor-3840-hz-3.pdf [200]
+  not: manuel niyet kontrolu gerekli
+- https://ledajans.com/wp-includes/js/wp-emoji-release.min.js?ver=6.9 [200]
+  not: manuel niyet kontrolu gerekli
+
+## DUSUK ONCELIK (2)
+- https://ledajans.com/en/feed/ [200]
+  title: LED Ekran û RGB Panel û LED G÷r³nt³ Sistemleri
+  not: kurumsal/dil/case sayfasi; ticari SEO katkisi dusuk
+- https://ledajans.com/de/author/admin_nstxz7t4/feed/ [200]
+  title: admin û LED Ekran û RGB Panel û LED G÷r³nt³ Sistemleri
+  not: kurumsal/dil/case sayfasi; ticari SEO katkisi dusuk
+
+## NORMAL (39)
+- http://ledajans.com/projeler [200]
+  title: LED Ekran Projeleri | LEDAJANS
+  not: yonlendirme; hedef URL indexlenmeli
+- http://ledajans.com/hakkimizda [200]
+  title: Hakk²m²zda | 25 Y²ll²k LED Ekran Tecr³besi - LEDAJANS
+  not: yonlendirme; hedef URL indexlenmeli
+- https://ledajans.com/our-company-information/ [200]
+  title: Our Company Information - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://ledajans.com/led-ekran-2/?utm_source=rss&utm_medium=rss&utm_campaign=led-ekran-2 [200]
+  title: Led Ekran - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://ledajans.com/de/led-ekran/ [200]
+  title: Led Ekran - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/dis-mekan-led-ekranlar/ [200]
+  title: D²■ Mekan Led Ekranlar - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://ledajans.com/blog/page/2/ [200]
+  title: LED Ekran Blog | Teknoloji Haberleri ve Rehberler - LEDAJANS
+  not: canonical baska URL'yi isaret ediyor
+- https://www.ledajans.com/hakkimizda/ [200]
+  title: Hakk²m²zda | 25 Y²ll²k LED Ekran Tecr³besi - LEDAJANS
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/teknik-destek-videolari/ [200]
+  title: LED Ekran Teknik Destek Videolar² | Kurulum ve Kullan²m Rehberi - LEDAJANS
+  not: yonlendirme; hedef URL indexlenmeli
+- https://ledajans.com/mctrl-300/ [200]
+  title: MCTRL 300 - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/led-nit-mcd/ [200]
+  title: LED / NIT / MCD - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/hd-c10-kontrol-karti/ [200]
+  title: HD-C10 Kontrol Kart² - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/p6-outdoor-rgb-panel/ [200]
+  title: P6 Outdoor Rgb Panel - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://ledajans.com/blog/page/11/ [200]
+  title: LED Ekran Blog | Teknoloji Haberleri ve Rehberler - LEDAJANS
+  not: canonical baska URL'yi isaret ediyor
+- https://ledajans.com/about-us/ [200]
+  title: About Us
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/iletisim [200]
+  title: ¦leti■im | LED Ekran Teklif ve Dan²■manl²k - LEDAJANS
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/program-indir/ [200]
+  title: LED Ekran Programlar² ¦ndir | Kontrol Yaz²l²mlar² - LEDAJANS
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/p5-indoor-rgb-panel/ [200]
+  title: P5 Indoor Rgb Panel - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/p4-indoor-rgb-panel/ [200]
+  title: P4 Indoor RGB Panel - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://ledajans.com/blog/page/3/ [200]
+  title: LED Ekran Blog | Teknoloji Haberleri ve Rehberler - LEDAJANS
+  not: canonical baska URL'yi isaret ediyor
+- https://www.ledajans.com/kayan-yazi/ [200]
+  title: Kayan Yaz² - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/pcb-nedir/ [200]
+  title: PCB Nedir - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://ledajans.com/p10-panel [200]
+  title: P10 Panel - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri 4
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/firma-bilgilerimiz/ [200]
+  title: Firma Bilgilerimiz | TAHA LED A.Ì. - LEDAJANS
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/p3-indoor-rgb-panel/ [200]
+  title: P3 Indoor Rgb Panel - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/p10-panel/ [200]
+  title: P10 Panel - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri 4
+  not: yonlendirme; hedef URL indexlenmeli
+- https://ledajans.com/outdoor-led-screen/ [200]
+  title: Outdoor Led Screen - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/kontrol-kartlari/ [200]
+  title: LED Kontrol Kartlar² | Huidu, Colorlight, Novastar - LEDAJANS
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/p10-outdoor-rgb-panel/ [200]
+  title: P10 Outdoor Rgb Panel - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/rv-908-receiver-linsn/ [200]
+  title: RV 908 Receiver Linsn - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/hd-d30-kontrol-karti/ [200]
+  title: HD-D30 Kontrol Kart² - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/led/ [200]
+  title: Led - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/tf-qc1-kontrol-karti/ [200]
+  title: TF-QC1 Kontrol Kart² - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: yonlendirme; hedef URL indexlenmeli
+- https://www.ledajans.com/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0 [200]
+  not: yonlendirme; hedef URL indexlenmeli
+- https://ledajans.com/en/author/admin_nstxz7t4/ [200]
+  title: admin - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: noindex bilincli ise indexlenmemeli
+- https://www.ledajans.com/iletisim/ [200]
+  title: ¦leti■im | LED Ekran Teklif ve Dan²■manl²k - LEDAJANS
+  not: yonlendirme; hedef URL indexlenmeli
+- https://ledajans.com/en/?add_to_wishlist=5465 [200]
+  title: Homepage - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: canonical baska URL'yi isaret ediyor
+- https://ledajans.com/en/?action=yith-woocompare-add-product&id=3116 [200]
+  title: Homepage - LED Ekran - RGB Panel - LED G÷r³nt³ Sistemleri
+  not: canonical baska URL'yi isaret ediyor
+- https://ledajans.com/blog/page/6/ [200]
+  title: LED Ekran Blog | Teknoloji Haberleri ve Rehberler - LEDAJANS
+  not: canonical baska URL'yi isaret ediyor
+
+## TEKNIK HATA (321)
+- https://ledajans.com/rehber/toplanti-odasi-led-ekran/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/sozluk/gob-led-nedir/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/de/ticker/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/colorlight-a500/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/colorlight-a200/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/de/category/genel-de/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p5-outdoor-rgb-panel/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/tf-qs2-kontrol-karti/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/gva_template/template_single_product_layout_3018395690/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/hd-a602-kontrol-karti/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/hd-c30-kontrol-karti/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p10-panel-beyaz/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/led-2/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/dip-led-panel-tamiri/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p10-outdoor-rgb-panel/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/gva_template/template_post_single_layout_2451414820/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://www.ledajans.com/blog/?p=1331 [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/urunler/rental-ekran [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/urunler/kontrol-kartlari [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/urunler/dis-mekan-rgb-panel [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/case/dis-mekan-led-ekran [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://www.ledajans.com/blog/?p=1440 [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/gva_template/dis-mekan-led-ekran/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/blog/?p=1440 [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/urunler/ic-mekan-rgb-panel [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/urunler/ic-mekan-led-ekran [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/led-ekran-10/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/hd-d10-kontrol-karti/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/en/case/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/led-ekran-7/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p2-5-gob-ic-mekan-rgb-panel/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/gva_template/template_archive_product_layout_3687556842/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/led-ekran-omru/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/blog/?p=276 [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/teknik-destek-videolari/image-18/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p1-25-gob-ic-mekan-rgb-panel/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p1-53-gob-ic-mekan-rgb-panel/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p1-86-gob-ic-mekan-rgb-panel/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/q1-25-flexible-ic-mekan-led-panel/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/q1-53-flexible-ic-mekan-led-panel/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/q1-86-flexible-ic-mekan-led-panel/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p5-indoor-rgb-panel/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/case/power-supply-2-2/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/* [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/category/kontrol-kartlari/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/de/verwendung-des-p10-grafikdisplays/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/de/info@ledajans.co.uk [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/about-me/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/ledajans.com/iletisim [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/ease/control-cards/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/case/indoor-rgb-panels/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/ease/indoor-rgb-panels/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/de/case/rgb-panel-fuer-den-aussenbereich [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/kayan-yazi-2/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/led/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/wp-content/plugins/* [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/case/power-supply-2 [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/category/uncategorized/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/case/outdoor-rgb-panel/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/case/rental-cabin/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p10-rgb-kabin/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p10-panel-2/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://www.ledajans.com/p10-panel-2/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/de/led-anzeige/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/led-ekran-6/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p10-grafik-ekran-kullanimi/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/psd100/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2032-10-27&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/huidu-c16l/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/hd-a601-kontrol-karti/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/ic-mekan-indoor-led-ekranlar/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p6-outdoor-rgb-panel/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p10-panel-kirmizi/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/case/control-cards/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/list/?tribe-bar-date=2028-02-17&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2029-09-28&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2033-12-30&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2029-05-21&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2036-04-15&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2079-05-24&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2074-10-08&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/de/case/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/colorlight-a60-player/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/msd-300-nova-sender/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/category/genel/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2062-10-11&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2080-07-12&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ns1.ledajans.com/ [ERR]
+  not: HTTPSConnectionPool(host='ns1.ledajans.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'ns1.ledajans.com'. (_ssl.c:1000)")))
+- https://www.ledajans.com/author/yonetici/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://www.ledajans.com/destek/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2059-05-16&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2073-11-09&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2064-02-18&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2071-06-14&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2075-10-22&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p3-indoor-rgb-panel/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2071-04-15&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2043-03-12&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2067-01-15&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2059-02-27&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2060-04-08&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2073-09-06&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2064-09-03&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2068-11-20&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2079-03-01&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2079-10-20&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2080-02-07&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2030-02-25&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2057-06-18&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2073-09-01&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/gva_template/template_header_layout_3961448586/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2040-06-13&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2054-01-30&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2075-01-09&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/ease/outdoor-led-screen/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p10-panel-4-2/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/gva_template/template_footer_layout_4063170865/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2027-12-28&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/colorlight-a40/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2054-09-27&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2029-01-20&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2033-08-29&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2066-03-25&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2069-04-13&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2070-01-31&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2075-09-02&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2080-06-27&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2031-08-04&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2047-11-18&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2067-04-17&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2068-03-15&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2070-04-24&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2074-04-25&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2040-04-22&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2066-02-25&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2070-03-31&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2075-08-27&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2056-07-21&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2058-08-14&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2034-05-17&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2071-06-06&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/ease/rental-cabin/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2054-06-23&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2023-02-24 [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2067-03-23&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2069-11-07&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2072-04-17&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2077-02-08&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2078-03-04&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2079-09-03&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2060-10-02&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2066-08-02&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2066-10-16&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2068-08-10&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2072-08-12&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2072-09-23&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2074-07-05&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2032-06-10&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2067-06-26&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2071-03-12&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2072-01-05&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/category-portfolio/ledajans/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2037-10-07&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2060-08-27&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2073-08-25&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2063-09-28&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2066-02-10&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2066-03-05&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2068-10-18&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2070-01-27&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2073-01-15&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2077-02-17&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2071-05-15&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2079-07-06&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2059-04-19&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2060-07-25&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2063-05-31&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2064-04-26&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2043-04-01&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2051-04-13&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2057-05-26&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2066-05-20&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2066-07-24&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2066-12-03&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2067-11-05&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2070-03-23&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2070-04-05&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2070-06-01&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2072-09-01&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2074-03-02&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2074-05-16&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2074-07-26&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2074-08-30&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2075-03-01&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2076-10-15&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2076-11-13&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2078-08-14&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2078-12-16&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2079-07-13&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2079-08-02&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/tf-qs2n-kontrol-karti-2/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2050-03-20&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2079-10-13&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/tf-qb5-kontrol-karti/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/colorlight-e120/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/ts-802/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2055-05-31&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2080-03-02&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2046-12-31&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2061-02-08&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2052-08-18&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2040-01-04&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2075-08-06&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2053-04-19&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2073-08-03&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2076-04-08&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/de/hd-c10/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2048-06-24&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2059-06-03&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p10-kirmizi-panel-2/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2064-02-07&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2044-01-21&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2047-09-22&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2049-08-19&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2027-02-05&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2035-10-29&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2065-05-12&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2069-07-31&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2069-12-25&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2077-03-12&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2078-05-24&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2032-09-10&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2043-12-05&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2052-03-17&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2057-04-09&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2072-09-09&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://www.ledajans.com/referanslar/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2062-09-08&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2071-03-29&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2031-05-19&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2047-01-21&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2042-07-14&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2069-07-11&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/serit-led/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2060-11-15&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2073-11-03&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2070-09-11&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2037-06-25&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2051-11-20&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2073-04-01&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2039-12-27&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2056-06-01&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2053-12-29&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2065-06-17&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2068-10-16&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://www.ledajans.com/dis-mekan-outdoor-rgb-paneller/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2052-06-01&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2054-05-27&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2069-06-17&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2072-01-04&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2078-10-07&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://www.ledajans.com/p10-panel-4/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2074-10-31&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2078-09-04&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2058-08-11&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/p10-panel-kirmizi-2/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2058-01-16&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2060-12-11&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2068-03-04&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2079-01-26&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2056-09-29&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2063-11-29&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2076-05-24&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2054-12-19&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2076-11-25&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/de/gefuehrt/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/kayan-yazi/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/2054-10-03/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/2062-08-13/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/2062-10-08/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/2062-10-17/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2066-11-19&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2054-05-12&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2036-08-23&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2072-08-14&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2076-02-20&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2079-07-10&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2079-08-03&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/wp-content/themes/modins/* [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2063-06-28&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2074-05-29&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2079-07-12&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2072-05-03&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2079-11-07&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/pcb-nedir/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2028-04-18&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2037-10-14&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2053-01-28&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2060-03-26&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2072-10-07&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2074-03-15&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2075-03-25&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2023-09-22&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2054-12-15&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2077-07-11&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2077-09-05&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/wp-content/uploads/* [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/tr [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2049-03-25&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2072-12-08&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2073-02-03&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/wp-*.php [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/colorlight-a35/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2052-10-01&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2057-01-04&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2062-12-08&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2064-04-07&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2069-12-02&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/kategori/seminars/liste/?tribe-bar-date=2026-02-18&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/events/liste/?tribe-bar-date=2079-08-08&eventDisplay=past [404]
+  not: 404; trafik/geri link varsa 301, degilse normal
+- https://ledajans.com/e80/feed/ [404]
+  not: 404; trafik/geri link varsa 301, degilse normal

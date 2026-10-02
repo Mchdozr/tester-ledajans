@@ -1,0 +1,138 @@
+/* LEDAJANS Round 1 — tasarım katmanı (child theme). Geri almak için: functions.php'deki R1 bloğunu kaldır. */
+:root{--ldj-brand:#f46f2c;--ldj-brand-ink:#c9501a;--ldj-ink:#16161d;--ldj-heading:#111827;--ldj-text:#52525c;--ldj-line:rgba(17,24,39,.1);--ldj-radius:10px;--ldj-ease:cubic-bezier(.22,.61,.36,1);--ldj-font:"Kumbh Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+
+/* 1) Tipografi */
+body.ldj-r1{--e-global-color-text:#52525c;--e-global-typography-primary-font-family:"Kumbh Sans";--e-global-typography-secondary-font-family:"Kumbh Sans";--e-global-typography-text-font-family:"Kumbh Sans";--e-global-typography-accent-font-family:"Kumbh Sans";color:var(--ldj-text);line-height:1.7;font-family:var(--ldj-font);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.ldj-r1 :is(h1,h2,h3,h4,h5,h6){font-family:var(--ldj-font)}
+body.ldj-r1 #wp-main-content h1:not(footer *){font-size:clamp(2rem,1.3rem + 3vw,3.5rem)!important;line-height:1.15!important;letter-spacing:-.02em!important}
+body.ldj-r1 #wp-main-content h2:not(footer *):not(.chaty *){font-size:clamp(1.75rem,1.25rem + 1.8vw,2.75rem)!important;line-height:1.2!important;letter-spacing:-.015em!important}
+body.ldj-r1 #wp-main-content :is(h3,h4,h5,h6):not(footer *){line-height:1.25!important}
+h3{font-size:clamp(1.25rem,1.1rem + .6vw,1.5rem)}h4{font-size:1.25rem}h5{font-size:1.125rem}h6{font-size:1rem}
+body.ldj-r1 #wp-main-content p{line-height:1.7}
+/* system-ui / ui-sans-serif'e düşen bloklar */
+body.ldj-r1 :is(.ledajans-home-certs__head,.ledajans-blog-hero-content,.la-wrapper,.ledajans-home-marquee-title,.ledajans-home-marquee-eyebrow,.ledajans-home-marquee-sub),
+body.ldj-r1 :is(.ledajans-home-certs__head,.ledajans-blog-hero-content,.la-wrapper) :not(i):not(svg):not(svg *){font-family:var(--ldj-font)!important}
+body.ldj-r1 #wp-main-content p a:not([class]),body.ldj-r1 #wp-main-content li a:not([class]):not(.chaty *){color:var(--ldj-brand-ink);text-underline-offset:3px}
+body.ldj-r1 #wp-main-content p a:not([class]):hover{color:var(--ldj-brand)}
+
+/* 2-3) Header: koyu nötr zemin, turuncu vurgu (logo değişmedi) */
+html body.ldj-r1 :is(header.wp-site-header,.header-builder-frontend,.header_default_screen,.header-builder-inner,.header-main-wrapper,.elementor-43,.elementor-element-a231664,.elementor-element-123bc72,.elementor-element-123bc72.gv-sticky-menu,.gv-sticky-menu){background:var(--ldj-ink)!important;background-color:var(--ldj-ink)!important}
+html body.ldj-r1 .elementor-element-123bc72.gv-sticky-menu{box-shadow:inset 0 -1px 0 rgba(255,255,255,.06)!important;transition:none!important}
+html body.ldj-r1 .elementor-element-123bc72.gv-sticky-menu::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,.28);opacity:0;transition:opacity .3s var(--ldj-ease)}
+html.ledajans-header-scrolled body.ldj-r1 :is(.gv-sticky-wrapper.is-fixed>.gv-sticky-menu,.elementor-element-123bc72.gv-sticky-menu,.elementor-element-123bc72){background:rgba(22,22,29,.92)!important;background-color:rgba(22,22,29,.92)!important;border-bottom:0!important;box-shadow:inset 0 -1px 0 rgba(255,255,255,.06)!important;transition:none!important}
+html.ledajans-header-scrolled body.ldj-r1 .elementor-element-123bc72.gv-sticky-menu::after{opacity:1}
+html.ledajans-header-scrolled body.ldj-r1 :is(header.wp-site-header,.header-builder-frontend,.header-builder-inner,.header-main-wrapper,.header_default_screen,.elementor-43,.elementor-element-a231664){background:transparent!important;background-color:transparent!important}
+html body.ldj-r1 .elementor-element-123bc72 .site-branding-logo img{transform-origin:left center;transition:transform .3s var(--ldj-ease)}
+@media (min-width:1025px){html.ledajans-header-scrolled body.ldj-r1 .elementor-element-123bc72 .site-branding-logo img{transform:scale(.88)}}
+@media (max-width:1024px){
+ html.ledajans-header-scrolled body.ldj-r1 :is(header.wp-site-header,.wp-site-header){background:rgba(22,22,29,.94)!important;background-color:rgba(22,22,29,.94)!important;box-shadow:0 8px 24px rgba(0,0,0,.25)!important;transition:none!important}
+ html.ledajans-header-scrolled body.ldj-r1 :is(.elementor-element-123bc72,.gv-sticky-menu){background:transparent!important;background-color:transparent!important}
+ html.ledajans-header-scrolled body.ldj-r1 .elementor-element-123bc72.gv-sticky-menu::after{opacity:0}
+}
+/* Menü linkleri */
+html body.ldj-r1 .elementor-element-123bc72 .gva-main-menu>li>a{position:relative;color:rgba(255,255,255,.88)!important;transition:color .2s}
+html body.ldj-r1 .elementor-element-123bc72 .gva-main-menu>li>a .menu-title,html body.ldj-r1 .elementor-element-123bc72 .gva-main-menu>li>a .caret{color:inherit!important}
+html body.ldj-r1 .elementor-element-123bc72 .gva-main-menu>li>a::after{content:"";position:absolute;left:.45rem;right:.45rem;bottom:-8px;height:2px;border-radius:2px;background:var(--ldj-brand);transform:scaleX(0);transform-origin:center;transition:transform .25s var(--ldj-ease)}
+html body.ldj-r1 .elementor-element-123bc72 .gva-main-menu>li:is(:hover,:focus-within)>a{color:#fff!important}
+html body.ldj-r1 .elementor-element-123bc72 .gva-main-menu>li:is(:hover,:focus-within)>a::after{transform:scaleX(.6)}
+html body.ldj-r1 .elementor-element-123bc72 .gva-main-menu>li.ldj-active>a{color:var(--ldj-brand)!important}
+html body.ldj-r1 .elementor-element-123bc72 .gva-main-menu>li.ldj-active>a::after{transform:scaleX(1)}
+html body.ldj-r1 .elementor-element-123bc72 :is(.ledajans-header-phone-row,.ledajans-header-phone-row a){color:rgba(255,255,255,.9)!important}
+html body.ldj-r1 .elementor-element-123bc72 .ledajans-header-phone-row :is(i,svg){color:var(--ldj-brand)!important;fill:var(--ldj-brand)!important}
+/* Dropdown */
+html body.ldj-r1 .gva-main-menu .submenu-inner{border-radius:12px!important;padding:8px!important;border:1px solid var(--ldj-line)!important;box-shadow:0 18px 40px -12px rgba(17,24,39,.28),0 2px 6px rgba(17,24,39,.06)!important;min-width:230px}
+html body.ldj-r1 .gva-main-menu .submenu-inner>li{border:0!important}
+html body.ldj-r1 .gva-main-menu .submenu-inner>li>a{display:block;border-radius:8px;padding:10px 14px!important;color:#1f2937!important;font-weight:500;line-height:1.35;transition:background-color .15s,color .15s}
+html body.ldj-r1 .gva-main-menu .submenu-inner>li>a:hover,html body.ldj-r1 .gva-main-menu .submenu-inner>li.ldj-active>a{background:#fff4ee!important;color:var(--ldj-brand-ink)!important}
+html body.ldj-r1 .gva-main-menu .submenu-inner>li>a::before{display:none!important}
+
+/* 4) Butonlar — tek radius standardı */
+body.ldj-r1 :is(.la1-btn,.la1-play,.la-btn,.ledajans-btn-tum-urunler,.ledajans-projects-btn,.ledajans-projects-filter-btn,.product-phone-button,.ledajans-form-buton,.elementor-button,.wpcf7-submit,.ledajans-form-buton input){border-radius:var(--ldj-radius)!important}
+body.ldj-r1 :is(.la1-btn,.la-btn,.ledajans-btn-tum-urunler,.ledajans-projects-btn,.product-phone-button,.ledajans-form-buton,.elementor-button,.wpcf7-submit){position:relative;isolation:isolate;transition:transform .25s var(--ldj-ease),background-color .2s,color .2s,border-color .2s!important;will-change:auto}
+body.ldj-r1 :is(.la1-btn,.la-btn,.ledajans-btn-tum-urunler,.ledajans-projects-btn,.product-phone-button,.ledajans-form-buton,.elementor-button)::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;box-shadow:0 12px 24px -10px rgba(244,111,44,.55);opacity:0;transition:opacity .25s var(--ldj-ease)}
+body.ldj-r1 :is(.la1-btn,.la-btn,.ledajans-btn-tum-urunler,.ledajans-projects-btn,.product-phone-button,.ledajans-form-buton,.elementor-button,.wpcf7-submit):hover{transform:translateY(-2px)}
+body.ldj-r1 :is(.la1-btn,.la-btn,.ledajans-btn-tum-urunler,.ledajans-projects-btn,.product-phone-button,.ledajans-form-buton,.elementor-button):hover::after{opacity:1}
+body.ldj-r1 :is(.la1-btn,.la-btn,.ledajans-btn-tum-urunler,.ledajans-projects-btn,.product-phone-button,.ledajans-form-buton,.elementor-button,.wpcf7-submit):active{transform:translateY(0)}
+body.ldj-r1 :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:2px solid var(--ldj-brand)!important;outline-offset:3px!important;box-shadow:0 0 0 5px rgba(244,111,44,.18)}
+body.ldj-r1 :is(a,button,input,select,textarea):focus:not(:focus-visible){outline:none}
+
+/* 5) Mobil yatay taşma */
+body.ldj-r1 .container-full>.row{margin-left:0!important;margin-right:0!important}
+body.ldj-r1 .container-full>.row>.col-12{padding-left:0!important;padding-right:0!important}
+body.ldj-r1 .wrapper-page{overflow-x:clip}
+body.ldj-r1 .ledajans-home-certs{overflow:hidden}
+@media (max-width:767px){body.ldj-r1 .la-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}}
+
+/* 6) Scroll-reveal (sadece JS çalışınca ve reduced-motion değilse) */
+@media (prefers-reduced-motion:no-preference){
+ html.ldj-rv-on .ldj-rv{opacity:0;transform:translate3d(0,24px,0);transition:opacity .7s var(--ldj-ease),transform .7s var(--ldj-ease)}
+ html.ldj-rv-on .ldj-rv.ldj-in{opacity:1;transform:none}
+}
+
+/* 7) Form / kart / footer cilası */
+body.ldj-r1 .wpcf7 :is(input:not([type=submit]):not([type=checkbox]):not([type=radio]),select,textarea){transition:border-color .2s,background-color .2s}
+body.ldj-r1 .wpcf7 :is(input:not([type=submit]),select,textarea):focus{border-color:var(--ldj-brand)!important;background-color:#fff!important;box-shadow:0 0 0 4px rgba(244,111,44,.14)!important;outline:none}
+body.ldj-r1 .wpcf7 ::placeholder{color:#8a8a94}
+body.ldj-r1 .wpcf7-not-valid-tip{font-size:.85rem;margin-top:6px}
+body.ldj-r1 footer a{transition:color .2s}
+body.ldj-r1 footer a:hover{color:var(--ldj-brand)!important}
+body.ldj-r1 .la-link::before{display:none}/* önceden de kırık (tofu) ikon glifi */
+
+/* ===== LEDAJANS R3: masaüstü sticky header (yalnızca transform/opacity animasyonu, yer ayrılmış) ===== */
+@media (min-width:1025px){
+body.ldj-r1 .gv-sticky-wrapper{min-height:var(--ldj-hdr-h,0px)}
+body.ldj-r1 .gv-sticky-wrapper.is-fixed>.gv-sticky-menu{position:fixed!important;top:0;left:0;right:0;width:100%;z-index:999;backface-visibility:hidden}
+body.ldj-r1.admin-bar .gv-sticky-wrapper.is-fixed>.gv-sticky-menu{top:32px!important}
+html.ldj-hdr-anim body.ldj-r1 .gv-sticky-wrapper.is-fixed>.gv-sticky-menu{animation:ldjHdrIn .28s cubic-bezier(.2,.7,.2,1) both}
+}
+@keyframes ldjHdrIn{from{transform:translate3d(0,-100%,0);opacity:0}to{transform:translate3d(0,0,0);opacity:1}}
+@media (prefers-reduced-motion:reduce){html.ldj-hdr-anim body.ldj-r1 .gv-sticky-wrapper.is-fixed>.gv-sticky-menu{animation:none!important}}
+
+/* ===== LEDAJANS R4: Chaty ana buton rengi #f46f2c (yalnızca tetik butonu; kanal ikonları kendi renginde) ===== */
+[id^="chaty-widget-"] .chaty-i-trigger .chaty-cta-button,
+[id^="chaty-widget-"] .chaty-i-trigger .chaty-cta-button button,
+[id^="chaty-widget-"] .chaty-i-trigger .open-chaty,
+[id^="chaty-widget-"] .chaty-i-trigger .open-chaty-channel{background-color:#f46f2c!important}
+[id^="chaty-widget-"] .chaty-i-trigger .chaty-svg circle,
+[id^="chaty-widget-"] .chaty-i-trigger .chaty-svg ellipse{fill:#f46f2c!important}
+
+/* ===== LEDAJANS Op B (tester): başlık ölçeği + beyaz yazılı butonlar #d95f1f ===== */
+/* H1/hero: 390px≈36px, 1024px≈55px, ≥1180px 60px (önceki: 32.5px / 56px) */
+body.ldj-r1 #wp-main-content h1:not(footer *){font-size:clamp(2.25rem,1.25rem + 3.4vw,3.75rem)!important;line-height:1.12!important}
+/* H2: 390px≈30px, ≥1400px 48px (önceki: 28px / 44px) */
+body.ldj-r1 #wp-main-content h2:not(footer *):not(.chaty *){font-size:clamp(1.875rem,1.3rem + 2vw,3rem)!important;line-height:1.18!important}
+/* Beyaz yazılı turuncu butonlar (Chaty ve diğer turuncu vurgular #f46f2c olarak kalır) */
+body.ldj-r1 :is(.la1-btn-primary,.la-btn-primary,.ledajans-btn-tum-urunler,.ledajans-projects-btn-primary,.ledajans-projects-load-more,.ledajans-projects-filter-btn.active,.ledajans-form-buton,.ledajans-hizli-ana,.products-slider-prev,.products-slider-next,.ledajans-reviews-prev,.ledajans-reviews-next,.ledajans-blog-prev,.ledajans-blog-next){background-color:#c9501a!important;border-color:#c9501a!important;color:#fff!important}
+body.ldj-r1 :is(.la1-btn-primary,.la-btn-primary,.ledajans-btn-tum-urunler,.ledajans-projects-btn-primary,.ledajans-projects-load-more,.ledajans-projects-filter-btn.active,.ledajans-form-buton,.ledajans-hizli-ana,.products-slider-prev,.products-slider-next,.ledajans-reviews-prev,.ledajans-reviews-next,.ledajans-blog-prev,.ledajans-blog-next):is(:hover,:focus-visible){background-color:#bf4f15!important;border-color:#bf4f15!important;color:#fff!important}
+
+/* ===== LEDAJANS R5 (tester) — mobil taşma düzeltmeleri (ledajans-r1.css sonuna eklenecek) ===== */
+
+/* B1) /led-ekran/ la-table: tablo zaten .la-table-wrap içinde (overflow-x:auto, 338px kutu, tablo 560px / 8 sütun).
+   Kutunun kendi içinde yatay kaydırmayı netleştir + iOS momentum + kaydırma ipucu (gölge) */
+body.ldj-r1 .la-table-wrap{overflow-x:auto!important;-webkit-overflow-scrolling:touch;max-width:100%;overscroll-behavior-x:contain;
+  background:linear-gradient(90deg,#fff 30%,rgba(255,255,255,0)) left/24px 100% no-repeat local,
+             linear-gradient(270deg,#fff 30%,rgba(255,255,255,0)) right/24px 100% no-repeat local,
+             radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.14),transparent) left/10px 100% no-repeat scroll,
+             radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.14),transparent) right/10px 100% no-repeat scroll}
+@media (max-width:767px){
+  body.ldj-r1 .la-table-wrap .la-table{min-width:560px;font-size:.875rem}
+  body.ldj-r1 .la-table-wrap .la-table :is(th,td){padding:.55rem .6rem;white-space:nowrap}
+  body.ldj-r1 .la-table-wrap .la-table :is(th,td):first-child{position:sticky;left:0;background:#fff;z-index:1}
+}
+
+/* B2) /rental-ekran/ görsel taşması: widget kuralı .lj-image-box img{transform:scale(1.14) translateY(8%)} (GorselBot tespiti) */
+@media (max-width:899px){
+  .lj-image-box img,.product-image-container img{transform:none!important;max-width:100%;height:auto!important;object-fit:contain!important}
+}
+
+/* B3) GEÇİCİ gizleme — /rental-ekran/ bozuk görseller (ikisi de sunucuda 404: Air-II-scaled.png, 500×1000-scaled.png).
+   Gerçek ürün fotoğrafları gelene kadar. Elementor'da hiçbir şey silinmez; geri alma = bu bloğu + B3-JS'i kaldırmak.
+   Slider (17e560c): widget JS'i yalnızca INLINE style.display='none' olan slaytları atlar (getVisibleSlides) -> slayt 2/3 CSS ile
+   gizlenir + B3-JS inline display:none verir; ilgili noktalar (data-slide 1,2) gizlenir. Kutu (faefd9a): görsel görünmez + nötr zemin. */
+.elementor-element-17e560c .product-slide:nth-child(2):has(img[src*="1000-scaled.png"]),
+.elementor-element-17e560c .product-slide:nth-child(3):has(img[src*="Air-II-scaled.png"]),
+.elementor-element-17e560c .product-slider-dot[data-slide="1"],
+.elementor-element-17e560c .product-slider-dot[data-slide="2"]{display:none!important}
+.elementor-element-faefd9a .lj-card:first-of-type .lj-image-box img[src*="Air-II-scaled.png"]{visibility:hidden!important}
+.elementor-element-faefd9a .lj-card:first-of-type .lj-image-box:has(img[src*="Air-II-scaled.png"]){min-height:240px;
+  background:#f3f4f6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='40'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='15' fill='%236b7280'%3EG%C3%B6rsel yak%C4%B1nda%3C/text%3E%3C/svg%3E") center/220px 40px no-repeat}

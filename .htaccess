@@ -1,0 +1,48 @@
+# BEGIN LEDAJANS-BLOCK
+# Tester: WP dışı proje/araç dosyalarını dışarıya kapat (2026-09-30, Operasyon A). Geri alma: bu bloğu silin.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^/?\.git(/|$) - [F,L]
+RewriteRule ^/?\.gitignore$ - [F,L]
+RewriteRule ^/?\.env - [F,L]
+RewriteRule ^/?\.cursor(/|$) - [F,L]
+RewriteRule ^/?AGENT-HUB(/|$) - [F,L]
+RewriteRule ^/?scripts(/|$) - [F,L]
+RewriteRule ^/?wordpress(/|$) - [F,L]
+RewriteRule ^/?lighthouse[^/]*(/|$) - [NC,F,L]
+RewriteRule ^/?[^/]+\.(sh|md|json|log|sql|zip|bak|env|py|ps1)$ - [NC,F,L]
+# -- Ek (Madde 6): kalan WP dışı kök klasör/dosyalar (sitede referansı yok; 279 URL + 65 CSS tarandı)
+RewriteRule ^/?(Anasayfa|Kurumsal|Urunlerimiz|Katalog|Code-Snippets|Footer|Ust-Menu|Blog|Teknik-Destek-Bilgi|SEO-Icerik-Widgets|node-compile-cache)(/|$) - [F,L]
+RewriteRule ^/?LED\sEkran(/|$) - [F,L]
+RewriteRule ^/?İletisim(/|$) - [F,L]
+RewriteRule ^/?wordpress-[^/]*\.php$ - [NC,F,L]
+RewriteCond %{REQUEST_URI} !^/(robots\.txt|llms\.txt|ads\.txt|app-ads\.txt|security\.txt|humans\.txt)$ [NC]
+RewriteCond %{REQUEST_URI} !^/(google[0-9a-z]+\.html|yandex_[0-9a-z]+\.html|BingSiteAuth\.xml|pinterest-[0-9a-z]+\.html)$ [NC]
+RewriteRule ^/?[^/]+\.(csv|html?|txt)$ - [NC,F,L]
+RewriteRule ^/?Ek-CSS-final\.css$ - [F,L]
+RewriteRule ^/?video-sitemap\.xml$ - [F,L]
+# -- Op B: LSCACHE bloğundan taşınan koruma (wp-content/.litespeed_conf.dat kalıyor)
+RewriteRule litespeed/debug/.*\.log$ - [F,L]
+RewriteRule \.litespeed_conf\.dat - [F,L]
+</IfModule>
+# -- Op B: tester tamamen noindex (HTML + statik dosyalar)
+<IfModule mod_headers.c>
+Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>
+# END LEDAJANS-BLOCK
+# BEGIN ldj-root-harden 2026-10-01 (Control OK)
+<FilesMatch "^(wp-config-sample\.php|readme\.txt|xmlrpc\.php)$">
+  Require all denied
+</FilesMatch>
+# END ldj-root-harden
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress

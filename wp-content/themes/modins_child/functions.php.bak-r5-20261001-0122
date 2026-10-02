@@ -1,0 +1,628 @@
+<?php
+/**
+ *
+ * @package [Parent Theme]
+ * @author  gaviasthemes <gaviasthemes@gmail.com>
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU Public License
+ *
+ */
+
+function modins_child_scripts() {
+   wp_enqueue_style( 'modins-parent-style', get_template_directory_uri(). '/style.css');
+   wp_enqueue_style( 'modins-child-style', get_stylesheet_uri());
+}
+add_action( 'wp_enqueue_scripts', 'modins_child_scripts', 9999 );
+
+function custom_override_header($name) {
+    if (!$name) {
+        get_template_part('header', 'front');
+    } else {
+        get_template_part('header', $name);
+    }
+}
+
+function override_get_header($name = null) {
+    remove_action('get_header', 'wp_head');
+    add_action('get_header', 'custom_override_header');
+}
+
+add_action('get_header', 'override_get_header');
+
+add_action('template_redirect', 'custom_buffer_start');
+
+function custom_buffer_start() {
+    if (is_admin() || is_feed()) {
+        return;
+    }
+    $uri = $_SERVER['REQUEST_URI'] ?? '';
+    $needs_translation = (strpos($uri, '/en/') !== false) || (strpos($uri, '/de/') !== false);
+    if ($needs_translation) {
+        ob_start('custom_translate_output');
+    }
+}
+
+function custom_translate_output($buffer) {
+    $current_url = esc_url(home_url($_SERVER['REQUEST_URI']));
+
+    $site_language = get_locale();
+    $is_english = strpos($current_url, '/en/') !== false || $site_language === 'en_US';
+    $is_german  = strpos($current_url, '/de/') !== false || $site_language === 'de_DE';
+
+    $translations = array(
+        'tr' => array(
+            'Hemen Arayın' => 'Hemen Arayın',
+            '+90 543 879 51 08' => '+90 543 879 51 08',
+            'Halide Edip Adıvar Mah.  Gül 2 Sokak No: 10a 34382 Şişli/İstanbul' => 'Halide Edip Adıvar Mah.  Gül 2 Sokak No: 10a 34382 Şişli/İstanbul',
+            'İletişim' => 'İletişim',
+            'Galeri' => 'Galeri',
+            'Bülten' => 'Bülten',
+            'Teklif Al' => 'Teklif Al',
+            'Haberdar olmak için bütene abone olun' => 'Haberdar olmak için bütene abone olun',
+            '© 2024 Ledajans.com Tüm Hakları Saklıdır.' => '© 2024 Ledajans.com Tüm Hakları Saklıdır.',
+            'Hayatınızı yaşama şeklinizi yansıtan Ledler' => 'Hayatınızı yaşama şeklinizi yansıtan Ledler',
+            'Led Ajans, hemen her sektörde kullanılan ve daha etkin reklam imkanı veren bilgilendirme panoları, led ekranlar ve kayan yazılarda kullanılan, led modül, güç kaynakları ve kontrol kartları ile değerli müşterilerine hizmet vermektedir.' => 'Led Ajans, hemen her sektörde kullanılan ve daha etkin reklam imkanı veren bilgilendirme panoları, led ekranlar ve kayan yazılarda kullanılan, led modül, güç kaynakları ve kontrol kartları ile değerli müşterilerine hizmet vermektedir.',
+        ),
+        'en' => array(
+            'Hemen Arayın' => 'Call Now',
+            '+90 543 879 51 08' => '+44 7932 7832 51',
+            'İletişim' => 'Contact Us',
+            'Halide Edip Adıvar Mah.  Gül 2 Sokak No: 10a 34382 Şişli/İstanbul' => 'Halide Edip Adıvar Mah.  Gül 2 Sokak No: 10a 34382 Şişli/İstanbul',
+            'Galeri' => 'Gallery',
+            'Bülten' => 'Subscribe',
+            'Teklif Al' => 'Get a Quote',
+            'Haberdar olmak için bütene abone olun' => 'Subscribe to the newsletter to stay informed',
+            '© 2024 Ledajans.com Tüm Hakları Saklıdır.' => '© 2024 Ledajans.com All Rights Reserved.',
+            'Hayatınızı yaşama şeklinizi yansıtan Ledler' => 'LEDs that reflect the way you live your life',
+            'Led Ajans, hemen her sektörde kullanılan ve daha etkin reklam imkanı veren bilgilendirme panoları, led ekranlar ve kayan yazılarda kullanılan, led modül, güç kaynakları ve kontrol kartları ile değerli müşterilerine hizmet vermektedir.' => 'Led Ajans provides services to its valued customers by offering LED modules, power supplies, and control cards used in information boards, LED screens, and scrolling texts, which are widely used across almost every industry to deliver more effective advertising opportunities.',
+        ),
+        'de' => array(
+            'Hemen Arayın' => 'Jetzt anrufen',
+            '+90 543 879 51 08' => '+49 1521 2401 915',
+            'İletişim' => 'Kontakt',
+            'Halide Edip Adıvar Mah.  Gül 2 Sokak No: 10a 34382 Şişli/İstanbul' => '4 Huxley Parade Great Cambridge Road N18 1HY',
+            'Galeri' => 'Galerie',
+            'Bülten' => 'Abonnieren',
+            'Teklif Al' => 'Angebot erhalten',
+            'Haberdar olmak için bütene abone olun' => 'Abonnieren Sie den Newsletter, um informiert zu bleiben',
+            '© 2024 Ledajans.com Tüm Hakları Saklıdır.' => '© 2024 Ledajans.com Alle Rechte vorbehalten.',
+            'Hayatınızı yaşama şeklinizi yansıtan Ledler' => 'LEDs, die widerspiegeln, wie Sie Ihr Leben leben',
+            'Led Ajans, hemen her sektörde kullanılan ve daha etkin reklam imkanı veren bilgilendirme panoları, led ekranlar ve kayan yazılarda kullanılan, led modül, güç kaynakları ve kontrol kartları ile değerli müşterilerine hizmet vermektedir.' => 'Led Ajans bietet seinen geschätzten Kunden LED-Module, Netzteile und Steuerkarten an, die in Informationstafeln, LED-Bildschirmen und Laufschriften verwendet werden und in nahezu allen Branchen eingesetzt werden, um effektivere Werbemöglichkeiten zu schaffen.',
+        ),
+    );
+
+    if ($is_english) {
+        foreach ($translations['en'] as $turkish => $translated) {
+            $buffer = str_replace($turkish, $translated, $buffer);
+        }
+    } elseif ($is_german) {
+        foreach ($translations['de'] as $turkish => $translated) {
+            $buffer = str_replace($turkish, $translated, $buffer);
+        }
+    }
+
+    return $buffer;
+}
+
+function add_title_to_images($content) {
+    if (is_singular()) {
+        global $post;
+        $page_title = get_the_title($post->ID);
+
+        $pattern = '/<img(.*?)>/i';
+        $replacement = '<img$1 title="' . esc_attr($page_title) . '" alt="' . esc_attr($page_title) . '">';
+
+        $content = preg_replace($pattern, $replacement, $content);
+    }
+
+    return $content;
+}
+add_filter('the_content', 'add_title_to_images');
+
+/**
+ * W3TC Lazy Load token temizliği
+ * Sayfada görünen {w3tc_lazyload_xxx} metinlerini kaldırır.
+ */
+add_filter('the_content', function ($content) {
+    return preg_replace('/\{w3tc_lazyload_[^}]+\}/i', '', $content);
+}, 999);
+
+add_action('template_redirect', 'redirect_404_to_homepage');
+function redirect_404_to_homepage() {
+    if (is_404()) {
+        wp_redirect(home_url(), 301);
+        exit;
+    }
+}
+
+add_filter('rank_math/sitemap/http_headers', function($headers) {
+    $headers['X-Robots-Tag'] = 'index, follow';
+    return $headers;
+});
+
+/**
+ * Önbellek başlıkları: önce gelen tüm Cache-Control/Pragma/Expires temizlenir,
+ * sonra tek satır yazılır (W3TC vb. send_headers sonrası).
+ */
+add_action('send_headers', function () {
+    if (is_admin() || (defined('REST_REQUEST') && REST_REQUEST) || headers_sent()) {
+        return;
+    }
+
+    header_remove('Cache-Control');
+    header_remove('Pragma');
+    header_remove('Expires');
+
+    if (is_user_logged_in()) {
+        header('Cache-Control: private, no-cache, must-revalidate, max-age=0');
+    } else {
+        header('Cache-Control: public, max-age=300, s-maxage=300, must-revalidate');
+    }
+}, 2147483647); // PHP_INT_MAX yerine sabit (eski PHP uyumu)
+
+/**
+ * Frontend performans iyileştirmeleri (güvenli set)
+ */
+add_action('wp_enqueue_scripts', function () {
+    // Misafirlerde gereksiz dashicons yükünü kaldır
+    if (!is_user_logged_in()) {
+        wp_deregister_style('dashicons');
+    }
+}, 100);
+
+// Emoji script/style kaldır (frontend)
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+
+// GTM/GA için erken bağlantı
+add_filter('wp_resource_hints', function ($urls, $relation_type) {
+    if ($relation_type === 'preconnect') {
+        $urls[] = ['href' => 'https://www.googletagmanager.com', 'crossorigin' => 'anonymous'];
+        $urls[] = ['href' => 'https://www.google-analytics.com', 'crossorigin' => 'anonymous'];
+    }
+    if ($relation_type === 'dns-prefetch') {
+        $urls[] = '//www.googletagmanager.com';
+        $urls[] = '//www.google-analytics.com';
+    }
+    return $urls;
+}, 10, 2);
+
+// GTM/GA script'lerini render engellemeden yükle
+add_filter('script_loader_tag', function ($tag, $handle, $src) {
+    if (
+        strpos($src, 'googletagmanager.com/gtm.js') !== false ||
+        strpos($src, 'googletagmanager.com/gtag/js') !== false
+    ) {
+        if (stripos($tag, ' defer') === false) {
+            $tag = str_replace('<script ', '<script defer ', $tag);
+        }
+    }
+    return $tag;
+}, 10, 3);
+
+add_action('template_redirect', function () {
+    if (is_admin() || is_feed()) return;
+
+    ob_start(function ($html) {
+        $pattern = "#<script>\\s*var gtmLoaded = false;\\s*function loadGTM\\(\\)\\s*\\{[\\s\\S]*?setTimeout\\(loadGTM, 3000\\);[\\s\\S]*?window\\.addEventListener\\(e, loadGTM, \\{once:true, passive:true\\}\\);[\\s\\S]*?\\}\\);\\s*</script>#i";
+        return preg_replace($pattern, '', $html, 1);
+    });
+}, 1);
+
+add_action('wp_head', function () {
+    if (!(is_front_page() || is_home())) {
+        return;
+    }
+
+    // R2: canlı domain yerine sitenin kendi uploads'ı + hero'da gerçekten kullanılan görseller
+    echo '<link rel="preload" as="image" href="' . esc_url(content_url('/uploads/2026/09/hero-stant-poster-1.webp')) . '" media="(min-width: 901px)" fetchpriority="high">' . "\n";
+    echo '<link rel="preload" as="image" href="' . esc_url(content_url('/uploads/2026/09/hero-stant-poster-mobile-1.webp')) . '" media="(max-width: 900px)" fetchpriority="high">' . "\n";
+}, 1);
+
+// Anasayfada Rank Math şemalarını kapat; schema kaynağı widget JSON-LD olsun
+add_filter('rank_math/json_ld', function ($data, $jsonld) {
+    if (is_front_page() || is_home()) {
+        return [];
+    }
+    return $data;
+}, 99, 2);
+
+/* =============================================================================
+ * LEDAJANS Round 1 tasarım katmanı (2026-09-30)
+ * assets/css/ledajans-r1.css + assets/js/ledajans-r1.js
+ * Geri alma: bu bloğu silmek (veya yedek functions.php'yi geri yüklemek) yeterli.
+ * ============================================================================= */
+add_action('wp_enqueue_scripts', function () {
+    $dir = get_stylesheet_directory();
+    $uri = get_stylesheet_directory_uri();
+    $css = '/assets/css/ledajans-r1.css';
+    $js  = '/assets/js/ledajans-r1.js';
+    if (file_exists($dir . $css)) {
+        wp_enqueue_style('ledajans-r1', $uri . $css, array(), (string) filemtime($dir . $css));
+    }
+    if (file_exists($dir . $js)) {
+        wp_enqueue_script('ledajans-r1', $uri . $js, array(), (string) filemtime($dir . $js), array('in_footer' => true, 'strategy' => 'defer'));
+    }
+    $js2 = '/assets/js/ledajans-r2.js';
+    if (file_exists($dir . $js2)) {
+        wp_enqueue_script('ledajans-r2', $uri . $js2, array(), (string) filemtime($dir . $js2), array('in_footer' => true, 'strategy' => 'defer'));
+    }
+}, 10000);
+
+add_filter('body_class', function ($classes) {
+    $classes[] = 'ldj-r1';
+    return $classes;
+});
+
+// Kullanılmayan font CSS'leri (Inter / Roboto / Roboto Slab) — yalnızca ön yüzde, editörde değil
+add_filter('style_loader_tag', function ($tag, $handle) {
+    if (is_admin() || isset($_GET['elementor-preview'])) {
+        return $tag;
+    }
+    $unused = array('elementor-gf-inter', 'elementor-gf-local-roboto', 'elementor-gf-local-robotoslab', 'rs-roboto');
+    return in_array($handle, $unused, true) ? '' : $tag;
+}, 10, 2);
+
+
+/* =============================================================================
+ * LEDAJANS Round 2 (2026-09-30): HTML çıktı filtresi
+ *  - tester'da GTM/GA/Ads çıktısını kaldırır (yalnızca HTTP_HOST = tester.ledajans.com)
+ *  - autoplay proje videolarında src'yi erteler (preload="none" + poster), mevcut IO script'i yükler
+ *  - alt'ı boş/eksik uploads görsellerine Ortam Kütüphanesi alt metnini yazar
+ * Geri alma: bu bloğu kaldırmak yeterli.
+ * ============================================================================= */
+function ldj_r2_is_front_html() {
+    if (is_admin() || is_feed() || wp_doing_ajax() || (defined('REST_REQUEST') && REST_REQUEST) || isset($_GET['elementor-preview']) || is_customize_preview()) {
+        return false;
+    }
+    return true;
+}
+
+add_action('template_redirect', function () {
+    if (ldj_r2_is_front_html()) {
+        ob_start('ldj_r2_filter_html');
+    }
+}, 3);
+
+function ldj_r2_alt_for($src) {
+    static $cache = array();
+    if (isset($cache[$src])) {
+        return $cache[$src];
+    }
+    $url = strtok($src, '?#');
+    if (strpos($url, '//') === 0) {
+        $url = 'https:' . $url;
+    }
+    $alt = '';
+    $site_host = wp_parse_url(home_url(), PHP_URL_HOST);
+    if (wp_parse_url($url, PHP_URL_HOST) === $site_host) {
+        $id = attachment_url_to_postid($url);
+        if (!$id) {
+            $id = attachment_url_to_postid(preg_replace('#-\d+x\d+(\.[a-z0-9]+)$#i', '$1', $url));
+        }
+        if ($id) {
+            $alt = trim((string) get_post_meta($id, '_wp_attachment_image_alt', true));
+        }
+    }
+    $cache[$src] = $alt;
+    return $alt;
+}
+
+function ldj_r2_filter_html($html) {
+    if (!is_string($html) || stripos($html, '<html') === false) {
+        return $html;
+    }
+    $orig = $html;
+
+    // 1) GTM / GA / Ads — sadece tester
+    $host = isset($_SERVER['HTTP_HOST']) ? strtolower($_SERVER['HTTP_HOST']) : '';
+    if ($host === 'tester.ledajans.com') {
+        $html = preg_replace('#<!--\s*Google Tag Manager \(noscript\)\s*-->.*?<!--\s*End Google Tag Manager \(noscript\)\s*-->#is', '', $html);
+        $html = preg_replace('#<!--\s*Google Tag Manager\s*-->.*?<!--\s*End Google Tag Manager\s*-->#is', '', $html);
+        $html = preg_replace_callback('#<script\b[^>]*>.*?</script>#is', function ($m) {
+            return preg_match('#googletagmanager\.com/(gtm|gtag)|google-analytics\.com/(analytics|ga)\.js|googleadservices\.com|doubleclick\.net|\bgtag\(\s*[\'"](config|js)#i', $m[0]) ? '' : $m[0];
+        }, $html);
+        $html = preg_replace('#<noscript>\s*<iframe[^>]*googletagmanager\.com/ns\.html[^>]*>\s*</iframe>\s*</noscript>#i', '', $html);
+        $html = preg_replace('#<link\b[^>]*href=["\'](?:https?:)?//www\.(?:googletagmanager|google-analytics)\.com/?["\'][^>]*>\s*#i', '', $html);
+    }
+
+    // 2) Autoplay videolar: src ertele + poster
+    $poster_names = array('outdoor-kure-led-ekran', 'WhatsApp-Video-2026-03-12-at-11.51.08-AM-1', 'WhatsApp-Video-2026-03-12-at-11.50.57-AM', 'WhatsApp-Video-2026-03-12-at-11.51.07-AM', 'WhatsApp-Video-2026-03-12-at-11.51.07-AM-2', 'WhatsApp-Video-2026-03-12-at-11.51.07-AM-1', 'v1', 'v2-Trim');
+    $html = preg_replace_callback('#<video\b([^>]*)>(.*?)</video>#is', function ($m) use ($poster_names) {
+        $attrs = $m[1];
+        $inner = $m[2];
+        if (stripos($attrs, 'autoplay') === false || stripos($attrs, 'la1Video') !== false || stripos($attrs, 'data-ldj-lazy') !== false) {
+            return $m[0];
+        }
+        $src = '';
+        if (preg_match('#\ssrc=(["\'])([^"\']+)\1#i', $attrs, $sm)) {
+            $src = $sm[2];
+        } elseif (preg_match('#<source\b[^>]*\ssrc=(["\'])([^"\']+)\1#i', $inner, $sm)) {
+            $src = $sm[2];
+        }
+        if ($src === '') {
+            return $m[0];
+        }
+        $attrs = preg_replace('#\ssrc=(["\'])#i', ' data-ldj-src=$1', $attrs);
+        $attrs = preg_replace('#\spreload=(["\'])[^"\']*\1#i', '', $attrs);
+        $attrs .= ' preload="none" data-ldj-lazy="1"';
+        if (stripos($attrs, ' poster=') === false) {
+            $base = basename((string) wp_parse_url($src, PHP_URL_PATH), '.mp4');
+            if (in_array($base, $poster_names, true)) {
+                $attrs .= ' poster="' . esc_url(content_url('/uploads/2026/09/ldj-poster-' . $base . '.webp')) . '"';
+            }
+        }
+        $inner = preg_replace('#(<source\b[^>]*?)\ssrc=(["\'])#i', '$1 data-ldj-src=$2', $inner);
+        return '<video' . $attrs . '>' . $inner . '</video>';
+    }, $html);
+
+    // 3) Boş alt → Ortam Kütüphanesi alt metni
+    $html = preg_replace_callback('#<img\b[^>]*>#i', function ($m) {
+        $tag = $m[0];
+        $has_alt = preg_match('#\salt=(["\'])(.*?)\1#is', $tag, $am);
+        if ($has_alt && trim($am[2]) !== '') {
+            return $tag;
+        }
+        if (!preg_match('#\ssrc=(["\'])([^"\']+)\1#i', $tag, $sm) || strpos($sm[2], '/wp-content/uploads/') === false) {
+            return $tag;
+        }
+        $alt = ldj_r2_alt_for($sm[2]);
+        if ($alt === '') {
+            return $tag;
+        }
+        if ($has_alt) {
+            return preg_replace('#\salt=(["\'])(.*?)\1#is', ' alt="' . esc_attr($alt) . '"', $tag, 1);
+        }
+        return preg_replace('#^<img\b#i', '<img alt="' . esc_attr($alt) . '"', $tag);
+    }, $html);
+
+    // Güvenlik: regex hatası (null) ya da beklenmedik küçülme olursa orijinali döndür
+    if (!is_string($html) || strlen($html) < strlen($orig) * 0.8) {
+        return $orig;
+    }
+    return $html;
+}
+
+
+/* =============================================================================
+ * LEDAJANS Round 3 (2026-09-30)
+ *  - /urunlerimiz-led-ekran/ (var olmayan URL) → /led-ekran/ 301 (404→anasayfa kuralından önce)
+ *  - tester: canlı alan adına (ledajans.com) giden preload'ları kaldırır
+ *  - tester: ağır görselleri Ortam Kütüphanesi'ndeki yeni optimize kopyalarla değiştirir (yalnızca <img>)
+ *  - ISO kayan bant görselleri: loading=lazy; hero LCP görseli: tek fetchpriority=high + eager
+ *  - içerik görsellerinde (ilk 2 hariç) eksik loading → lazy
+ *  - Send eklentisi: ayar nesnesi yoksa zararsız fallback (hiçbir formu izlemez)
+ * Geri alma: bu bloğu kaldırmak yeterli (R2 yedeği: backups/20260930-190917/files/...).
+ * ============================================================================= */
+add_action('template_redirect', function () {
+    if (!is_404()) {
+        return;
+    }
+    $path = isset($_SERVER['REQUEST_URI']) ? strtolower((string) wp_parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) : '';
+    if (rtrim($path, '/') === '/urunlerimiz-led-ekran') {
+        wp_safe_redirect(home_url('/led-ekran/'), 301);
+        exit;
+    }
+    // Eksik statik dosyalar (/wp-content/, /wp-includes/) anasayfaya yönlenmesin: gerçek 404 dönsün
+    if (strpos($path, '/wp-content/') === 0 || strpos($path, '/wp-includes/') === 0) {
+        remove_action('template_redirect', 'redirect_404_to_homepage');
+    }
+}, 1);
+
+add_action('template_redirect', function () {
+    if (ldj_r2_is_front_html()) {
+        ob_start('ldj_r3_filter_html');
+    }
+}, 4);
+
+function ldj_r3_image_map() {
+    return array(
+        '2023/01/P2.5.jpg' => '2026/09/ldj-opt-P2.5-400w.webp',
+        '2023/01/PH1.53.jpg' => '2026/09/ldj-opt-PH1.53-400w.webp',
+        '2023/01/fb8143a3-9d69-45a3-859c-2e2db66c334a.jpg' => '2026/09/ldj-opt-fb8143a3-9d69-45a3-859c-2e2db66c334a-400w.webp',
+        '2023/01/P1.25-2-scaled.jpg' => '2026/09/ldj-opt-P1.25-2-scaled-400w.webp',
+        '2023/01/P3.jpg' => '2026/09/ldj-opt-P3-400w.webp',
+        '2023/01/ec8726e1-1617-438d-927c-6904cf2506f4.jpg' => '2026/09/ldj-opt-ec8726e1-1617-438d-927c-6904cf2506f4-400w.webp',
+        '2023/01/PH1.53-550x632.jpg' => '2026/09/ldj-opt-PH1.53-550x632-400w.webp',
+        '2023/01/P1.25-2-550x632.jpg' => '2026/09/ldj-opt-P1.25-2-550x632-400w.webp',
+        '2023/01/fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632.jpg' => '2026/09/ldj-opt-fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632-400w.webp',
+        '2023/01/P3-550x632.jpg' => '2026/09/ldj-opt-P3-550x632-400w.webp',
+        '2023/01/ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg' => '2026/09/ldj-opt-ec8726e1-1617-438d-927c-6904cf2506f4-550x632-400w.webp',
+        '2026/09/iso-9001-2015-1.webp' => '2026/09/ldj-opt-iso-9001-2015-1-240w.webp',
+        '2026/09/iso-45001-2018-1.webp' => '2026/09/ldj-opt-iso-45001-2018-1-240w.webp',
+        '2026/09/iso-14001-2015-1.webp' => '2026/09/ldj-opt-iso-14001-2015-1-240w.webp',
+        '2026/09/iso-10002-2018-1.webp' => '2026/09/ldj-opt-iso-10002-2018-1-240w.webp',
+        '2026/09/iso-27001-2022-1.webp' => '2026/09/ldj-opt-iso-27001-2022-1-240w.webp',
+        '2026/09/iso-31000-2018-1.webp' => '2026/09/ldj-opt-iso-31000-2018-1-240w.webp',
+        '2026/09/taha-led-14064-1.webp' => '2026/09/ldj-opt-taha-led-14064-1-240w.webp',
+        '2022/12/Arka-plani-kaldir-projesi-2-8.png' => '2026/09/ldj-opt-Arka-plani-kaldir-projesi-2-8-1000w.webp',
+        '2022/12/P4.jpg' => '2026/09/ldj-opt-P4-1000w.webp',
+        '2022/12/COLORGLIGHT.jpg' => '2026/09/ldj-opt-COLORGLIGHT-600w.webp',
+        '2026/09/ic-mekan-led-ekran-panel-transparent.webp' => '2026/09/ldj-opt-ic-mekan-led-ekran-panel-transparent-900w.webp',
+        '2023/01/P2.5-550x632.jpg' => '2026/09/ldj-opt-P2.5-550x632-400w.webp',
+    );
+}
+
+function ldj_r3_filter_html($html) {
+    if (!is_string($html) || stripos($html, '<html') === false) {
+        return $html;
+    }
+    $host = isset($_SERVER['HTTP_HOST']) ? strtolower($_SERVER['HTTP_HOST']) : '';
+    if ($host !== 'tester.ledajans.com') {
+        return $html;
+    }
+    $orig = $html;
+    $up = content_url('/uploads/');
+
+    // 0) mu-plugin (ledajans-perf-patch) mobilde gecikmeli GTM yükleyicisini sonradan ekliyor;
+    //    bayrak önceden tanımlanınca yükleyici eklenmez/çalışmaz (yalnızca tester)
+    if (stripos($html, 'ledajansGtmLoaded') === false) {
+        $html = preg_replace('#<head\b[^>]*>#i', '$0' . "\n" . '<script id="ldj-gtm-off">window.ledajansGtmLoaded=1;</script>', $html, 1);
+    }
+
+    // 1) Canlı alan adına giden preload'lar
+    $html = preg_replace('#<link\b[^>]*rel=["\']preload["\'][^>]*href=["\']https?://(?:www\.)?ledajans\.com/[^"\']*["\'][^>]*>\s*#i', '', $html);
+
+    // 2) İçerik başlangıcı (header sonrası)
+    $content_pos = stripos($html, 'data-elementor-type="wp-page"');
+    if ($content_pos === false) {
+        $content_pos = strripos($html, '</header>');
+    }
+    if ($content_pos === false) {
+        $content_pos = 0;
+    }
+
+    $map = ldj_r3_image_map();
+    $from = array();
+    $to = array();
+    foreach ($map as $o => $n) {
+        $from[] = $up . $o;
+        $to[] = $up . $n;
+    }
+
+    $count = 0;
+    $html = preg_replace_callback('#<img\b[^>]*>#i', function ($m) use ($from, $to, $content_pos, &$count) {
+        $tag = $m[0][0];
+        $pos = $m[0][1];
+        $new = str_replace($from, $to, $tag);
+        if ($new !== $tag) {
+            // optimize kopyaya geçildi: eski srcset/sizes büyük adayları seçtirmesin
+            $new = preg_replace('#\s(srcset|sizes)=(["\']).*?\2#is', '', $new);
+            $tag = $new;
+        }
+        $is_hero = stripos($tag, 'hero-stant-poster') !== false;
+        $is_iso = (bool) preg_match('#ldj-opt-(iso-|taha-led-14064)#i', $tag);
+        if ($is_hero) {
+            $tag = preg_replace('#\sfetchpriority=(["\'])[^"\']*\1#i', '', $tag);
+            $tag = preg_replace('#\sloading=(["\'])lazy\1#i', '', $tag);
+            $tag = preg_replace('#^<img\b#i', '<img fetchpriority="high"', $tag);
+            return $tag;
+        }
+        if ($is_iso) {
+            $tag = preg_replace('#\sloading=(["\'])[^"\']*\1#i', '', $tag);
+            $tag = preg_replace('#^<img\b#i', '<img loading="lazy"', $tag);
+            return $tag;
+        }
+        if ($pos > $content_pos && stripos($tag, 'fetchpriority') === false && !preg_match('#\sloading=#i', $tag)) {
+            $count++;
+            if ($count > 2) {
+                $tag = preg_replace('#^<img\b#i', '<img loading="lazy"', $tag);
+                if (!preg_match('#\sdecoding=#i', $tag)) {
+                    $tag = preg_replace('#^<img\b#i', '<img decoding="async"', $tag);
+                }
+            }
+        }
+        return $tag;
+    }, $html, -1, $n_img, PREG_OFFSET_CAPTURE);
+
+    // 3) Send eklentisi fallback (ayar nesnesi kaldırılmışsa JS hatasını önle)
+    $guards = array(
+        'elementor' => array('send-app-elementor-form-tracker-js', 'eSendElementorFormsSettings'),
+        'cf7'       => array('send-app-cf7-form-tracker-js', 'eSendCf7FormsSettings'),
+    );
+    foreach ($guards as $integ => $g) {
+        $script_id = $g[0];
+        $var = $g[1];
+        if (strpos($html, 'id="' . $script_id . '"') !== false && strpos($html, $var) === false) {
+            $cfg = wp_json_encode(array(
+                'ajaxUrl' => admin_url('admin-ajax.php'),
+                'integration' => $integ,
+                'nonce' => '',
+                'viewedThreshold' => 0.95,
+                'viewedAction' => '',
+                'abandonedAction' => '',
+                'formSelectors' => array('form.ldj-esend-disabled'),
+                'debugOn' => false,
+                'idPrefix' => '',
+            ));
+            $guard = '<script id="ldj-esend-guard-' . $integ . '">window.' . $var . '=window.' . $var . '||' . $cfg . ';</script>' . "\n";
+            $html = preg_replace('#<script\b[^>]*id="' . preg_quote($script_id, '#') . '"#', $guard . '$0', $html, 1);
+        }
+    }
+
+    if (!is_string($html) || strlen($html) < strlen($orig) * 0.8) {
+        return $orig;
+    }
+    return $html;
+}
+
+/* =============================================================================
+ * LEDAJANS R4 (tester): Slider Revolution varlıklarını slider olmayan sayfalarda kaldır
+ *  - Nihai HTML'de RevSlider modülü (sr7-module / rs-module / SR7.PMH / [rev_slider) yoksa
+ *    sr7.css, tptools.js, sr7.js ve SR7 satır içi yapılandırma betiği çıkarılır.
+ *  - Modül bulunan sayfalarda hiçbir şeye dokunulmaz.
+ * Geri alma: bu bloğu kaldırmak yeterli (R4 yedeği: backups/20260930-201856/files/...).
+ * ============================================================================= */
+add_action('template_redirect', function () {
+    if (ldj_r2_is_front_html()) {
+        ob_start('ldj_r4_revslider_filter');
+    }
+}, 5);
+
+function ldj_r4_revslider_filter($html) {
+    if (!is_string($html) || $html === '' || stripos($html, '<html') === false) {
+        return $html;
+    }
+    if (strpos($html, 'plugins/revslider/') === false && strpos($html, 'window.SR7') === false) {
+        return $html;
+    }
+    // RevSlider'ın kendi satır içi yapılandırma betikleri (içlerinde modül adları geçtiği için tespitten önce ayrılır)
+    $inline_re = '#<script\b[^>]*>(?:(?!</script>).)*?window\._tpt\s*\?\?=\s*\{\}(?:(?!</script>).)*</script>#is';
+    $probe = preg_replace($inline_re, '', $html);
+    if ($probe === null) {
+        return $html;
+    }
+    $probe = preg_replace('#<(?:script|link)\b[^>]*plugins/revslider/[^>]*>#i', '', $probe);
+    if ($probe === null) {
+        return $html;
+    }
+    $markers = array('<sr7-module', '<rs-module', 'SR7.PMH', '[rev_slider', 'rev_slider_wrapper', 'rs-module-wrap', 'sr7-module-bg');
+    foreach ($markers as $m) {
+        if (stripos($probe, $m) !== false) {
+            return $html; // sayfada slider var: dokunma
+        }
+    }
+    $out = preg_replace($inline_re, '', $html);
+    if ($out === null) {
+        return $html;
+    }
+    $out2 = preg_replace(array(
+        '#<link\b[^>]*plugins/revslider/[^>]*>\s*#i',
+        '#<script\b[^>]*plugins/revslider/[^>]*>\s*</script>\s*#i',
+    ), '', $out);
+    if ($out2 === null) {
+        return $html;
+    }
+    return $out2;
+}
+/* =============================================================================
+ * LEDAJANS Op B (tester): Rank Math sitemap yanıtlarına X-Robots-Tag: noindex
+ *  - Mevcut satır ~137'deki 'index, follow' filtresini (öncelik 10) öncelik 99 ile ezer.
+ *  - Yalnızca tester host'ta çalışır.
+ * Geri alma: bu bloğu kaldırmak yeterli.
+ * ============================================================================= */
+add_filter('rank_math/sitemap/http_headers', function ($headers) {
+    if (wp_parse_url(home_url(), PHP_URL_HOST) === 'tester.ledajans.com') {
+        $headers['X-Robots-Tag'] = 'noindex, nofollow';
+    }
+    return $headers;
+}, 99);
+
+/* =============================================================================
+ * LEDAJANS (tester): kullanılmayan mobil preload'u kaldır
+ *  - mu-plugin'in wp_head'e yazdığı ldajsn2-mobile-q60.webp preload'u sayfada hiç
+ *    kullanılmıyor (hero: hero-stant-poster-mobile-1.webp). Yalnızca anasayfa head'inden silinir.
+ * Geri alma: bu bloğu kaldırmak yeterli (yedek: backups/preload-<ts>/functions.php).
+ * ============================================================================= */
+add_action('template_redirect', function () {
+    if (ldj_r2_is_front_html() && is_front_page()) {
+        ob_start('ldj_drop_q60_preload');
+    }
+}, 6);
+
+function ldj_drop_q60_preload($html) {
+    if (!is_string($html) || strpos($html, 'ldajsn2-mobile-q60.webp') === false) {
+        return $html;
+    }
+    $out = preg_replace('#<link\b[^>]*rel=["\']preload["\'][^>]*ldajsn2-mobile-q60\.webp[^>]*>\s*#i', '', $html, 1);
+    return $out === null ? $html : $out;
+}

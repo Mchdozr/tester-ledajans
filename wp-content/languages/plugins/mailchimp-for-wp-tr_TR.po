@@ -1,0 +1,892 @@
+# Translation of Plugins - MC4WP: Mailchimp for WordPress - Stable (latest release) in Turkish
+# This file is distributed under the same license as the Plugins - MC4WP: Mailchimp for WordPress - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-07-21 21:03:21+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/4.1.0\n"
+"Language: tr\n"
+"Project-Id-Version: Plugins - MC4WP: Mailchimp for WordPress - Stable (latest release)\n"
+
+#: includes/integrations/views/integrations.php:117
+msgid "Greyed out integrations will become available after installing & activating the corresponding plugin."
+msgstr "Gri renkteki entegrasyonlar uygun eklentiyi yükledikten ve aktlfledikten sonra kullanıma açılacaktır."
+
+#: includes/forms/class-admin.php:120
+msgid "Value"
+msgstr "Değer"
+
+#. translators: %s is a URL to the debug log documentation.
+#: includes/views/other-settings.php:47
+msgid "Determines what events should be written to <a href=\"%s\">the debug log</a> (see below)."
+msgstr "Hangi olayların <a href=\"%s\">hata ayıklama dosyasına</a> yazılacağını belirler (aşağıya bakın)."
+
+#: includes/views/other-settings.php:41
+msgid "Errors & warnings only"
+msgstr "Sadece hatalar ve uyarılar"
+
+#: includes/views/other-settings.php:35
+msgid "Miscellaneous settings"
+msgstr "Çeşitli ayarlar"
+
+#: includes/views/other-settings.php:42
+msgid "Everything"
+msgstr "Herşey"
+
+#: includes/forms/class-admin.php:94
+msgid "Field type"
+msgstr "Alan türü"
+
+#: includes/views/other-settings.php:38
+msgid "Logging"
+msgstr "Log dosyası girişi"
+
+#: includes/admin/class-cron-notice.php:92
+#: includes/admin/class-review-notice.php:76
+msgid "Dismiss this notice."
+msgstr "Bu bildirimi yoksay."
+
+#. translators: %s is the URL to the WordPress.org plugin review page.
+#: includes/admin/class-review-notice.php:74
+msgid "If you do, please <a href=\"%s\">leave us a 5★ rating on WordPress.org</a>. It would be of great help to us."
+msgstr "Mümkünse, lütfen <a href=\"%s\">bize Wordpress.org üzerinden 5★ yıldızlı bir değerlendirme yapın</a>. Bize yardım etmeniz için muhteşem bir yol."
+
+#: includes/forms/views/tabs/form-settings.php:58
+msgid "Are you sure you want to disable double opt-in?"
+msgstr "Kullanıcı onaylı doğrulamayı iptal etmek istediğinizden emin misiniz?"
+
+#: includes/admin/class-admin.php:458
+msgid "Here's some info on solving common connectivity issues."
+msgstr "Aşağıda bazı genel bağlantı sorunlarının çözümleri yer almaktadır."
+
+#: integrations/ninja-forms/class-field.php:107
+msgid "Checked"
+msgstr "İşaretlendi"
+
+#: integrations/ninja-forms/class-field.php:109
+msgid "Unchecked"
+msgstr "İşaretlenmedi"
+
+#: includes/forms/views/tabs/form-messages.php:79
+msgid "The text that shows when an existing subscriber is updated."
+msgstr "Varolan bir abone güncellendiğinde gösterilecek metin."
+
+#: includes/forms/views/tabs/form-messages.php:76
+msgid "Updated"
+msgstr "Güncellendi"
+
+#: includes/forms/class-admin.php:101
+msgid "Interest categories"
+msgstr "İlgili kategoriler"
+
+#: includes/forms/class-admin.php:98
+msgid "Form fields"
+msgstr "Form alanları"
+
+#: config/default-form-messages.php:12
+msgid "Thank you, your records have been updated!"
+msgstr "Teşekkürler, kayıtlarınız güncellendi"
+
+#: includes/class-dynamic-content-tags.php:32
+msgid "Data from a cookie."
+msgstr "Çerezden gelen veri."
+
+#: includes/forms/class-admin.php:89
+msgid "Choose a field to add to the form"
+msgstr "Forma eklemek için alan seçin"
+
+#: includes/forms/class-admin.php:113
+msgid "Remove"
+msgstr "Kaldır"
+
+#: includes/forms/class-admin.php:112
+msgid "Preselect"
+msgstr "Önseçim"
+
+#: includes/views/other-settings.php:107
+msgid "Log file is not writable."
+msgstr "Günlük dosyası yazılabilir değil."
+
+#: includes/forms/class-admin.php:109
+msgid "Optional"
+msgstr "İsteğe bağlı"
+
+#: integrations/woocommerce/admin-after.php:20
+msgid "Before submit button"
+msgstr "Gönder butonundan önce"
+
+#: integrations/woocommerce/admin-after.php:49
+msgid "Position"
+msgstr "Pozisyon"
+
+#: integrations/woocommerce/admin-after.php:19
+msgid "After customer details"
+msgstr "Müşteri detaylarından sonra"
+
+#: includes/class-dynamic-content-tags.php:83
+msgid "Property of the current page or post."
+msgstr "Geçerli sayfa yada yazı özellikleri"
+
+#: integrations/woocommerce/admin-after.php:18
+msgid "After shipping details"
+msgstr "Nakliye detaylarından sonra"
+
+#: includes/views/other-settings.php:164
+msgid "Right now, the plugin is configured to only log errors and warnings."
+msgstr "Şuanda eklenti sadece log hataları ve uyarılar için ayarlandı."
+
+#: includes/forms/class-admin.php:121
+msgid "Text to prefill this field with."
+msgstr "Bu alandaki ön doldurma için kullanılacak metin."
+
+#: includes/forms/class-admin.php:111
+msgid "Text to show when field has no value."
+msgstr "Alanda herhangi bir değer olmadığında gösterilecek metin."
+
+#: includes/views/other-settings.php:102
+msgid "Filter.."
+msgstr "Filtre.."
+
+#: includes/admin/class-admin.php:526
+msgid "Log successfully emptied."
+msgstr "Log başarıyla boşaltıldı."
+
+#: includes/views/other-settings.php:146
+msgid "Nothing here. Which means there are no errors!"
+msgstr "Burada birşey yok.Herhangi bir hata yok demektir"
+
+#: includes/views/other-settings.php:102
+msgid "Debug Log"
+msgstr "Hata ayıklama günlüğü"
+
+#: includes/views/other-settings.php:156
+msgid "Empty Log"
+msgstr "Log dosyasını boşalt"
+
+#: includes/admin/class-admin.php:371
+msgid "Other"
+msgstr "Diğer"
+
+#: includes/admin/class-admin.php:370 includes/views/other-settings.php:14
+#: includes/views/other-settings.php:24
+msgid "Other Settings"
+msgstr "Diğer ayarlar"
+
+#: includes/admin/class-ads.php:110
+msgid "Upgrade to Premium"
+msgstr "Premium'a yükselt"
+
+#: integrations/custom/admin-before.php:11
+msgid "Subscribe to our newsletter."
+msgstr "Haber bültenimize abone olun."
+
+#. translators: %s is the URL to the GitHub issues page.
+#: includes/views/parts/admin-sidebar.php:21
+msgid "Found a bug? Please <a href=\"%s\">open an issue on GitHub</a>."
+msgstr "Bir hata mı buldunuz? Lütfen <a href=\"%s\">GitHub üzerinden bildirimde bulunun</a>."
+
+#. translators: %s is a URL to the premium features page.
+#: includes/admin/class-ads.php:57
+msgid "Want to customize the style of your form? <a href=\"%s\">Try our Styles Builder</a> & edit the look of your forms with just a few clicks."
+msgstr "Form tasarımını kişiselleştirmek mi istiyorsunuz? <a href=\"%s\">Tasarım oluşturucuyu deneyin</a> & birkaç tıklama ile formunuzun görünümünü düzenleyin."
+
+#. translators: %s is a URL to the premium features page.
+#: includes/admin/class-ads.php:152
+msgid "Are you enjoying this plugin? The Premium add-on unlocks several powerful features. <a href=\"%s\">Find out about all benefits now</a>."
+msgstr "Eklentiden hoşlandınız mı? Premium eklentiler birçok güçlü özelliklerin kilidini açar. <a href=\"%s\">Tüm faydaları şimdi keşfedin</a>."
+
+#. translators: %s is a URL to the premium features page.
+#: includes/admin/class-ads.php:139
+msgid "Do you want to create more than one form? Our Premium add-on does just that! <a href=\"%s\">Have a look at all Premium benefits</a>."
+msgstr "Birden fazla form mu oluşturmak istiyorsunuz? Premium eklentimiz ile bunu yapabilirsiniz  <a href=\"%s\">Tüm Premium faydalarına göz atın</a>."
+
+#. translators: %s is the URL to the WordPress.org support forum for this
+#. plugin.
+#: includes/views/parts/admin-sidebar.php:19
+msgid "If your answer can not be found in the resources listed above, please use the <a href=\"%s\">support forums on WordPress.org</a>."
+msgstr "Sorunuzun cevabı üst kaynak listesinde bulunmuyorsa, lütfen <a href=\"%s\">WordPress.org üzerindeki destek forumunu</a> kullanın."
+
+#: includes/views/parts/admin-sidebar.php:16
+msgid "Frequently Asked Questions"
+msgstr "Sıkça sorulan sorular"
+
+#: includes/views/parts/admin-sidebar.php:13
+msgid "We have some resources available to help you in the right direction."
+msgstr "Size doğru yönergeler sunabilmek için birkaç kaynağımız var."
+
+#: includes/views/parts/admin-sidebar.php:15
+msgid "Knowledge Base"
+msgstr "Bilgi tabanı"
+
+#: includes/integrations/views/integrations.php:109
+msgid "The table below shows all available integrations."
+msgstr "Aşağıdaki tablo tüm uygun olan entegrasyonları göstermektedir."
+
+#: includes/integrations/views/integrations.php:110
+msgid "Click on the name of an integration to edit all settings specific to that integration."
+msgstr "Entegrasyon ismine tıklayın ve bu entegrasyona ait tüm spesifik ayarları düzenleyin."
+
+#: includes/forms/class-admin.php:116
+msgid "State"
+msgstr "İl"
+
+#: includes/forms/class-admin.php:136 includes/forms/views/edit-form.php:33
+msgid "Form"
+msgstr "Form"
+
+#: includes/forms/class-admin.php:114
+msgid "Radio buttons"
+msgstr "Radyo düğmeleri"
+
+#: includes/forms/class-admin.php:115
+msgid "Street Address"
+msgstr "Adres satırı"
+
+#: includes/forms/class-admin.php:122
+msgid "ZIP"
+msgstr "Posta kodu"
+
+#: includes/forms/class-admin.php:102
+msgid "Is this field required?"
+msgstr "Bu alan zorunlu mu?"
+
+#: includes/forms/class-admin.php:106
+msgid "Min"
+msgstr "En az"
+
+#: includes/forms/class-admin.php:95
+msgid "Field label"
+msgstr "Alan etiketi"
+
+#: includes/forms/class-admin.php:97
+msgid "This field will allow your visitors to choose whether they would like to subscribe or unsubscribe"
+msgstr "Bu alan ziyaretçilerinize abone olmak isteyip istemediklerini seçmelerini sağlar"
+
+#: includes/forms/class-admin.php:96
+msgid "Form action"
+msgstr "Form eylemi"
+
+#: includes/forms/class-admin.php:92
+msgid "Dropdown"
+msgstr "Açılır menü"
+
+#: includes/forms/class-admin.php:107
+msgid "Max"
+msgstr "En yüksek"
+
+#: includes/forms/class-admin.php:91
+msgid "Country"
+msgstr "Ülke"
+
+#: includes/forms/class-admin.php:87
+msgid "Choices"
+msgstr "Seçimler"
+
+#: includes/forms/class-admin.php:88
+msgid "Choice type"
+msgstr "Seçim tipi"
+
+#: includes/forms/class-admin.php:90
+msgid "Close"
+msgstr "Kapat"
+
+#: includes/forms/class-admin.php:85
+msgid "City"
+msgstr "Şehir"
+
+#. translators: %d is the WooCommerce order number.
+#: integrations/woocommerce/class-woocommerce.php:253
+msgid "Order #%d"
+msgstr "Sipariş #%d"
+
+#: integrations/custom/admin-before.php:4
+msgid "To get a custom integration to work, include the following HTML in the form you are trying to integrate with."
+msgstr "Özel entegrasyonun çalışması için, aşağıdaki HTML kodunu entegre etmeye çalıştığınız form içerisine ekleyin."
+
+#. translators: %s is the shortcode input element [mc4wp_checkbox].
+#: integrations/contact-form-7/admin-before.php:8
+msgid "To integrate with Contact Form 7, configure the settings below and then add %s to your CF7 form mark-up."
+msgstr "Contact Form 7 ile entegrasyon için, aşağıdaki ayarları düzenleyin ve  CF7 form kodlaması içerisine %s ekleyin."
+
+#: includes/integrations/views/integrations.php:21
+msgid "Configure this integration"
+msgstr "Entegrasyonu yapılandır"
+
+#: includes/integrations/views/integrations.php:61
+msgid "Description"
+msgstr "Tanım"
+
+#: includes/integrations/views/integrations.php:60
+msgid "Name"
+msgstr "Bağlantı ismi"
+
+#: includes/integrations/views/integration-settings.php:186
+#: integrations/gravity-forms/class-gravity-forms.php:141
+msgid "Select \"yes\" if the checkbox should be pre-checked."
+msgstr "Checkbox seçeneğinin önceden seçili olmasını istiyorsanız \"Evet\" seçin."
+
+#: includes/integrations/views/integration-settings.php:52
+msgid "Enabled?"
+msgstr "Etkin"
+
+#. translators: %s is the name of the integration (e.g. Contact Form 7,
+#. WooCommerce).
+#: includes/integrations/views/integration-settings.php:17
+msgid "%s integration"
+msgstr "%s entegrasyonu"
+
+#: includes/integrations/class-admin.php:79
+#: includes/integrations/class-admin.php:80
+#: includes/integrations/views/integration-settings.php:9
+#: includes/integrations/views/integrations.php:98
+#: includes/integrations/views/integrations.php:103
+#: includes/integrations/views/integrations.php:115
+msgid "Integrations"
+msgstr "Entegrasyonlar"
+
+#: includes/forms/views/tabs/form-settings.php:133
+msgid "Form behaviour"
+msgstr "Form davranışı"
+
+#: includes/forms/views/tabs/form-settings.php:99
+#: includes/integrations/views/integration-settings.php:289
+msgid "What does this do?"
+msgstr "Yapılacak eylem"
+
+#: includes/forms/views/tabs/form-settings.php:51
+#: integrations/ninja-forms/class-action.php:68
+msgid "Use double opt-in?"
+msgstr "Kullanıcı onaylı kayıt seçeneğini kullan"
+
+#: includes/forms/views/tabs/form-settings.php:76
+#: includes/integrations/views/integration-settings.php:262
+msgid "Select \"yes\" if you want to update existing subscribers with the data that is sent."
+msgstr "Gönderilen veriler ile mevcut abonelerin bilgilerinin güncellenmesini istiyorsanız \"evet\" seçin."
+
+#: includes/forms/views/tabs/form-settings.php:98
+#: includes/integrations/views/integration-settings.php:288
+msgid "Select \"no\" if you want to add the selected interests to any previously selected interests when updating a subscriber."
+msgstr "Abone güncellenirken daha önce seçilmiş olan ilgili gruba eklemek için \"hayır\" seçin."
+
+#. translators: %s is the name of the integration (e.g. Contact Form 7,
+#. WooCommerce).
+#: includes/integrations/views/integration-settings.php:59
+msgid "Enable the %s integration? This will add a sign-up checkbox to the form."
+msgstr "%s entegrasyonunu etkinleştir. Bu seçenek form içerisine kayıt olmak için checkbox ekleyecektir."
+
+#: includes/integrations/views/integration-settings.php:82
+msgid "Implicit?"
+msgstr "Aboneye sormadan kayıt et"
+
+#: includes/forms/views/tabs/form-appearance.php:10
+msgid "Basic"
+msgstr "Basit"
+
+#: includes/forms/views/edit-form.php:29
+#: includes/integrations/views/integration-settings.php:7
+#: includes/integrations/views/integrations.php:96
+#: includes/views/general-settings.php:7 includes/views/other-settings.php:12
+msgid "You are here: "
+msgstr "Buradasınız:"
+
+#: includes/forms/views/edit-form.php:57
+msgid "Enter form title here"
+msgstr "Form başlığı girin"
+
+#: includes/forms/views/edit-form.php:61
+msgid "Enter the title of your sign-up form"
+msgstr "Kayıt formunuz için başlık girin"
+
+#: includes/forms/views/parts/add-fields-help.php:4
+#: includes/forms/views/tabs/form-fields.php:13
+msgid "Add more fields"
+msgstr "Daha fazla alan ekle"
+
+#: includes/forms/views/parts/add-fields-help.php:12
+msgid "Here's how:"
+msgstr "İşte böyle:"
+
+#: includes/forms/views/tabs/form-messages.php:6
+msgid "Form Messages"
+msgstr "Form mesajları"
+
+#: includes/forms/views/tabs/form-fields.php:16
+msgid "Form Fields"
+msgstr "Form alanları"
+
+#: includes/forms/views/tabs/form-fields.php:9
+msgid "Form variables"
+msgstr "Form değişkenleri"
+
+#: includes/forms/views/tabs/form-appearance.php:31
+msgid "Form Style"
+msgstr "Form stili"
+
+#: includes/forms/views/tabs/form-appearance.php:27
+msgid "Form Appearance"
+msgstr "Form görünümü"
+
+#: includes/forms/views/tabs/form-appearance.php:11
+msgid "Form Themes"
+msgstr "Form temaları"
+
+#. translators: %s is the name of the active WordPress theme.
+#: includes/forms/views/tabs/form-appearance.php:9
+msgid "Inherit from %s theme"
+msgstr "%s temasından al"
+
+#: includes/forms/views/parts/dynamic-content-tags.php:6
+msgid "Add dynamic form variable"
+msgstr "Dinamik form değişkeni ekle"
+
+#: includes/forms/views/parts/add-fields-help.php:31
+msgid "Edit list fields for"
+msgstr "Liste alanlarını şunun için düzenle"
+
+#: includes/forms/views/parts/add-fields-help.php:23
+msgid "Clicking the following links will take you to the right screen."
+msgstr "Aşağıdaki linkler sizi ilgili ekrana götürecektir."
+
+#: includes/forms/views/parts/add-fields-help.php:22
+msgid "Add list fields to any of your selected lists."
+msgstr "Seçilen listeye alan ekle."
+
+#: includes/forms/views/tabs/form-fields.php:25
+msgid "Enter the HTML code for your form fields.."
+msgstr "Form alanlarınız için HTML kodu yazın"
+
+#: includes/forms/views/edit-form.php:38
+msgid "Edit Form"
+msgstr "Formu düzenle"
+
+#: includes/forms/views/edit-form.php:15
+msgid "Appearance"
+msgstr "Görünüm"
+
+#: includes/forms/views/edit-form.php:12
+msgid "Fields"
+msgstr "Bilgiler"
+
+#: includes/forms/views/edit-form.php:13
+msgid "Messages"
+msgstr "İletiler"
+
+#: includes/forms/views/add-form.php:19
+msgid "Enter your form title.."
+msgstr "Form başlığını giriniz..."
+
+#: includes/forms/views/add-form.php:16
+msgid "What is the name of this form?"
+msgstr "Bu formun adı nedir?"
+
+#: includes/forms/views/add-form.php:6 includes/forms/views/add-form.php:58
+msgid "Add new form"
+msgstr "Yeni form ekle"
+
+#: includes/class-dynamic-content-tags.php:77
+msgid "The property of the currently logged-in user."
+msgstr "Şu anda oturum açmış kullanıcının mülküdür."
+
+#. translators: %s is an example of the visitor's IP address.
+#: includes/class-dynamic-content-tags.php:72
+msgid "The visitor's IP address. Example: %s."
+msgstr "Ziyaretçinin IP adresi. Örnek %s."
+
+#. translators: %s is an example of the site's locale, e.g. en_US.
+#: includes/class-dynamic-content-tags.php:66
+msgid "The site's language. Example: %s."
+msgstr "Sitenin dili. Örnek: %s."
+
+#. translators: %s is an example of the current time, e.g. 14:30:00.
+#: includes/class-dynamic-content-tags.php:60
+msgid "The current time. Example: %s."
+msgstr "Geçerli saat. Örnek: %s."
+
+#. translators: %s is an example of the current date, e.g. 2024/01/15.
+#: includes/class-dynamic-content-tags.php:54
+msgid "The current date. Example: %s."
+msgstr "Geçerli tarih. Örnek: %s."
+
+#: includes/class-dynamic-content-tags.php:48
+msgid "The path of the page."
+msgstr "Sayfanın yolu."
+
+#: includes/class-dynamic-content-tags.php:43
+msgid "The URL of the page."
+msgstr "Sayfanın URL bağlantısı."
+
+#: includes/class-dynamic-content-tags.php:38
+msgid "The email address of the current visitor (if known)."
+msgstr "Geçerli ziyaretçinin email adresi (biliyorsanız)."
+
+#: includes/forms/class-form-tags.php:45
+msgid "Data from the URL or a submitted form."
+msgstr "URL veya gönderilen bir formda ki veriler."
+
+#. translators: %d is the form post ID.
+#: includes/forms/class-form.php:28
+msgid "There is no form with ID %d, perhaps it was deleted?"
+msgstr "Kimliği %d olan bir form yok. Belki de silindi"
+
+#: includes/forms/views/tabs/form-fields.php:29
+msgid "Form preview"
+msgstr "Form önizleme"
+
+#: includes/forms/class-admin.php:407
+msgid "Form not found."
+msgstr "Form bulunamadı."
+
+#: includes/forms/class-admin.php:409
+msgid "Go back"
+msgstr "Geri dön"
+
+#: includes/admin/migrations/3.0.0-form-1-post-type.php:34
+msgid "Default sign-up form"
+msgstr "Varsayılan kayıt formu"
+
+#: includes/admin/class-admin-texts.php:74
+msgid "Documentation"
+msgstr "Belgelendirme"
+
+#: config/default-form-messages.php:40
+msgid "Please select at least one list."
+msgstr "Lütfen en az bir liste seçin."
+
+#: includes/integrations/views/integrations.php:62
+#: includes/views/general-settings.php:31
+msgid "Status"
+msgstr "Durum"
+
+#: includes/forms/class-admin.php:81
+msgid "Add to form"
+msgstr "Forma ekle"
+
+#: includes/views/parts/admin-sidebar.php:12
+msgid "Looking for help?"
+msgstr "Yardım mı arıyorsunuz?"
+
+#. Author of the plugin
+#: mailchimp-for-wp.php
+msgid "ibericode"
+msgstr "ibericode"
+
+#: includes/admin/class-admin-texts.php:55
+#: includes/forms/views/edit-form.php:14
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: includes/forms/class-admin.php:86
+msgid "Checkboxes"
+msgstr "Onay kutuları"
+
+#: includes/forms/class-admin.php:135 includes/forms/views/edit-form.php:31
+msgid "Forms"
+msgstr "Formlar"
+
+#: includes/forms/class-admin.php:117
+msgid "Subscribe"
+msgstr "Abone ol"
+
+#: includes/forms/class-widget.php:84
+msgid "Title:"
+msgstr "Başlık"
+
+#: config/default-form-content.php:6
+msgid "Your email address"
+msgstr "E-posta adresiniz"
+
+#: config/default-form-messages.php:24
+msgid "Oops. Something went wrong. Please try again later."
+msgstr "Oops. Bir şeyler yanlış gitti. Lütfen daha sonra tekrar deneyin."
+
+#: config/default-form-messages.php:28
+msgid "Please provide a valid email address."
+msgstr "Lütfen geçerli bir e-posta adresi girin."
+
+#: config/default-form-messages.php:32
+msgid "Given email address is already subscribed, thank you!"
+msgstr "Girilen e-posta adresi zaten kayıtlı, teşekkürler!"
+
+#: config/default-form-messages.php:36
+msgid "Please fill in the required fields."
+msgstr "Lütfen gerekli alanları doldurun."
+
+#: config/default-form-messages.php:16
+msgid "You were successfully unsubscribed."
+msgstr "Listeden başarıylla çıktınız"
+
+#: config/default-form-messages.php:20
+msgid "Given email address is not subscribed."
+msgstr "Verilen e-posta adresi listeye eklenmemiştir"
+
+#: includes/forms/views/tabs/form-settings.php:55
+#: includes/forms/views/tabs/form-settings.php:70
+#: includes/forms/views/tabs/form-settings.php:91
+#: includes/forms/views/tabs/form-settings.php:144
+#: includes/forms/views/tabs/form-settings.php:160
+#: includes/integrations/views/integration-settings.php:54
+#: includes/integrations/views/integration-settings.php:84
+#: includes/integrations/views/integration-settings.php:182
+#: includes/integrations/views/integration-settings.php:216
+#: includes/integrations/views/integration-settings.php:233
+#: includes/integrations/views/integration-settings.php:256
+#: includes/integrations/views/integration-settings.php:281
+#: integrations/contact-form-7/class-contact-form-7.php:77
+#: integrations/gravity-forms/class-gravity-forms.php:124
+#: integrations/gravity-forms/class-gravity-forms.php:136
+#: integrations/prosopo-procaptcha/admin-after.php:112
+#: integrations/wpforms/class-field.php:140
+#: integrations/wpforms/class-field.php:313
+msgid "Yes"
+msgstr "Evet"
+
+#: includes/forms/views/tabs/form-settings.php:59
+#: includes/forms/views/tabs/form-settings.php:74
+#: includes/forms/views/tabs/form-settings.php:95
+#: includes/forms/views/tabs/form-settings.php:148
+#: includes/forms/views/tabs/form-settings.php:164
+#: includes/integrations/views/integration-settings.php:55
+#: includes/integrations/views/integration-settings.php:85
+#: includes/integrations/views/integration-settings.php:183
+#: includes/integrations/views/integration-settings.php:217
+#: includes/integrations/views/integration-settings.php:237
+#: includes/integrations/views/integration-settings.php:260
+#: includes/integrations/views/integration-settings.php:285
+#: integrations/contact-form-7/class-contact-form-7.php:77
+#: integrations/gravity-forms/class-gravity-forms.php:125
+#: integrations/gravity-forms/class-gravity-forms.php:137
+#: integrations/prosopo-procaptcha/admin-after.php:116
+#: integrations/wpforms/class-field.php:141
+#: integrations/wpforms/class-field.php:313
+msgid "No"
+msgstr "Hayır"
+
+#: includes/views/general-settings.php:15
+msgid "API Settings"
+msgstr "API Ayarları"
+
+#: includes/views/general-settings.php:37
+msgid "CONNECTED"
+msgstr "BAĞLANDI"
+
+#: includes/views/general-settings.php:41
+msgid "NOT CONNECTED"
+msgstr "BAĞLANMADI"
+
+#: includes/views/general-settings.php:55
+msgid "Get your API key here."
+msgstr "API anahtarınızı buradan alın."
+
+#: integrations/gravity-forms/class-gravity-forms.php:116
+msgid "Select the list(s) to which people who check the checkbox should be subscribed."
+msgstr "Onay kutusunu seçen kişilerin abone olacağı listeleri seçin."
+
+#: includes/integrations/views/integration-settings.php:240
+#: integrations/gravity-forms/class-gravity-forms.php:128
+msgid "Select \"yes\" if you want people to confirm their email address before being subscribed (recommended)"
+msgstr "Ziyaretçilerinizin abone olmadan önce e-posta adreslerini onaylamalarını istiyorsanız \"evet\" seçeneğini seçin (önerilen)."
+
+#: includes/integrations/views/integration-settings.php:156
+msgid "Checkbox label text"
+msgstr "Onay kutusu etiket metni"
+
+#. translators: %s is a list of allowed HTML tags (e.g. <strong><em><a>).
+#: includes/integrations/views/integration-settings.php:162
+msgid "HTML tags like %s are allowed in the label text."
+msgstr "Etiket metninde %s gibi HTML etiketlerine izin verilmektedir."
+
+#: includes/integrations/views/integration-settings.php:180
+#: integrations/gravity-forms/class-gravity-forms.php:133
+msgid "Pre-check the checkbox?"
+msgstr "Onay kutusu önceden işaretlensin mi?"
+
+#: includes/integrations/views/integration-settings.php:214
+msgid "Load some default CSS?"
+msgstr "Varsayılan CSS yüklensin mi?"
+
+#: includes/integrations/views/integration-settings.php:218
+msgid "Select \"yes\" if the checkbox appears in a weird place."
+msgstr "Onay kutusu garip bir yerde görünürse \"evet\" seçeneğini seçin."
+
+#: includes/forms/views/tabs/form-appearance.php:52
+msgid "If you want to load some default CSS styles, select \"basic formatting styles\" or choose one of the color themes"
+msgstr "Eğer varsayılan CSS stilleri yüklemek istiyorsanız, \"temel biçimlendirme stilleri\" seçeneğini veya renk temalarından birini seçin"
+
+#. translators: %s is the shortcode to display the form (e.g. [mc4wp_form
+#. id=123]).
+#: includes/forms/views/edit-form.php:69
+#: includes/forms/views/tabs/form-fields.php:47
+msgid "Use the shortcode %s to display this form inside a post, page or text widget."
+msgstr "Bu formu bir yazının, sayfanın ya da metin aracının içerisinde görüntülemek için %s kısa kodunu kullanın."
+
+#: includes/forms/views/tabs/form-settings.php:66
+#: includes/integrations/views/integration-settings.php:252
+#: integrations/ninja-forms/class-action.php:69
+msgid "Update existing subscribers?"
+msgstr "Mevcut aboneler güncellensin mi?"
+
+#: includes/forms/views/tabs/form-settings.php:87
+#: includes/integrations/views/integration-settings.php:277
+msgid "Replace interest groups?"
+msgstr "İlgilenilen gruplar (?) değiştirilsin mi?"
+
+#: includes/forms/views/tabs/form-settings.php:140
+msgid "Hide form after a successful sign-up?"
+msgstr "Başarılı bir abonelik işleminden sonra form gizlensin mi?"
+
+#: includes/forms/views/tabs/form-settings.php:151
+msgid "Select \"yes\" to hide the form fields after a successful sign-up."
+msgstr "Başarılı bir kayıt işleminden sonra form alanlarının gizlenmesi için \"evet\" seçeneğini seçin."
+
+#: includes/forms/views/tabs/form-settings.php:172
+msgid "Redirect to URL after successful sign-ups"
+msgstr "Başarılı kayıtlardan sonra bir URL'ye yönlendir"
+
+#. translators: %s is an example URL, e.g. https://example.com/thank-you/.
+#: includes/forms/views/tabs/form-settings.php:175
+msgid "Example: %s"
+msgstr "Örnek: %s"
+
+#: includes/forms/views/tabs/form-messages.php:20
+msgid "Invalid email address"
+msgstr "Geçersiz eposta adresi"
+
+#: includes/forms/views/tabs/form-messages.php:27
+msgid "Required field missing"
+msgstr "Gerekli bir alan boş bırakıldı"
+
+#: includes/forms/views/tabs/form-messages.php:34
+msgid "Already subscribed"
+msgstr "Zaten abone"
+
+#: includes/forms/views/tabs/form-messages.php:41
+msgid "General error"
+msgstr "Genel hata"
+
+#. translators: %s is a list of allowed HTML tags (e.g. <strong><em><a>).
+#: includes/forms/views/tabs/form-messages.php:99
+msgid "HTML tags like %s are allowed in the message fields."
+msgstr "Mesaj alanlarında %s gibi HTML etiketlerini kullanabilirsiniz."
+
+#: integrations/woocommerce/admin-after.php:17
+msgid "After billing details"
+msgstr "Fatura ayrıntılarından sonra"
+
+#: includes/forms/class-admin.php:100
+msgid "Initial value"
+msgstr "İlk değer"
+
+#: config/default-form-messages.php:8
+msgid "Thank you, your sign-up request was successful! Please check your email inbox to confirm."
+msgstr "Teşekkürler, kayıt başvurunuz başarıyla tamamlandı! Lütfen e-posta gelen kutunuzu kontrol edin."
+
+#. translators: %s is a URL to the documentation on using dynamic variables in
+#. forms.
+#: includes/forms/views/parts/dynamic-content-tags.php:10
+msgid "This allows you to personalise your form or response messages."
+msgstr "Bu formunuzu veya cevap mesajınızı kişiselleştirmenize izin verir."
+
+#: includes/forms/class-admin.php:118
+msgid "Submit button"
+msgstr "Gönder düğmesi"
+
+#: includes/forms/class-admin.php:119
+msgid "Wrap in paragraph tags?"
+msgstr "Paragrafı etiketler ile sarmala"
+
+#: includes/forms/views/tabs/form-messages.php:23
+msgid "The text that shows when an invalid email address is given."
+msgstr "Geçersiz bir email adresi girildiğinde gösterilecek metin."
+
+#: includes/forms/class-form-tags.php:51
+#: includes/integrations/class-integration-tags.php:35
+msgid "Replaced with the number of subscribers on the selected list(s)"
+msgstr "Seçili liste(ler) içerisindeki abonelerin sayısı değiştirildi"
+
+#. translators: %s is a URL to the documentation on using dynamic variables in
+#. forms.
+#: includes/forms/views/parts/dynamic-content-tags.php:10
+msgid "The following list of variables can be used to <a href=\"%s\">add some dynamic content to your form or success and error messages</a>."
+msgstr "Aşağıdaki değişken listesi <a href=\"%s\">form içerisine dinamik içerik ,başarılı yada hata mesajları eklemek</a> için kullanılabilir."
+
+#: includes/forms/views/tabs/form-messages.php:13
+msgid "Successfully subscribed"
+msgstr "Başarıyla abone olundu"
+
+#: includes/forms/views/tabs/form-messages.php:44
+msgid "The text that shows when a general error occured."
+msgstr "Genel bir hata oluştuğunda görüntülenen yazı."
+
+#: config/default-form-content.php:5 includes/class-mailchimp.php:258
+#: includes/forms/class-admin.php:93
+msgid "Email address"
+msgstr "E-mail adresi"
+
+#: includes/integrations/class-integration.php:80
+msgid "Sign me up for the newsletter!"
+msgstr "Beni haber bültenine kaydet"
+
+#: config/default-form-content.php:7
+msgid "Sign up"
+msgstr "Kayıt ol"
+
+#: includes/forms/class-widget.php:27
+msgid "Newsletter"
+msgstr "Haber bülteni"
+
+#: includes/forms/views/tabs/form-settings.php:3
+msgid "Form Settings"
+msgstr "Form ayarları"
+
+#: includes/forms/class-admin.php:110
+msgid "Placeholder"
+msgstr "Yer tutucu"
+
+#: includes/forms/class-form-tags.php:39
+msgid "Replaced with the form response (error or success messages)."
+msgstr "Form yanıtı ile değiştirildi (hata yada başarılı mesajı)."
+
+#: includes/forms/views/tabs/form-messages.php:55
+msgid "Not subscribed"
+msgstr "Abone olunmadı"
+
+#: includes/forms/views/tabs/form-messages.php:48
+msgid "Unsubscribed"
+msgstr "Abonelik iptal edildi"
+
+#: includes/forms/views/tabs/form-appearance.php:13
+msgid "Dark Theme"
+msgstr "Koyu renk tema"
+
+#: includes/forms/views/tabs/form-appearance.php:16
+msgid "Blue Theme"
+msgstr "Mavi tema"
+
+#: includes/forms/views/tabs/form-appearance.php:15
+msgid "Green Theme"
+msgstr "Yeşil tema"
+
+#: includes/forms/views/tabs/form-appearance.php:14
+msgid "Red Theme"
+msgstr "Kırmızı tema"
+
+#: includes/forms/views/tabs/form-appearance.php:12
+msgid "Light Theme"
+msgstr "Açık renk tema"
+
+#: includes/views/general-settings.php:50
+msgid "API Key"
+msgstr "API anahtarı"
+
+#: includes/integrations/views/integration-settings.php:229
+#: integrations/gravity-forms/class-gravity-forms.php:121
+#: integrations/wpforms/class-field.php:132
+msgid "Double opt-in?"
+msgstr "Kullanıcı onaylı doğrulama"
+
+#: includes/forms/views/tabs/form-settings.php:177
+msgid "Leave empty or enter <code>0</code> for no redirect. Otherwise, use complete (absolute) URLs, including <code>http://</code>."
+msgstr "Boş bırakın veya yönlendirme olmaması için <code>0</code> girin. Aksi takdirde <code>http://</code> kısmını da dahil ederek tam URL bağlantısını girin."
