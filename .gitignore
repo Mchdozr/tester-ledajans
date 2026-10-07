@@ -24,3 +24,8 @@ wp-content/updraft/
 wp-content/upgrade/
 wp-content/cache/
 .freebuff/
+
+# 2026-10-07 tester: ortama özgü / gizli anahtar içeren ve eski yedek dosyalar
+wp-content/wp-cache-config.php
+*.bak-*
+*.bk
