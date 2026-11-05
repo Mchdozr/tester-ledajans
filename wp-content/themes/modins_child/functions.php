@@ -914,3 +914,22 @@ if ( ! function_exists( 'ledajans_rest_snippet_guard' ) ) {
         add_filter( 'rest_pre_dispatch', 'ledajans_rest_snippet_guard', 10, 3 );
     }
 }
+
+// ===== LEDAJANS — hreflang locale çiftleri: tr-TR, en-GB, de-DE =====
+// Polylang tek dil ailesinde ülke kodunu düşürür. Google listesindeki 7 etiket için aynı URL'yi locale koduyla da basar.
+add_filter('pll_rel_hreflang_attributes', function ($hreflangs) {
+    if (!is_array($hreflangs)) {
+        return $hreflangs;
+    }
+    $pairs = array(
+        'tr' => 'tr-TR',
+        'en' => 'en-GB',
+        'de' => 'de-DE',
+    );
+    foreach ($pairs as $lang => $locale) {
+        if (!empty($hreflangs[$lang]) && empty($hreflangs[$locale])) {
+            $hreflangs[$locale] = $hreflangs[$lang];
+        }
+    }
+    return $hreflangs;
+}, 30);
