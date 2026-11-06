@@ -1,6 +1,8 @@
+<style>html,body{overflow-x:clip}</style>
 <div class="ledajans-iletisim">
     <h2 class="ledajans-iletisim-baslik"style="font-size:36px">Bize Ulaşın</h2>
     <p class="ledajans-iletisim-altbaslik">LED ekran projeniz için ücretsiz danışmanlık almak ve detaylı bilgi için formu doldurun. Size en kısa sürede dönüş yapacağız.</p>
+    <p class="ldj-ux-mail-note">Telefon ve WhatsApp hattı açıktır. Form talebine en kısa sürede dönüş yapılır.</p>
   
     <div class="ledajans-iletisim-grid">
       <!-- Sol: Form -->
@@ -37,6 +39,54 @@
           </div>
           <button type="submit" class="ledajans-form-buton">Mesaj Gönder</button>
         </form>
+        <script>
+        (function() {
+          var form = document.getElementById('ledajans-iletisim-form');
+          if (!form) return;
+          var params = new URLSearchParams(window.location.search);
+          var gen = params.get('gen');
+          var yuk = params.get('yuk');
+          var mesafe = params.get('mesafe');
+          var pitch = params.get('pitch');
+          if (gen || yuk || mesafe || pitch) {
+            var subjectEl = document.getElementById('ledajans-subject');
+            var messageEl = document.getElementById('ledajans-message');
+            if (subjectEl) subjectEl.value = 'fiyat-teklifi';
+            if (messageEl && !messageEl.value.trim()) {
+              var ortamAd = { ic: 'İç mekan', dis: 'Dış mekan', gunes: 'Güneş' };
+              var kullanimAd = { vitrin: 'Vitrin', kontrol: 'Kontrol odası', salon: 'Salon', cephe: 'Cephe', rental: 'Rental' };
+              var isikAd = { dusuk: 'Düşük', orta: 'Orta', karsi: 'Karşı ışık' };
+              var lines = ['Proje mimarından gelen ön seçim:'];
+              if (gen && yuk) lines.push('Ölçü: ' + gen + ' m × ' + yuk + ' m');
+              if (mesafe) lines.push('İzleme mesafesi: ' + mesafe + ' m');
+              if (params.get('ortam')) lines.push('Ortam: ' + (ortamAd[params.get('ortam')] || params.get('ortam')));
+              if (params.get('isik')) lines.push('Işık: ' + (isikAd[params.get('isik')] || params.get('isik')));
+              if (params.get('kullanim')) lines.push('Kullanım: ' + (kullanimAd[params.get('kullanim')] || params.get('kullanim')));
+              if (pitch) lines.push('Önerilen pitch: P' + String(pitch).replace('.', ','));
+              lines.push('Bu metin ön seçimdir. Kesin teklif keşif sonrası yazılır.');
+              messageEl.value = lines.join('\n');
+            }
+          }
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('ledajans-name').value.trim();
+            var email = document.getElementById('ledajans-email').value.trim();
+            var phone = document.getElementById('ledajans-phone').value.trim();
+            var subjectEl = document.getElementById('ledajans-subject');
+            var subjectText = subjectEl.options[subjectEl.selectedIndex].text;
+            var message = document.getElementById('ledajans-message').value.trim();
+            if (!name || !email || !subjectEl.value || !message) return;
+            var subject = encodeURIComponent('İletişim Formu: ' + (subjectText || 'Genel Bilgi'));
+            var body = encodeURIComponent(
+              'Merhaba,\n\nAşağıdaki bilgiler ile iletişim formu doldurulmuştur:\n\n' +
+              'Ad Soyad: ' + name + '\nE-posta: ' + email + '\nTelefon: ' + (phone || 'Belirtilmemiş') + '\nKonu: ' + (subjectText || 'Genel Bilgi') + '\n\nMesaj:\n' + message + '\n\n---\nBu e-posta ' + new Date().toLocaleString('tr-TR') + ' tarihinde gönderilmiştir.'
+            );
+            window.location.href = 'mailto:info@ledajans.com?subject=' + subject + '&body=' + body;
+            form.reset();
+            setTimeout(function() { alert('E-posta istemciniz açıldı. Mesajınızı göndermek için "Gönder" butonuna tıklayın.'); }, 100);
+          });
+        })();
+        </script>
       </div>
   
       <!-- Sağ: Hızlı İletişim + Harita -->
@@ -147,7 +197,7 @@
   .ledajans-form-grup input,
   .ledajans-form-grup select,
   .ledajans-form-grup textarea {
-    width: 100%; padding: 0.75rem 1rem; border: 1px solid #d1d5db; border-radius: 0.75rem;
+    width: 100%; min-height: 44px; padding: 0.75rem 1rem; border: 1px solid #d1d5db; border-radius: 0.75rem;
     font-size: 1rem; background: rgba(244,111,44,0.05); color: #111827;
     box-sizing: border-box;
   }
@@ -438,28 +488,3 @@
   }
   
   </style>
-  
-  <script>
-  (function() {
-    var form = document.getElementById('ledajans-iletisim-form');
-    if (!form) return;
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var name = document.getElementById('ledajans-name').value.trim();
-      var email = document.getElementById('ledajans-email').value.trim();
-      var phone = document.getElementById('ledajans-phone').value.trim();
-      var subjectEl = document.getElementById('ledajans-subject');
-      var subjectText = subjectEl.options[subjectEl.selectedIndex].text;
-      var message = document.getElementById('ledajans-message').value.trim();
-      if (!name || !email || !subjectEl.value || !message) return;
-      var subject = encodeURIComponent('İletişim Formu: ' + (subjectText || 'Genel Bilgi'));
-      var body = encodeURIComponent(
-        'Merhaba,\n\nAşağıdaki bilgiler ile iletişim formu doldurulmuştur:\n\n' +
-        'Ad Soyad: ' + name + '\nE-posta: ' + email + '\nTelefon: ' + (phone || 'Belirtilmemiş') + '\nKonu: ' + (subjectText || 'Genel Bilgi') + '\n\nMesaj:\n' + message + '\n\n---\nBu e-posta ' + new Date().toLocaleString('tr-TR') + ' tarihinde gönderilmiştir.'
-      );
-      window.location.href = 'mailto:info@ledajans.com?subject=' + subject + '&body=' + body;
-      form.reset();
-      setTimeout(function() { alert('E-posta istemciniz açıldı. Mesajınızı göndermek için "Gönder" butonuna tıklayın.'); }, 100);
-    });
-  })();
-  </script>

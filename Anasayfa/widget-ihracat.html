@@ -1,0 +1,49 @@
+<!-- WIDGET — Hizmet noktaları. Sertifika şeridinin yerine geçmez. -->
+<style>
+  .ldj-eng { --ink:#111827; --muted:#475569; --orange:#F46F2C; --line:rgba(17,24,39,.08); color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; }
+  .ldj-eng, .ldj-eng * { box-sizing:border-box; }
+  .ldj-eng h2, .ldj-eng h3, .ldj-eng p { margin:0; }
+  .ldj-eng a { color:inherit; text-decoration:none; }
+  .ldj-export { background:#fff; padding:clamp(1.6rem,3vw,2.8rem) 1rem; }
+  .ldj-export-inner { max-width:1120px; margin:0 auto; }
+  .ldj-kicker { color:var(--orange); font-size:.75rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+  .ldj-export h2 { margin:.4rem 0 .5rem; font-size:clamp(1.7rem,3vw,2.6rem); letter-spacing:-.04em; }
+  .ldj-export-inner > p { max-width:62ch; color:var(--muted); line-height:1.6; }
+  .ldj-nodes { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; margin-top:1.1rem; }
+  .ldj-node { border:1px solid var(--line); border-radius:1.2rem; padding:1rem 1rem 1.1rem; background:linear-gradient(180deg,#fff,#f8fafc); min-height:100%; }
+  .ldj-node h3 { font-size:1.15rem; letter-spacing:-.02em; }
+  .ldj-node p { margin-top:.4rem; color:var(--muted); line-height:1.5; font-size:.95rem; }
+  .ldj-node span { display:inline-block; margin-top:.75rem; color:var(--orange); font-size:.78rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
+  .ldj-export-links { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1rem; }
+  .ldj-export-links a { border-radius:999px; padding:.7rem 1rem; font-weight:800; background:#111827; color:#fff; }
+  .ldj-export-links a.alt { background:#fff; color:#111827; border:1px solid var(--line); }
+  @media (max-width:800px) { .ldj-nodes { grid-template-columns:1fr; } }
+</style>
+<section class="ldj-eng ldj-export" id="ldj-ihracat" aria-labelledby="ldj-ihracat-title">
+  <div class="ldj-export-inner">
+    <p class="ldj-kicker">Hizmet noktaları</p>
+    <h2 id="ldj-ihracat-title">İstanbul, Erkrath, Girne</h2>
+    <p>Üç adres iletişim sayfasında yazılı olan hizmet noktalarıdır. Almanya ve Kıbrıs ofisi kurulum hikâyesi diye anlatılmaz. İhracat, ISO belgelerinin faaliyet kapsamı cümlesinde geçer.</p>
+    <div class="ldj-nodes">
+      <article class="ldj-node">
+        <h3>İstanbul</h3>
+        <p>Halide Edip Adıvar Mah. Gül 2 Sk. No:10, 34382 Şişli, Türkiye</p>
+        <span>Merkez</span>
+      </article>
+      <article class="ldj-node">
+        <h3>Erkrath</h3>
+        <p>Heinrich-Hertz-Straße 50, 40699 Erkrath, Almanya</p>
+        <span>Hizmet noktası</span>
+      </article>
+      <article class="ldj-node">
+        <h3>Girne</h3>
+        <p>Karaoğlanoğlu Cad. Yayla Aktiğin İş Hanı No:6 Lapta, Girne, Kıbrıs</p>
+        <span>Hizmet noktası</span>
+      </article>
+    </div>
+    <div class="ldj-export-links">
+      <a href="/sertifikalarimiz/">Uygunluk ve kapsam</a>
+      <a class="alt" href="/imza-projeler/">İmza referanslar</a>
+    </div>
+  </div>
+</section>

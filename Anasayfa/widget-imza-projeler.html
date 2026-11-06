@@ -1,0 +1,84 @@
+<!-- WIDGET — İmza projeler. Mevcut hero ve proje ızgarasının yerine geçmez. -->
+<style>
+  .ldj-eng { --ink:#111827; --paper:#f8fafc; --orange:#F46F2C; --line:rgba(17,24,39,.08); color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; }
+  .ldj-eng, .ldj-eng * { box-sizing:border-box; }
+  .ldj-eng h2, .ldj-eng h3, .ldj-eng p { margin:0; }
+  .ldj-eng a { color:inherit; }
+  .ldj-imza { background:#f8fafc; color:#111827; }
+  .ldj-imza-nav a { color:#9a3412; border-color:rgba(17,24,39,.12); background:#fff; }
+  .ldj-imza h2, .ldj-imza-copy p { color:#111827; }
+  .ldj-imza-copy p { color:#475569; }
+  .ldj-kicker { color:#F46F2C; }
+  .ldj-imza-nav { display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; padding:1rem 1rem 0; }
+  .ldj-imza-nav a { color:#9a3412; border:1px solid rgba(17,24,39,.12); background:#fff; border-radius:999px; padding:.45rem .8rem; font-size:.82rem; font-weight:700; text-decoration:none; }
+  .ldj-imza-rail { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; }
+  .ldj-imza-slide { flex:0 0 100%; scroll-snap-align:start; display:grid; grid-template-columns:1.05fr .95fr; min-height:0; background:#fff; border-bottom:1px solid rgba(17,24,39,.06); }
+  .ldj-imza-copy { padding:clamp(1.5rem,4vw,3.2rem); display:flex; flex-direction:column; justify-content:flex-end; }
+  .ldj-imza-shot { margin:0; display:flex; flex-direction:column; justify-content:center; padding:1.2rem 1.2rem 1.2rem 0; }
+  .ldj-imza-shot img { width:100%; height:min(42vh,360px); object-fit:contain; background:#0f172a; border-radius:1.2rem; }
+  .ldj-imza-shot figcaption { margin-top:.45rem; color:#64748b; font-size:.78rem; letter-spacing:.04em; }
+  .ldj-kicker { display:inline-flex; margin-bottom:.7rem; color:#F46F2C; font-size:.75rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+  .ldj-imza h2 { font-size:clamp(1.8rem,4vw,3rem); line-height:1; letter-spacing:-.04em; max-width:16ch; color:#111827; }
+  .ldj-imza-copy p { margin-top:1rem; max-width:46ch; color:#475569; line-height:1.6; font-size:1.02rem; }
+  .ldj-class { background:var(--paper); color:var(--ink); padding:clamp(1.5rem,3vw,2.5rem) 1rem 2.5rem; }
+  .ldj-class-inner, .ldj-wrap { max-width:1120px; margin:0 auto; }
+  .ldj-class h3 { font-size:clamp(1.4rem,2.5vw,2rem); letter-spacing:-.03em; }
+  .ldj-class > .ldj-class-inner > p { color:#475569; margin:.6rem 0 1rem; line-height:1.6; }
+  .ldj-cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; }
+  .ldj-card { display:block; background:#fff; border:1px solid var(--line); border-radius:1.1rem; padding:1rem 1.05rem 1.1rem; text-decoration:none; min-height:100%; transition:transform .25s ease, box-shadow .25s ease; }
+  .ldj-card:hover { transform:translateY(-3px); box-shadow:0 16px 40px rgba(15,23,42,.08); }
+  .ldj-card strong { display:block; font-size:1.05rem; margin-bottom:.35rem; }
+  .ldj-card span { color:#64748b; line-height:1.5; font-size:.92rem; }
+  .ldj-card em { display:block; margin-top:.7rem; color:var(--orange); font-style:normal; font-weight:800; font-size:.82rem; }
+  @media (max-width:800px) {
+    .ldj-cards { grid-template-columns:1fr; }
+    .ldj-imza-slide { grid-template-columns:1fr; min-height:0; }
+    .ldj-imza-shot { padding:0 1rem 1.2rem; }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    .ldj-imza-rail { display:block; overflow:visible; scroll-behavior:auto; }
+    .ldj-imza-slide { min-height:0; }
+    .ldj-card { transition:none; }
+  }
+</style>
+<section class="ldj-eng ldj-imza" id="ldj-imza" aria-labelledby="ldj-imza-title">
+  <div class="ldj-imza-nav">
+    <a href="#ldj-slide-sg">Sabiha Gökçen</a>
+    <a href="#ldj-slide-tp">Teknopark İstanbul</a>
+  </div>
+  <div class="ldj-imza-rail">
+    <article class="ldj-imza-slide" id="ldj-slide-sg">
+      <div class="ldj-imza-copy">
+        <p class="ldj-kicker">Havalimanı · katalog referansı</p>
+        <h2 id="ldj-imza-title">İstanbul Sabiha Gökçen</h2>
+        <p>Ulaşım ölçeğinde yayımlanan referans görseli. Metrekare ve pitch bu kartta yok; ölçü keşifte netleşir. İçerik sürekliliği, parlaklık ve bakım erişimi havalimanı işinin asıl konuşmasıdır.</p>
+      </div>
+      <figure class="ldj-imza-shot">
+        <img src="/wp-content/uploads/2022/12/untitled.225-min-1.png" alt="İstanbul Sabiha Gökçen Havalimanı katalog görseli" width="960" height="720">
+        <figcaption>Katalog görseli</figcaption>
+      </figure>
+    </article>
+    <article class="ldj-imza-slide" id="ldj-slide-tp">
+      <div class="ldj-imza-copy">
+        <p class="ldj-kicker">Teknoloji kampüsü · DEEP TECH DEEP IMPACT</p>
+        <h2>Teknopark İstanbul</h2>
+        <p>Kampüs iletişimi ölçeğinde katalog referansı. Karttaki ifade aynen duruyor. Ayrı bir metrekare iddiası eklenmedi.</p>
+      </div>
+      <figure class="ldj-imza-shot">
+        <img src="/wp-content/uploads/2022/12/untitled.226-min-1.png" alt="Teknopark İstanbul katalog görseli" width="960" height="720">
+        <figcaption>Katalog görseli</figcaption>
+      </figure>
+    </article>
+  </div>
+  <div class="ldj-class">
+    <div class="ldj-class-inner">
+      <h3>Uygulama sınıfları ve saha portföyü</h3>
+      <p>İsimli iki referans yukarıda. Stadyum ve medya cephe, teslim edilmiş iş diye yazılmaz; çözüm sınıfı olarak ilgili rehbere gider. İsimsiz saha kurulumları mevcut portföyde durur.</p>
+      <div class="ldj-cards">
+        <a class="ldj-card" href="/havaalani-led-ekran/"><strong>Havalimanı sınıfı</strong><span>Süreklilik, parlaklık ve bakım erişimi. Rehber, Sabiha Gökçen kartının yerine geçmez.</span><em>Çözüm sınıfı</em></a>
+        <a class="ldj-card" href="/stadyum-led-ekran/"><strong>Stadyum sınıfı</strong><span>Skorbord ve tribün ölçeği bir çözüm başlığıdır. Ledajans işi diye isimlendirilmiş bir stadyum kartı yok.</span><em>Çözüm sınıfı</em></a>
+        <a class="ldj-card" href="/projeler/"><strong>Saha kurulumları</strong><span>İç mekan, dış mekan, mağaza, rental ve COB kurulum ızgarası olduğu gibi duruyor.</span><em>Mevcut portföy</em></a>
+      </div>
+    </div>
+  </div>
+</section>

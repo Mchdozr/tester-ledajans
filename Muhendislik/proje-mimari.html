@@ -1,0 +1,111 @@
+<!-- SEO Meta Description: LED ekran proje mimarı: ölçü, izleme mesafesi ve ışık açısına göre pitch önerisi, ızgara kıyası, güç aralığı ve teklif formu. -->
+<!-- SEO Focus Keyword: LED ekran pitch hesaplama -->
+<style>
+  .ldj-eng { --ink:#111827; --muted:#475569; --orange:#F46F2C; --line:rgba(17,24,39,.08); color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; background:#f8fafc; }
+  .ldj-eng, .ldj-eng * { box-sizing:border-box; }
+  .ldj-eng h1, .ldj-eng h2, .ldj-eng p, .ldj-eng label { margin:0; }
+  .ldj-eng a, .ldj-eng input, .ldj-eng select { font:inherit; }
+  .ldj-page { max-width:1120px; margin:0 auto; padding:clamp(1.2rem,3vw,2.2rem) 1rem 3rem; }
+  .ldj-kicker { color:var(--orange); font-size:.75rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+  .ldj-page h1 { margin:.4rem 0 .55rem; font-size:clamp(2rem,4vw,3.3rem); letter-spacing:-.045em; line-height:.98; }
+  .ldj-lead, .ldj-copy, .ldj-fine { color:var(--muted); line-height:1.6; }
+  .ldj-fine { font-size:.86rem; margin-top:.35rem; }
+  .ldj-layout { display:grid; grid-template-columns:.86fr 1.14fr; gap:1rem; margin-top:1.1rem; }
+  .ldj-panel { background:#fff; border:1px solid var(--line); border-radius:1.2rem; padding:1rem; }
+  .ldj-fields { display:grid; grid-template-columns:1fr 1fr; gap:.65rem; }
+  .ldj-fields label { display:flex; flex-direction:column; gap:.3rem; font-size:.82rem; font-weight:800; color:#334155; }
+  .ldj-fields input, .ldj-fields select { border:1px solid var(--line); border-radius:.8rem; padding:.7rem .75rem; background:#f8fafc; color:#111827; }
+  .ldj-wide { grid-column:1 / -1; }
+  .ldj-pitch { font-size:clamp(2.4rem,5vw,3.8rem); letter-spacing:-.05em; font-variant-numeric:tabular-nums; line-height:.95; }
+  .ldj-stats, .ldj-grids { display:grid; grid-template-columns:1fr 1fr; gap:.6rem; margin-top:.75rem; }
+  .ldj-stat { background:#f8fafc; border-radius:.9rem; padding:.75rem; }
+  .ldj-stat span { display:block; color:#64748b; font-size:.72rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
+  .ldj-stat strong { display:block; margin-top:.25rem; font-variant-numeric:tabular-nums; }
+  .ldj-grid { background:#0f172a; border-radius:1rem; overflow:hidden; }
+  .ldj-grid p { color:#fdba74; font-size:.78rem; font-weight:800; padding:.55rem .7rem 0; }
+  .ldj-grid canvas { display:block; width:100%; height:190px; }
+  .ldj-actions { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
+  .ldj-actions a { text-decoration:none; border-radius:999px; padding:.8rem 1.05rem; font-weight:800; background:#F46F2C; color:#fff; }
+  .ldj-fields input, .ldj-fields select { width:100%; min-height:44px; }
+  body.page-id-7171 :is(h1.title, .heading-title) { display:none; }
+  @media (max-width:860px) {
+    .ldj-layout, .ldj-fields, .ldj-stats, .ldj-grids { grid-template-columns:1fr; }
+    .ldj-wide { grid-column:auto; }
+  }
+</style>
+<article class="ldj-eng">
+  <div class="ldj-page" data-ldj-mimari="full">
+    <p class="ldj-kicker">Proje mimarı</p>
+    <h1>Ölçüyü pitch’e çevir</h1>
+    <p class="ldj-lead">Ölçüyü girin. Araç pitch, alan, kabin ve güç aralığını yayınlanmış değerlere göre gösterir. Sonuç ön seçimdir.</p>
+    <div class="ldj-layout">
+      <form class="ldj-panel" action="/iletisim/" method="get">
+        <div class="ldj-fields">
+          <label>Genişlik (m)<input data-in="gen" name="gen" type="number" min="0.4" max="40" step="0.1" value="4"></label>
+          <label>Yükseklik (m)<input data-in="yuk" name="yuk" type="number" min="0.3" max="20" step="0.1" value="2"></label>
+          <label>İzleme mesafesi (m)<input data-in="mesafe" name="mesafe" type="number" min="0.5" max="80" step="0.1" value="3"></label>
+          <label>Ortam
+            <select data-in="ortam" name="ortam">
+              <option value="ic">İç mekan</option>
+              <option value="dis" selected>Dış mekan</option>
+              <option value="gunes">Güneş</option>
+            </select>
+          </label>
+          <label>Işık gelişi
+            <select data-in="isik" name="isik">
+              <option value="dusuk">Düşük</option>
+              <option value="orta" selected>Orta</option>
+              <option value="karsi">Karşı ışık</option>
+            </select>
+          </label>
+          <input data-in="pitch" name="pitch" type="hidden" value="2.5">
+          <label>Kullanım
+            <select data-in="kullanim" name="kullanim">
+              <option value="vitrin">Vitrin</option>
+              <option value="kontrol">Kontrol odası</option>
+              <option value="salon">Salon</option>
+              <option value="cephe" selected>Cephe</option>
+              <option value="rental">Rental</option>
+            </select>
+          </label>
+        </div>
+        <p class="ldj-fine">Güneş modu dış mekan ailesine geçer. Rental, Grand Air pitch listesini ve m²/gün bandını açar. Satın almada TL çıkmaz.</p>
+      </form>
+      <div class="ldj-panel" aria-live="polite">
+        <p class="ldj-pitch" data-out="pitch">P2,5</p>
+        <p class="ldj-copy" data-out="alt"></p>
+        <p class="ldj-fine" data-out="rule"></p>
+        <div class="ldj-stats">
+          <div class="ldj-stat"><span>Alan</span><strong data-out="area"></strong></div>
+          <div class="ldj-stat"><span>Kabin</span><strong data-out="modules"></strong><p class="ldj-fine" data-out="moduleNote"></p></div>
+          <div class="ldj-stat"><span>Güç</span><strong data-out="power"></strong><p class="ldj-fine" data-out="powerNote"></p></div>
+          <div class="ldj-stat"><span>Göreli bant</span><strong data-out="band"></strong><p class="ldj-fine" data-out="bandNote"></p></div>
+        </div>
+        <div class="ldj-stat" data-out="money" hidden style="margin-top:.6rem;">
+          <span>Kiralama bandı</span>
+          <strong data-out="moneyValue"></strong>
+          <p class="ldj-fine" data-out="moneyNote"></p>
+        </div>
+        <p class="ldj-fine" data-out="bright"></p>
+        <div class="ldj-grids">
+          <figure class="ldj-grid"><p data-grid-label="0"></p><canvas data-grid></canvas></figure>
+          <figure class="ldj-grid"><p data-grid-label="1"></p><canvas data-grid></canvas></figure>
+        </div>
+        <div class="ldj-actions">
+          <a data-out="quote" href="/iletisim/">Bu ölçüyle teklif iste</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<script src="/wp-content/themes/modins_child/assets/js/ledajans-proje-mimari.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "LEDAJANS proje mimarı",
+  "applicationCategory": "BusinessApplication",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" },
+  "description": "İzleme mesafesine göre katalog pitch önerisi. Satın alma fiyatı üretmez."
+}
+</script>

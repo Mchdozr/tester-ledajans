@@ -1,0 +1,50 @@
+<!-- WIDGET — Yayınlanmış teknik değerler. Laboratuvar raporu değildir. -->
+<style>
+  .ldj-eng { --ink:#111827; --muted:#475569; --orange:#F46F2C; --line:rgba(17,24,39,.08); color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; }
+  .ldj-eng, .ldj-eng * { box-sizing:border-box; }
+  .ldj-eng h2, .ldj-eng h3, .ldj-eng p { margin:0; }
+  .ldj-eng button, .ldj-eng a { font:inherit; }
+  .ldj-met { background:#f8fafc; padding:clamp(1.6rem,3vw,2.8rem) 1rem; }
+  .ldj-met-inner { max-width:1120px; margin:0 auto; }
+  .ldj-kicker { color:var(--orange); font-size:.75rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+  .ldj-met h2 { margin:.35rem 0 .45rem; font-size:clamp(1.7rem,3vw,2.6rem); letter-spacing:-.04em; }
+  .ldj-met-inner > p { max-width:68ch; color:var(--muted); line-height:1.6; }
+  .ldj-tabs { display:flex; flex-wrap:wrap; gap:.45rem; margin:1rem 0; }
+  .ldj-tabs button { border:1px solid var(--line); background:#fff; border-radius:999px; padding:.55rem .85rem; font-weight:750; cursor:pointer; }
+  .ldj-tabs button[aria-selected="true"] { background:#111827; color:#fff; border-color:#111827; }
+  .ldj-gauges { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.7rem; }
+  .ldj-gauge { background:#fff; border:1px solid var(--line); border-radius:1rem; padding:.9rem .95rem 1rem; }
+  .ldj-gauge span { display:block; color:#64748b; font-size:.75rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+  .ldj-gauge strong { display:block; margin:.35rem 0 .55rem; font-size:1.15rem; letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+  .ldj-track { height:6px; border-radius:99px; background:#e2e8f0; overflow:hidden; }
+  .ldj-track i { display:block; height:100%; width:0; background:linear-gradient(90deg,#F46F2C,#fb923c); transition:width .7s ease; }
+  .ldj-note { margin-top:.8rem; color:#64748b; font-size:.88rem; line-height:1.5; }
+  .ldj-met a.ldj-go { display:inline-flex; margin-top:1rem; background:#F46F2C; color:#fff; text-decoration:none; font-weight:800; border-radius:999px; padding:.75rem 1rem; }
+  @media (max-width:800px) { .ldj-gauges { grid-template-columns:1fr; } }
+  @media (prefers-reduced-motion:reduce) { .ldj-track i { transition:none; } }
+</style>
+<section class="ldj-eng ldj-met" id="ldj-metrikler" data-ldj-metrics aria-labelledby="ldj-metrik-title">
+  <div class="ldj-met-inner">
+    <p class="ldj-kicker">Yayınlanmış teknik değerler</p>
+    <h2 id="ldj-metrik-title">Aile seç, tablo konuşsun</h2>
+    <p>Rakamlar ürün kartı ve seri tablosundan gelir. Bağımsız laboratuvar raporu, delta-E belgesi veya karbon yüzdesi değildir.</p>
+    <div class="ldj-tabs" role="tablist">
+      <button type="button" data-family-btn="cob" aria-selected="true">İç mekan COB</button>
+      <button type="button" data-family-btn="gob" aria-selected="false">İç mekan GOB</button>
+      <button type="button" data-family-btn="outdoor" aria-selected="false">Dış mekan</button>
+      <button type="button" data-family-btn="rental" aria-selected="false">Rental</button>
+    </div>
+    <div class="ldj-gauges">
+        <article class="ldj-gauge"><span>Pitch</span><strong data-field="pitch">1,25 – 1,87 mm</strong></article>
+        <article class="ldj-gauge"><span>Yenileme</span><strong data-field="refresh">≥3840 Hz</strong><div class="ldj-track"><i data-bar="refresh"></i></div></article>
+        <article class="ldj-gauge"><span>Parlaklık</span><strong data-field="bright">0–1000 cd/m²</strong><div class="ldj-track"><i data-bar="bright"></i></div></article>
+        <article class="ldj-gauge"><span>Koruma</span><strong data-field="ip">Ön bakım kabin</strong></article>
+        <article class="ldj-gauge"><span>Güç</span><strong data-field="power">140 / 300 W/m²</strong><div class="ldj-track"><i data-bar="power"></i></div></article>
+        <article class="ldj-gauge"><span>Ömür</span><strong data-field="life">Şemada ≥100.000 saat</strong><div class="ldj-track"><i data-bar="life"></i></div></article>
+    </div>
+    <p class="ldj-note" data-field="source">COB model kartları ve P1.56 CFC156 tablosu. Ömür: iç mekan LED ekran ürün şeması.</p>
+    <p class="ldj-note" data-field="powerNote">P1.56 CFC156 tablosu. Diğer COB pitch satırlarında aynı watt değeri yok.</p>
+    <a class="ldj-go" href="/muhendislik-metrikleri/">Enerji grafiği ve kalibrasyon notu</a>
+  </div>
+</section>
+<script src="/wp-content/themes/modins_child/assets/js/ledajans-proje-mimari.js" defer></script>
