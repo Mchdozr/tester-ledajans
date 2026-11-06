@@ -1,5 +1,9 @@
 # AGENTS.md
 
+## Yayın hedefi
+
+WordPress yazma hedefi yalnızca **tester.ledajans.com**. Kullanıcı "canlıya al", "yayınla" veya "deploy" dediğinde bu adresi kasteder. Üretim sitesine istek atma; içerik yazma, sayfa açma, menü, önbellek silme ve geri alma da buna dahildir. Ayrıntı: `.cursor/rules/yalniz-tester.mdc`.
+
 ## Overview
 
 This repository is a content staging and deployment pipeline for the **ledajans.com** WordPress site (a Turkish B2B LED screen manufacturer). It contains:

@@ -1,0 +1,12 @@
+---
+description: Yayın ve "canlıya al" yalnızca tester.ledajans.com
+alwaysApply: true
+---
+
+# Yalnızca tester.ledajans.com
+
+Bu depodaki her sohbette WordPress yazma hedefi tester.ledajans.com'dur.
+
+- Üretim sitesine istek atma. İçerik yazma, sayfa açma, menü, önbellek silme ve geri alma da buna dahildir.
+- Kullanıcı "canlıya al", "yayınla" veya "deploy" dediğinde yalnızca tester.ledajans.com kastedilir.
+- Betiklerde adres üretim sitesine işaret etse bile çalıştırmadan önce hedefi tester.ledajans.com yap. Üretim adresine yazan bir komut çalıştırma.
