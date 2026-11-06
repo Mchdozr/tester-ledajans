@@ -35,8 +35,7 @@ html body.ldj-r1 .elementor-element-123bc72 > .elementor-container > .elementor-
 html body.ldj-r1 .elementor-element-123bc72 .site-branding-logo img{height:34px!important;max-width:190px!important}
 html body.ldj-r1 .elementor-element-123bc72 .elementor-element-548f702{position:relative!important;left:auto!important;top:auto!important;transform:none!important;width:auto!important;max-width:none!important;min-width:0!important}
 html body.ldj-r1 .elementor-element-123bc72 .menu-anamenu-container{min-width:0!important;max-width:100%!important;overflow:hidden!important}
-html[lang^="en"] body.ldj-r1 .elementor-element-123bc72 .gva-main-menu>li>a .menu-title,
-html[lang^="de"] body.ldj-r1 .elementor-element-123bc72 .gva-main-menu>li>a .menu-title{font-size:.78rem!important;padding:0 .16rem!important;letter-spacing:-.01em!important}
+html body.ldj-r1 .elementor-element-123bc72 .gva-navigation-menu .gva-main-menu{justify-content:space-evenly!important}
 }
 html body.ldj-r1 .elementor-element-123bc72 .gva-main-menu>li>a{position:relative;color:rgba(255,255,255,.88)!important;transition:color .2s}
 html body.ldj-r1 .elementor-element-123bc72 .gva-main-menu>li>a .menu-title,html body.ldj-r1 .elementor-element-123bc72 .gva-main-menu>li>a .caret{color:inherit!important}

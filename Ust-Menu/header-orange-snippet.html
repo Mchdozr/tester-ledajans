@@ -128,10 +128,11 @@ img.ledajans-footer-logo {
     -webkit-transform: none !important;
     flex: 1 1 auto !important;
     width: auto !important;
-    max-width: none !important;
+    max-width: 100% !important;
     min-width: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow: hidden !important;
   }
   html body .elementor-element-123bc72 .elementor-element-548f702 .elementor-widget-container,
   html body .elementor-element-123bc72 .nav-one__default,
@@ -175,7 +176,7 @@ img.ledajans-footer-logo {
   html body .elementor-element-123bc72 .gva-navigation-menu .gva-main-menu {
     display: flex !important;
     flex-wrap: nowrap !important;
-    justify-content: center !important;
+    justify-content: space-evenly !important;
     align-items: center !important;
     width: 100% !important;
     height: 76px !important;
@@ -197,7 +198,7 @@ img.ledajans-footer-logo {
     white-space: nowrap !important;
     padding: 0 0.45rem !important;
     line-height: 1.2 !important;
-    font-size: 1rem !important;
+    font-size: var(--ldj-menu-size, 1rem) !important;
     font-weight: 600 !important;
   }
   html body .elementor-element-123bc72 .ledajans-header-phones,
@@ -221,23 +222,11 @@ img.ledajans-footer-logo {
   html body .elementor-element-123bc72 .gva-main-menu > li > a,
   html body .elementor-element-123bc72 .gva-main-menu > li > a .menu-title {
     padding: 0 0.28rem !important;
-    font-size: 0.9rem !important;
+    font-size: var(--ldj-menu-size, 0.9rem) !important;
     font-weight: 600 !important;
   }
   html body .elementor-element-123bc72 .ledajans-header-phone-row {
     font-size: 0.75rem !important;
-  }
-  html[lang^="en"] body .elementor-element-123bc72 .gva-main-menu > li,
-  html[lang^="de"] body .elementor-element-123bc72 .gva-main-menu > li {
-    padding: 0 1px !important;
-  }
-  html[lang^="en"] body .elementor-element-123bc72 .gva-main-menu > li > a,
-  html[lang^="en"] body .elementor-element-123bc72 .gva-main-menu > li > a .menu-title,
-  html[lang^="de"] body .elementor-element-123bc72 .gva-main-menu > li > a,
-  html[lang^="de"] body .elementor-element-123bc72 .gva-main-menu > li > a .menu-title {
-    padding: 0 0.16rem !important;
-    font-size: 0.78rem !important;
-    letter-spacing: -0.01em !important;
   }
 }
 @media (max-width: 1024px) {
@@ -330,22 +319,32 @@ img.ledajans-footer-logo {
 <script id="ledajans-header-fit">
 (function () {
   function fit() {
-    var lang = (document.documentElement.lang || "").toLowerCase();
-    if (lang.indexOf("en") !== 0 && lang.indexOf("de") !== 0) return;
     if (window.innerWidth < 1025) return;
     var menu = document.getElementById("menu-anamenu-desktop");
     var box = menu && menu.closest(".elementor-element-548f702");
-    if (!menu || !box) return;
-    var size = 13.5;
-    menu.style.fontSize = size + "px";
+    var phones = document.querySelector(".ledajans-header-phones");
+    var logo = document.querySelector(".elementor-element-123bc72 .site-branding-logo img");
+    var bar = document.querySelector(".elementor-element-123bc72");
+    if (!menu || !box || !bar) return;
+    bar.style.removeProperty("--ldj-menu-size");
+    var size = parseFloat(getComputedStyle(menu.querySelector("a") || menu).fontSize) || 16;
+    function overflows() {
+      var first = menu.querySelector(":scope > li:first-child > a");
+      var last = menu.querySelector(":scope > li:last-child > a");
+      if (!first || !last) return false;
+      var phoneX = phones ? phones.getBoundingClientRect().left : window.innerWidth;
+      var logoR = logo ? logo.getBoundingClientRect().right : 0;
+      return last.getBoundingClientRect().right > phoneX - 10 || first.getBoundingClientRect().left < logoR + 12;
+    }
     var guard = 0;
-    while (menu.scrollWidth > box.clientWidth + 1 && size > 11 && guard < 10) {
+    while (overflows() && size > 10.5 && guard < 20) {
       size -= 0.5;
-      menu.style.fontSize = size + "px";
+      bar.style.setProperty("--ldj-menu-size", size + "px");
       guard += 1;
     }
   }
   window.addEventListener("resize", fit);
+  window.addEventListener("load", fit);
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fit);
   else fit();
 })();
