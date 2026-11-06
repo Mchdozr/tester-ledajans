@@ -213,9 +213,9 @@ add_action('wp_head', function () {
         return;
     }
 
-    // R2: canlı domain yerine sitenin kendi uploads'ı + hero'da gerçekten kullanılan görseller
-    echo '<link rel="preload" as="image" href="' . esc_url(content_url('/uploads/2026/09/hero-stant-poster-1.webp')) . '" media="(min-width: 901px)" fetchpriority="high">' . "\n";
-    echo '<link rel="preload" as="image" href="' . esc_url(content_url('/uploads/2026/09/hero-stant-poster-mobile-1.webp')) . '" media="(max-width: 900px)" fetchpriority="high">' . "\n";
+    // Hero görseli: fuar standı fotoğrafı. Eski stant poster ön yüklemesi kaldırıldı.
+    echo '<link rel="preload" as="image" href="' . esc_url(content_url('/uploads/2024/08/ledajans-fuar-IMG_9414.jpg')) . '" media="(min-width: 781px)" fetchpriority="high">' . "\n";
+    echo '<link rel="preload" as="image" href="' . esc_url(content_url('/uploads/2024/08/ledajans-fuar-IMG_9414-768x432.jpg')) . '" media="(max-width: 780px)" fetchpriority="high">' . "\n";
 }, 1);
 
 // Anasayfada Rank Math şemalarını kapat; schema kaynağı widget JSON-LD olsun
