@@ -11,11 +11,8 @@ function ldj_tester_ux_page() {
         ? (int) get_queried_object_id() : 0;
 }
 
-add_filter('elementor/widget/render_content', static function ($content, $widget) {
+add_filter('elementor/frontend/the_content', static function ($content) {
     $page = ldj_tester_ux_page();
-    if ($widget->get_name() !== 'html') {
-        return $content;
-    }
     if ($page === 7171 && strpos($content, 'data-ldj-mimari="full"') !== false) {
         return str_replace('<h1>Ölçüyü pitch’e çevir</h1>', '<h2>Ölçüyü pitch’e çevir</h2>', $content);
     }
@@ -64,7 +61,7 @@ add_filter('elementor/widget/render_content', static function ($content, $widget
         }
         return $video . $fallback . $image;
     }, $content) ?? $content;
-}, 10, 2);
+});
 
 add_action('wp_head', static function () {
     if (!in_array(ldj_tester_ux_page(), array(1248, 4956, 5001, 7171, 27, 1262), true)) {
