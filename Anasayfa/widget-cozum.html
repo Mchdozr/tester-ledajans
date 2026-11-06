@@ -1,13 +1,16 @@
-<!-- Çözüm seçimi: mevcut ürün sayfalarına gider. -->
-<style>html,body{overflow-x:clip}</style>
-<section class="ldj-ux-solutions" id="ldj-cozum" aria-labelledby="ldj-cozum-title">
+<!-- Çözüm seçici, site geneli panelle çift olduğu için anasayfada gizli. -->
+<style>
+  html, body { overflow-x: clip; }
+  body.page-id-1248 #ldj-cozum,
+  body.page-id-1248 .elementor-top-section:has(#ldj-cozum) { display: none !important; }
+</style>
+<section class="ldj-ux-solutions" id="ldj-cozum" hidden aria-labelledby="ldj-cozum-title">
   <p class="ldj-ux-kicker">Çözüm seçin</p>
   <h2 id="ldj-cozum-title">İhtiyaca göre LED ekran</h2>
   <p>İç mekan, dış mekan veya rental. Ürünü inceleyin ya da ölçüyle teklif isteyin.</p>
   <div class="ldj-ux-solution-grid">
-    <a href="/ic-mekan-led-ekran/"><strong>İç mekan</strong><span>Mağaza, toplantı odası, showroom</span><b>Ürünleri incele</b></a>
-    <a href="/dis-mekan-led-ekran/"><strong>Dış mekan</strong><span>Cephe ve açık alan</span><b>Ürünleri incele</b></a>
-    <a href="/rental-ekran/"><strong>Rental</strong><span>Fuar, sahne, kısa süreli iş</span><b>Ürünleri incele</b></a>
+    <a href="/ic-mekan-led-ekran/"><strong>İç mekan</strong><span>Mağaza, toplantı odası, showroom</span><b>Ürünleri incele →</b></a>
+    <a href="/dis-mekan-led-ekran/"><strong>Dış mekan</strong><span>Cephe ve açık alan</span><b>Ürünleri incele →</b></a>
+    <a href="/rental-ekran/"><strong>Rental</strong><span>Fuar, sahne, kısa süreli iş</span><b>Ürünleri incele →</b></a>
   </div>
-  <p style="margin-top:1rem;"><a href="/iletisim/" style="display:inline-flex;align-items:center;min-height:48px;padding:.7rem 1.15rem;border-radius:999px;background:#F46F2C;color:#fff;font-weight:800;text-decoration:none;">Fiyat teklifi al</a></p>
 </section>
