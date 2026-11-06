@@ -1,402 +1,1053 @@
-<!-- Program İndir - İndirme Kartları -->
+<!-- Program İndir - Görsel İndirme Merkezi -->
 <style>
-    .program-downloads-section {
-      padding: clamp(2rem, 5vw, 4rem) max(1rem, env(safe-area-inset-left));
-      padding-bottom: clamp(2rem, 5vw, 4rem);
-      background: linear-gradient(180deg, #fafbfc 0%, #ffffff 100%);
-    }
-    
-    .program-downloads-container {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-    
-    .program-downloads-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-    }
-    
-    @media (min-width: 480px) {
-      .program-downloads-grid { gap: 1.5rem; }
-    }
-    
-    @media (min-width: 640px) {
-      .program-downloads-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.75rem;
-      }
-    }
-    
-    @media (min-width: 1024px) {
-      .program-downloads-grid { gap: 2rem; }
-    }
-    
-    .program-download-card {
-      background: white;
-      border-radius: 1.5rem;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      padding: 1.5rem;
-      transition: box-shadow 0.3s, border-color 0.3s;
-    }
-    
-    @media (min-width: 640px) {
-      .program-download-card { padding: 2rem; }
-    }
-    
-    .program-download-card-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #111827;
-      margin: 0 0 1.5rem 0;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #e5e7eb;
-      line-height: 1.3;
-      text-align: center;
-    }
-    
-    @media (min-width: 640px) {
-      .program-download-card-title {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-        padding-bottom: 1.25rem;
-      }
-    }
-    
-    .program-download-card-subtitle {
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: #6b7280;
-      text-align: center;
-      margin: -0.5rem 0 0.875rem 0;
-      line-height: 1.4;
-    }
-    
-    .program-download-card-logo {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 0.5rem;
-    }
-    
-    .program-download-card-logo img {
-      max-height: 44px;
-      width: auto;
-      object-fit: contain;
-    }
-    
-    .program-download-card-logo.has-title-line {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    
-    @media (min-width: 640px) {
-      .program-download-card-logo.has-title-line {
-        margin-bottom: 2rem;
-        padding-bottom: 1.25rem;
-      }
-    }
-    
-    .program-download-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    
-    .program-download-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      width: 100%;
-      min-height: 48px;
-      padding: 0.75rem 1rem;
-      background: #F46F2C;
-      color: #ffffff;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 0.5rem;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      -webkit-tap-highlight-color: transparent;
-    }
-    
-    @media (min-width: 640px) {
-      .program-download-btn { font-size: 1rem; }
-    }
-    
-    .program-download-btn:hover {
-      background: #e55a1a;
-      transform: translateY(-1px);
-      color: #ffffff;
-    }
-    
-    .program-download-btn svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-    }
-    
-    .program-download-btn span {
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    
-    @media (max-width: 479px) {
-      .program-download-btn span { white-space: normal; text-align: center; }
-    }
+  .program-downloads-section *,
+  .program-downloads-section *::before,
+  .program-downloads-section *::after { box-sizing: border-box; }
+  .program-downloads-section {
+    font-family: inherit;
+    padding: clamp(1.75rem, 4vw, 3.5rem) max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-bottom: clamp(2rem, 5vw, 4rem);
+    background: linear-gradient(180deg, #faf7f4 0%, #f5f1ec 55%, #faf7f4 100%);
+    color: #1f2937;
+  }
+  .program-downloads-container { max-width: 1280px; margin: 0 auto; width: 100%; }
 
-    /* Blog ile aynı arama çubuğu (Program İndir) */
-    @keyframes ledajans-search-pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(244,111,44,0.35); }
-      50% { box-shadow: 0 0 0 6px rgba(244,111,44,0); }
-    }
-    .ledajans-blog-search-wrap {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 2rem;
-      width: 100%;
-    }
-    .ledajans-search-border-wrap {
-      max-width: 28rem;
-      width: 100%;
-    }
-    .ledajans-blog-search {
-      width: 100%;
-      padding: 0.75rem 1rem 0.75rem 2.75rem;
+  .pi-picker { margin-bottom: 1.5rem; scroll-margin-top: 5.5rem; }
+  .pi-picker-title {
+    margin: 0 0 0.4rem 0;
+    font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+    font-weight: 700;
+    color: #1f2937;
+    text-align: center;
+    letter-spacing: -0.025em;
+    line-height: 1.3;
+  }
+  .pi-picker-sub {
+    margin: 0 auto 1.15rem auto;
+    max-width: 36rem;
+    text-align: center;
+    font-size: 0.9375rem;
+    color: #6b7280;
+    line-height: 1.65;
+  }
+  @media (min-width: 640px) {
+    .pi-picker-sub { font-size: 1rem; }
+  }
+  .pi-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  @media (min-width: 640px) {
+    .pi-picker-grid { grid-template-columns: repeat(3, 1fr); gap: 0.9rem; }
+  }
+  @media (min-width: 1024px) {
+    .pi-picker-grid { grid-template-columns: repeat(6, 1fr); }
+  }
+  .pi-pick {
+    appearance: none;
+    border: 1px solid #ebe4dc;
+    background: #ffffff;
+    border-radius: 0.875rem;
+    padding: 1rem 0.55rem 0.85rem;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(120, 80, 40, 0.05);
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    font-family: inherit;
+    width: 100%;
+    max-width: 100%;
+  }
+  .pi-pick:hover {
+    border-color: #f0c9b0;
+    background: #fffaf7;
+    box-shadow: 0 4px 12px rgba(244, 111, 44, 0.08);
+  }
+  .pi-pick.is-active {
+    border-color: #f46f2c;
+    background: #fff7f2;
+    box-shadow: 0 0 0 2px rgba(244, 111, 44, 0.12);
+  }
+  .pi-pick-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff1e8;
+    color: #ea6a2d;
+  }
+  .pi-pick-icon svg { width: 20px; height: 20px; }
+  .pi-pick-icon.c-all,
+  .pi-pick-icon.c-destek,
+  .pi-pick-icon.c-color,
+  .pi-pick-icon.c-huidu,
+  .pi-pick-icon.c-nova,
+  .pi-pick-icon.c-mobil {
+    background: #fff1e8;
+    color: #ea6a2d;
+  }
+  .pi-pick.is-active .pi-pick-icon,
+  .pi-pick.is-active .pi-pick-icon.c-all,
+  .pi-pick.is-active .pi-pick-icon.c-destek,
+  .pi-pick.is-active .pi-pick-icon.c-color,
+  .pi-pick.is-active .pi-pick-icon.c-huidu,
+  .pi-pick.is-active .pi-pick-icon.c-nova,
+  .pi-pick.is-active .pi-pick-icon.c-mobil {
+    background: rgba(244, 111, 44, 0.16);
+    color: #f46f2c;
+  }
+  .pi-pick-name {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.3;
+  }
+  .pi-pick-hint {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.6875rem;
+    color: #9a8f86;
+    line-height: 1.35;
+  }
+
+  .pi-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 1.35rem;
+    padding: 0.65rem 0;
+    background: rgba(250, 247, 244, 0.94);
+    backdrop-filter: blur(8px);
+  }
+  .ledajans-blog-search-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .ledajans-search-border-wrap { max-width: 28rem; width: 100%; }
+  .ledajans-blog-search {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.7rem 1rem 0.7rem 2.75rem;
+    font-size: 0.9375rem;
+    font-family: inherit;
+    border: 1px solid #e8ddd3;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239ca3af'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 0.875rem center;
+    background-size: 1.25rem;
+    outline: none;
+    color: #1f2937;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .ledajans-blog-search::placeholder { color: #9ca3af; }
+  .ledajans-blog-search:focus {
+    border-color: #f46f2c;
+    box-shadow: 0 0 0 3px rgba(244,111,44,0.12);
+  }
+  .pi-active-label {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: #6b7280;
+    margin: 0;
+  }
+  .pi-active-label strong { color: #ea6a2d; font-weight: 600; }
+
+  .pi-cat {
+    margin-bottom: 1.75rem;
+    scroll-margin-top: 7rem;
+  }
+  .pi-cat[hidden] { display: none !important; }
+  .pi-cat-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid #ebe4dc;
+  }
+  .pi-cat-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff1e8;
+    color: #ea6a2d;
+    flex-shrink: 0;
+  }
+  .pi-cat-badge svg { width: 20px; height: 20px; }
+  .pi-cat-badge.c-destek,
+  .pi-cat-badge.c-color,
+  .pi-cat-badge.c-huidu,
+  .pi-cat-badge.c-nova,
+  .pi-cat-badge.c-mobil {
+    background: #fff1e8;
+    color: #ea6a2d;
+  }
+  .pi-cat-head h3 {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1f2937;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+  @media (min-width: 640px) {
+    .pi-cat-head h3 { font-size: 1.25rem; }
+  }
+  .pi-cat-head p {
+    margin: 0.15rem 0 0 0;
+    font-size: 0.8125rem;
+    color: #6b7280;
+    line-height: 1.4;
+  }
+
+  .pi-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+  @media (min-width: 640px) {
+    .pi-grid { grid-template-columns: repeat(2, 1fr); gap: 1.35rem; }
+  }
+  @media (min-width: 1024px) {
+    .pi-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  }
+  .pi-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid #ebe4dc;
+    box-shadow: 0 2px 10px rgba(120, 80, 40, 0.05);
+    overflow: hidden;
+    transition: box-shadow 0.25s, border-color 0.25s;
+  }
+  .pi-card:hover {
+    border-color: #f0c9b0;
+    box-shadow: 0 8px 22px rgba(244, 111, 44, 0.1);
+  }
+  .pi-card[hidden] { display: none !important; }
+  .pi-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.15rem 1.15rem 0.35rem;
+    min-width: 0;
+  }
+  @media (min-width: 640px) {
+    .pi-card-top { padding: 1.35rem 1.35rem 0.4rem; }
+  }
+  .pi-card-visual {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #fff1e8;
+    color: #ea6a2d;
+  }
+  .pi-card-visual svg { width: 20px; height: 20px; }
+  .pi-card-visual img {
+    max-width: 24px;
+    max-height: 24px;
+    object-fit: contain;
+  }
+  .pi-v-folder,
+  .pi-v-doc,
+  .pi-v-app,
+  .pi-v-pdf,
+  .pi-v-remote,
+  .pi-v-huidu,
+  .pi-v-nova,
+  .pi-v-tf,
+  .pi-v-phone {
+    background: #fff1e8;
+    color: #ea6a2d;
+  }
+  .pi-card-meta { min-width: 0; flex: 1; overflow: hidden; }
+  .pi-type {
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    background: #fff1e8;
+    color: #c45a20;
+    border: none;
+  }
+  .pi-card-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f2937;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  @media (min-width: 640px) {
+    .pi-card-title { font-size: 1.0625rem; }
+  }
+  .pi-card-body {
+    padding: 0.25rem 1.15rem 1.15rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.85rem;
+    min-width: 0;
+  }
+  @media (min-width: 640px) {
+    .pi-card-body { padding: 0.25rem 1.35rem 1.35rem; }
+  }
+  .pi-what {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #5b6570;
+    line-height: 1.6;
+  }
+  .pi-btn {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 0.65rem 0.75rem;
+    background: #f46f2c;
+    color: #ffffff !important;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: inherit;
+    text-decoration: none !important;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(244, 111, 44, 0.22);
+    transition: background 0.2s, box-shadow 0.2s;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+  @media (min-width: 640px) {
+    .pi-btn {
+      min-height: 46px;
       font-size: 0.9375rem;
-      border: 2px solid #F46F2C;
-      border-radius: 0.5rem;
-      background-color: #ffffff;
-      animation: ledajans-search-pulse 2s ease-in-out infinite;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239ca3af'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: 0.875rem center;
-      background-size: 1.25rem;
-      outline: none;
-      transition: box-shadow 0.2s, border-color 0.2s;
+      padding: 0.7rem 0.9rem;
     }
-    .ledajans-blog-search::placeholder { color: #9ca3af; }
-    .ledajans-blog-search:focus {
-      animation: none;
-      box-shadow: 0 0 0 4px rgba(244,111,44,0.25);
-    }
-    .program-download-search-results {
-      display: none;
-      margin-bottom: 0;
-    }
-    .program-download-search-results.active {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-    }
-    @media (min-width: 640px) {
-      .program-download-search-results.active {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.75rem;
-      }
-    }
-    @media (min-width: 1024px) {
-      .program-download-search-results.active { gap: 2rem; }
-    }
-    .program-download-search-empty {
-      grid-column: 1 / -1;
-      text-align: center;
-      color: #6b7280;
-      padding: 2rem;
-      margin: 0;
-    }
-    .program-downloads-section.search-active .program-download-main-grid {
-      display: none;
-    }
-    </style>
-    
-    <section class="program-downloads-section" id="indirme-listesi">
-      <div class="program-downloads-container">
-        <div class="ledajans-blog-search-wrap">
-          <div class="ledajans-search-border-wrap">
-            <label for="ledajans-program-indir-arama" class="screen-reader-text" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Program ve dosyalarda ara</label>
-            <input type="search" id="ledajans-program-indir-arama" class="ledajans-blog-search" placeholder="Program ve dosya adında ara..." autocomplete="off" enterkeyhint="search">
-          </div>
-        </div>
-        <div class="program-download-search-results program-downloads-grid" aria-live="polite"></div>
-        <div class="program-download-main-grid">
-        <div class="program-downloads-grid">
-          <!-- 1. Tarama Dosyaları -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">Tarama Dosyaları</h3>
-            <div class="program-download-buttons">
-              <a href="https://drive.google.com/drive/folders/1zDVV7am98E-Q6AuEx3s6N66kjVlTVhQj?usp=sharing" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>Tarama Dosyaları</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-    
-          <!-- 2. Teknik Özellikler -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">Teknik Özellikler</h3>
-            <div class="program-download-buttons">
-              <a href="https://drive.usercontent.google.com/download?id=1KoEUv2DC8wKPH53Io_itsQD2Dl1ZTfxh&authuser=0" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>Teknik Özellikler</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-    
-          <!-- 5. Colorlight -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">Colorlight</h3>
-            <div class="program-download-buttons">
-              <a href="https://drive.google.com/file/d/1NV5wVmb-rkJ9qz2oQ67GXS_6UFRLXiX2/view?usp=drive_link" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>LEDUpgrade V5.2</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-              <a href="https://drive.google.com/file/d/1tfHaa5BL_iddhBFzyMCsYUXf04nPgJPD/view?usp=sharing" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>LED Settings V2.2</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-              <a href="https://drive.google.com/file/d/1clcgdzazxoH5Y3o-WJVsKLLg8Tvh03qi/view?usp=drive_link" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>LedVision 9.7</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-    
-          <!-- 6. Colorlight - PlayMasterTR -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">Colorlight - PlayMasterTR</h3>
-            <div class="program-download-buttons">
-              <a href="https://drive.google.com/uc?export=download&id=16BqRtYl5XpCOHx04Vy8O0M0hdO5QEvXj" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                <span>Colorlight - PlayMasterTR</span>
-              </a>
-              <a href="https://ledajans.com/wp-content/uploads/2025/03/PlayerMaster-User-Manual-V1.4-TR.pdf" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                <span>PlayerMaster-User Manual V1.4 TR</span>
-              </a>
-            </div>
-          </div>
-           <!-- 9. HD Kontrol Kartı Programı -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">HD Kontrol Kartı Programı</h3>
-            <div class="program-download-buttons">
-              <a href="https://drive.google.com/file/d/13ylhEOkXGu4BDJc6JVFoioqqdoCmQR5x/view?usp=sharing" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>HDSign V2.0.2</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-              <a href="https://drive.google.com/file/d/1Ro4MFVYNcuN98wVSIPQI2XuC-SMITJnP/view?usp=sharing" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>HDSet V4.0.16</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-          
-    
-          
-          <!-- 7. HD Serisi Kontrol Kartı -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">HD Serisi Kontrol Kartı Programı</h3>
-            <div class="program-download-buttons">
-              <a href="https://drive.google.com/uc?export=download&id=1LdOMy0ENd3RiUvghE1coe0gx7OTGS-K5" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>HDPlayer V7.11.8.0</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-          
-         <!-- 4. AnyDesk -->
-          <div class="program-download-card">
-            <div class="program-download-card-logo has-title-line">
-              <img src="https://ledajans.com/wp-content/uploads/2024/08/Screenshot2024-03-21095210-ezgif.com-resize.png" alt="AnyDesk" loading="lazy" onerror="this.style.display='none'">
-            </div>
-            <div class="program-download-buttons">
-              <a href="https://anydesk.com/en" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>Anydesk - Uzaktan Destek</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-          
-          <!-- 8. TF Serisi Kontrol Kartı -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">TF Serisi Kontrol Kartı Programı</h3>
-            <div class="program-download-buttons">
-              <a href="https://drive.usercontent.google.com/download?id=1KoEUv2DC8wKPH53Io_itsQD2Dl1ZTfxh&authuser=0" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>TF PowerLed_2.89.4</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-    
-          <!-- 10. LedArt Uygulaması -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">LedArt Uygulaması</h3>
-            <div class="program-download-buttons">
-              <a href="https://www.huidu.cn/qrcode.html" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>LedArt Mobil Uygulama İndir</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-              <a href="https://www.huidu.cn/User_Manual_APP_en.html" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>LedArt Mobil Uygulama Kullanma Kılavuzu</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-          <!-- 3. Nova Star Kart -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">Nova Star Kart</h3>
-            <div class="program-download-buttons">
-              <a href="https://oss.novastar.tech/uploads/2020/07/NovaLCT-V5.3.1.zip" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>NovaLCT V5.3.1</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-              <a href="https://oss.novastar.tech/uploads/2020/01/NovaLCT-V5.3.0.zip" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>NovaLCT V5.3.0</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+  }
+  .pi-btn:hover {
+    background: #e55a1a;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(244, 111, 44, 0.28);
+  }
+  .pi-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+  .pi-btn span { min-width: 0; }
+
+  .pi-empty {
+    display: none;
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #6b7280;
+    background: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid #ebe4dc;
+  }
+  .pi-empty.is-visible { display: block; }
+  .pi-empty strong { color: #1f2937; }
+
+  .pi-scan[hidden] { display: none !important; }
+  .pi-scan {
+    margin-bottom: 1.75rem;
+    background: #ffffff;
+    border: 1px solid #ebe4dc;
+    border-radius: 1rem;
+    padding: 1rem 1rem 1.1rem;
+    box-shadow: 0 2px 8px rgba(120, 80, 40, 0.05);
+  }
+  .pi-scan-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    max-height: 70vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .pi-scan-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid #ebe4dc;
+    border-radius: 0.75rem;
+    background: #fffaf7;
+  }
+  .pi-scan-meta { min-width: 0; flex: 1; }
+  .pi-scan-name {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 0.9375rem;
+    overflow-wrap: anywhere;
+  }
+  .pi-scan-path {
+    margin-top: 0.15rem;
+    color: #6b7280;
+    font-size: 0.8125rem;
+    overflow-wrap: anywhere;
+  }
+  .pi-scan-dl { width: auto; flex: 0 0 auto; min-width: 7.5rem; }
+  @media (max-width: 639px) {
+    .pi-scan-row { flex-direction: column; align-items: stretch; }
+    .pi-scan-dl { width: 100%; }
+  }
+</style>
+
+<section class="program-downloads-section" id="indirme-listesi">
+  <div class="program-downloads-container">
+
+    <!-- MARKA SEÇİCİ -->
+    <div class="pi-picker" id="program-secim">
+      <h2 class="pi-picker-title">Hangi programı istiyorsunuz?</h2>
+      <p class="pi-picker-sub">Markanızı seçin veya aramaya pitch ya da modül yazın (p3, p2.5, 1065, j609). Huidu ve Colorlight tarama dosyaları tek tek iner.</p>
+      <div class="pi-picker-grid" role="tablist" aria-label="Program kategorileri">
+        <button type="button" class="pi-pick is-active" data-cat="all" role="tab" aria-selected="true">
+          <span class="pi-pick-icon c-all" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></span>
+          <span class="pi-pick-name">Tümü</span>
+          <span class="pi-pick-hint">Hepsini göster</span>
+        </button>
+        <button type="button" class="pi-pick" data-cat="destek" role="tab" aria-selected="false">
+          <span class="pi-pick-icon c-destek" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg></span>
+          <span class="pi-pick-name">Destek & Dosya</span>
+          <span class="pi-pick-hint">AnyDesk · Tarama</span>
+        </button>
+        <button type="button" class="pi-pick" data-cat="colorlight" role="tab" aria-selected="false">
+          <span class="pi-pick-icon c-color" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span>
+          <span class="pi-pick-name">Colorlight</span>
+          <span class="pi-pick-hint">PlayMaster · Ayar</span>
+        </button>
+        <button type="button" class="pi-pick" data-cat="huidu" role="tab" aria-selected="false">
+          <span class="pi-pick-icon c-huidu" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></span>
+          <span class="pi-pick-name">Huidu / HD</span>
+          <span class="pi-pick-hint">HDPlayer · HDSet</span>
+        </button>
+        <button type="button" class="pi-pick" data-cat="nova" role="tab" aria-selected="false">
+          <span class="pi-pick-icon c-nova" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span>
+          <span class="pi-pick-name">Nova & TF</span>
+          <span class="pi-pick-hint">NovaLCT · PowerLed</span>
+        </button>
+        <button type="button" class="pi-pick" data-cat="mobil" role="tab" aria-selected="false">
+          <span class="pi-pick-icon c-mobil" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></span>
+          <span class="pi-pick-name">Mobil</span>
+          <span class="pi-pick-hint">LedArt uygulama</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="pi-toolbar">
+      <div class="ledajans-blog-search-wrap">
+        <div class="ledajans-search-border-wrap">
+          <label for="ledajans-program-indir-arama" class="screen-reader-text" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Program ve dosyalarda ara</label>
+          <input type="search" id="ledajans-program-indir-arama" class="ledajans-blog-search" placeholder="Pitch veya modül ara: p3, 1065, j609…" autocomplete="off" enterkeyhint="search">
         </div>
       </div>
-    </section>
+      <p class="pi-active-label" id="pi-active-label">Şu an: <strong>Tüm programlar</strong></p>
+    </div>
+
+        <div class="pi-scan" id="pi-scan" hidden>
+      <div class="pi-cat-head">
+        <div class="pi-cat-badge c-huidu" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg></div>
+        <div>
+          <h3 id="pi-scan-title">Tarama dosyaları</h3>
+          <p>Eşleşen dosyalar tek tek indirilir</p>
+        </div>
+      </div>
+      <div class="pi-scan-list" id="pi-scan-list"></div>
+    </div>
+
+<div class="program-download-main-grid" id="pi-main">
+
+      <!-- DESTEK -->
+      <div class="pi-cat" data-cat="destek">
+        <div class="pi-cat-head">
+          <div class="pi-cat-badge c-destek" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg></div>
+          <div>
+            <h3>Destek & Ortak Dosyalar</h3>
+            <p>Uzaktan yardım, tarama dosyaları ve teknik özellik belgeleri</p>
+          </div>
+        </div>
+        <div class="pi-grid">
+
+          <article class="pi-card" data-cat="destek" data-search="anydesk uzak destek masaüstü bağlantı">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-remote" aria-hidden="true">
+                <img src="/wp-content/uploads/2024/08/Screenshot2024-03-21095210-ezgif.com-resize.png" alt="AnyDesk" loading="lazy" width="200" height="200">
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Uzak destek</span>
+                <h4 class="pi-card-title">AnyDesk</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Uzaktan teknik destek için güvenli bağlantı programı. Ledajans ekibinin yazılım kurulumu yapabilmesi için indirin.</p>
+              <a href="https://anydesk.com/en" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                AnyDesk indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="destek" data-search="tarama dosyaları scan rcfg">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-folder" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Klasör</span>
+                <h4 class="pi-card-title">Tarama Dosyaları</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Ekranınızın doğru görünmesi için kullanılan ayar dosyaları. Google Drive klasörü açılır; kartınıza uygun dosyayı seçin.</p>
+              <a href="https://drive.google.com/drive/folders/1zDVV7am98E-Q6AuEx3s6N66kjVlTVhQj?usp=sharing" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Tarama klasörünü aç
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="destek" data-search="teknik özellikler datasheet pdf">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-doc" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Belge</span>
+                <h4 class="pi-card-title">Teknik Özellikler</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Ürün ölçüleri, çözünürlük ve teknik bilgiler. Program değil — bilgilendirme dosyasıdır.</p>
+              <a href="https://drive.usercontent.google.com/download?id=1KoEUv2DC8wKPH53Io_itsQD2Dl1ZTfxh&authuser=0" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Teknik özellikleri indir
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- COLORLIGHT -->
+      <div class="pi-cat" data-cat="colorlight">
+        <div class="pi-cat-head">
+          <div class="pi-cat-badge c-color" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+          <div>
+            <h3>Colorlight Programları</h3>
+            <p>Kartınızda “Colorlight” yazıyorsa bu bölümü kullanın</p>
+          </div>
+        </div>
+        <div class="pi-grid">
+
+          <article class="pi-card" data-cat="colorlight" data-search="playmastertr playmaster colorlight oynatıcı">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-app" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Ana program</span>
+                <h4 class="pi-card-title">PlayMaster TR</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Colorlight ekranlara video / yazı yayınlamak için ana Türkçe program. Çoğu kullanıcı önce bunu indirir.</p>
+              <a href="https://drive.google.com/uc?export=download&id=16BqRtYl5XpCOHx04Vy8O0M0hdO5QEvXj" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                PlayMaster TR indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="colorlight" data-search="playmaster manual kılavuz pdf user manual">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-pdf" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">PDF kılavuz</span>
+                <h4 class="pi-card-title">PlayMaster Kullanım Kılavuzu</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">PlayMaster’ı adım adım anlatan Türkçe PDF. Program değil — okuma / yazdırma dosyasıdır.</p>
+              <a href="/wp-content/uploads/2025/03/PlayerMaster-User-Manual-V1.4-TR.pdf" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Kılavuzu indir (PDF)
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="colorlight" data-search="led settings ledsettings colorlight ayar">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-app" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Ayar programı</span>
+                <h4 class="pi-card-title">LED Settings V2.2</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Colorlight kartın ekran ayarlarını (tarama, parlaklık, eşleme) yapan program.</p>
+              <a href="https://drive.google.com/file/d/1tfHaa5BL_iddhBFzyMCsYUXf04nPgJPD/view?usp=sharing" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                LED Settings indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="colorlight" data-search="ledupgrade upgrade güncelleme colorlight">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-app" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Güncelleme</span>
+                <h4 class="pi-card-title">LEDUpgrade V5.2</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Colorlight kartın iç yazılımını (firmware) günceller. Destek ekibi söylemeden indirmeyin.</p>
+              <a href="https://drive.google.com/file/d/1NV5wVmb-rkJ9qz2oQ67GXS_6UFRLXiX2/view?usp=drive_link" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                LEDUpgrade indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="colorlight" data-search="ledvision vision colorlight yayın">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-app" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Yayın programı</span>
+                <h4 class="pi-card-title">LedVision 9.7</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Colorlight için alternatif içerik yayın yazılımı. PlayMaster yerine veya yanında kullanılır.</p>
+              <a href="https://drive.google.com/file/d/1clcgdzazxoH5Y3o-WJVsKLLg8Tvh03qi/view?usp=drive_link" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                LedVision indir
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- HUIDU / HD -->
+      <div class="pi-cat" data-cat="huidu">
+        <div class="pi-cat-head">
+          <div class="pi-cat-badge c-huidu" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+          <div>
+            <h3>Huidu / HD Serisi</h3>
+            <p>Kartınızda “HD” veya “Huidu” yazıyorsa buradan indirin</p>
+          </div>
+        </div>
+        <div class="pi-grid">
+
+          <article class="pi-card" data-cat="huidu" data-search="hdplayer hd serisi huidu oynatıcı">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-huidu" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Ana program</span>
+                <h4 class="pi-card-title">HDPlayer V7.11.8.0</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">HD / Huidu serisi kartlara içerik yüklemek için ana program. Çoğu HD kullanıcı bunu indirir.</p>
+              <a href="https://drive.google.com/uc?export=download&id=1LdOMy0ENd3RiUvghE1coe0gx7OTGS-K5" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                HDPlayer indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="huidu" data-search="hdsign hd kontrol kartı">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-huidu" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">İçerik / tabela</span>
+                <h4 class="pi-card-title">HDSign V2.0.2</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">HD kontrol kartı için tabela / yazı içerik programı. Destek ekibi önerdiyse indirin.</p>
+              <a href="https://drive.google.com/file/d/13ylhEOkXGu4BDJc6JVFoioqqdoCmQR5x/view?usp=sharing" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                HDSign indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="huidu" data-search="hdset ayar hd kontrol">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-huidu" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Ayar programı</span>
+                <h4 class="pi-card-title">HDSet V4.0.16</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">HD kartın ekran / iletişim ayarlarını yapan program. İlk kurulumda sık kullanılır.</p>
+              <a href="https://drive.google.com/file/d/1Ro4MFVYNcuN98wVSIPQI2XuC-SMITJnP/view?usp=sharing" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                HDSet indir
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- NOVA & TF -->
+      <div class="pi-cat" data-cat="nova">
+        <div class="pi-cat-head">
+          <div class="pi-cat-badge c-nova" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+          <div>
+            <h3>Nova Star & TF Serisi</h3>
+            <p>Nova / Novastar veya TF yazılı kartlar için</p>
+          </div>
+        </div>
+        <div class="pi-grid">
+
+          <article class="pi-card" data-cat="nova" data-search="novalct nova star novastar 5.3.1">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-nova" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Önerilen</span>
+                <h4 class="pi-card-title">NovaLCT V5.3.1</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Nova Star kartlar için resmi ayar ve kurulum programı. Genelde bu sürümü kullanın.</p>
+              <a href="https://oss.novastar.tech/uploads/2020/07/NovaLCT-V5.3.1.zip" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                NovaLCT 5.3.1 indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="nova" data-search="novalct nova star 5.3.0">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-nova" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Eski sürüm</span>
+                <h4 class="pi-card-title">NovaLCT V5.3.0</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">NovaLCT’nin bir önceki sürümü. Yeni sürüm açılmazsa bunu deneyin.</p>
+              <a href="https://oss.novastar.tech/uploads/2020/01/NovaLCT-V5.3.0.zip" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                NovaLCT 5.3.0 indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="nova" data-search="tf powerled power led serisi">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-tf" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">TF kart</span>
+                <h4 class="pi-card-title">TF PowerLed 2.89.4</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">TF serisi kontrol kartı için yayın / ayar programı. Kartınızda “TF” geçiyorsa bunu indirin.</p>
+              <a href="https://drive.usercontent.google.com/download?id=1KoEUv2DC8wKPH53Io_itsQD2Dl1ZTfxh&authuser=0" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                TF PowerLed indir
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- MOBİL -->
+      <div class="pi-cat" data-cat="mobil">
+        <div class="pi-cat-head">
+          <div class="pi-cat-badge c-mobil" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+          <div>
+            <h3>Mobil Uygulama</h3>
+            <p>Telefondan LED ekran yönetmek için (Huidu LedArt)</p>
+          </div>
+        </div>
+        <div class="pi-grid">
+
+          <article class="pi-card" data-cat="mobil" data-search="ledart mobil uygulama huidu app telefon">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-phone" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Telefon uygulaması</span>
+                <h4 class="pi-card-title">LedArt Mobil Uygulama</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Telefonunuzdan Huidu ekranı yönetmek için uygulama. Bilgisayar programı değil — telefonunuza kurulur.</p>
+              <a href="https://www.huidu.cn/qrcode.html" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                LedArt indir sayfasını aç
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="mobil" data-search="ledart kılavuz manual app">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-pdf" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Kılavuz</span>
+                <h4 class="pi-card-title">LedArt Kullanma Kılavuzu</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">LedArt uygulamasının nasıl kullanılacağını anlatan resmi rehber sayfası.</p>
+              <a href="https://www.huidu.cn/User_Manual_APP_en.html" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                Kılavuzu aç
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+    </div>
+
+    <p class="pi-empty" id="pi-empty" role="status">Bu aramaya / seçime uygun dosya yok. <strong>Tümü</strong>ne tıklayın veya başka kelime deneyin.</p>
+  </div>
+</section>
+
+<script type="application/json" id="huidu-tarama-katalogu">[{"p":"HDPlayerExport","n":"ekran.boo","id":"1SsQ3HITdy0GQ9jBHRHu4piWu32dvy6ES","b":"Huidu"},{"p":"P1 (N208) 1065L 5368 17286","n":"asasasasasa.ssx","id":"1o9FJ8w-_IpWn33X3I50Qcojs1KwZJDD3","b":"Huidu"},{"p":"P1 (N208) 1065L 5368 17286","n":"C16L_FPGA_V9_16_17_65.bin","id":"19S3qxb-UDlj4RNWwTUWdCqOVov9PIDxB","b":"Huidu"},{"p":"P1 (N208) 1065L 5368 17286","n":"FPGA_C08L_V9_8_11_71.bin","id":"1XMaLa5otdyeDWktk_4hNZhB2j-z2Q7NN","b":"Huidu"},{"p":"P1 (N208) 1065L 5368 17286","n":"P1 (N208) 1065L 5368 17286.ssr","id":"1zjycmVAANL4b1OLcWXgq7pIp4Pk3MyWd","b":"Huidu"},{"p":"P1 (N208) 1065L 5368 17286","n":"P1 (N208) 1065L 5368 17286.ssx","id":"124vhed5dhzDrsDTdm7e2UYoPaGoX0Qy3","b":"Huidu"},{"p":"P1 (N208) 1065L 5368 17286","n":"R708_FPGA_V25.14.65.32.bin","id":"1FPrSBkamIiGg7OS4ZH22a_dhJfp_VwFI","b":"Huidu"},{"p":"P1 (N208) 1065L 5368 17286","n":"R712_FPGA_V25.16.65.30.bin","id":"1QBGbNfbgL0LPXlRMGweyav18YkJDOFBv","b":"Huidu"},{"p":"P1 (N208) 1065L 5368 17286","n":"R716_R732_FPGA_V25.14.65.31_MCU_V23.02.10.11.bin","id":"1kJqlfBW51v1IiNePATtnub3TJfTKNW_r","b":"Huidu"},{"p":"P1.53 J503","n":"P 1.53 J503.ssr","id":"1x6AE7LO27Rx5URdB1ZManLJuTb0RZE8g","b":"Huidu"},{"p":"P1.53 J503","n":"P 1.53 U512.ssr","id":"1DHFFbd6zTNUWa_54bg6FYg6A_5WPS5ol","b":"Huidu"},{"p":"P1.53 J503","n":"R712_FPGA_V25.16.65.30.bin","id":"1l2yp3rKfCqoLq5zfvuXohiCTz-Gb3ZyW","b":"Huidu"},{"p":"P1.86 / P1 86 1065 2018","n":"P1 86 1065 2018.ssr","id":"1mSd7SyAxF8Eqrx_ILY6l9UFG-mvY9chb","b":"Huidu"},{"p":"P1.86 / P1 86 1065S 2018 (J502)","n":"C16L_FPGA_V9_16_14_65.bin","id":"1FV970ut6ZAwLPjeLJkf-IY1rUQNY232e","b":"Huidu"},{"p":"P1.86 / P1 86 1065S 2018 (J502)","n":"H1 86 1065S 2018 (J502).ssr","id":"1tbPxPGqox7pgfJiugoXYjiJVQqcOEanC","b":"Huidu"},{"p":"P1.86 / P1 86 1065S 2018 (J502)","n":"H1 86 1065S 2018 (J502).ssx","id":"1XMg1oZJcpi7V3t9GrWdAXti0Ol3Nuc_R","b":"Huidu"},{"p":"P1.86 / P1 86 3365S 32020 (S557)","n":"P1 86 3365S 32020 (S557).ssx","id":"1U7v5DMki3yfEmfQ1NCwq0gYl_eTuO1CA","b":"Huidu"},{"p":"P1.86 / P1.86","n":"P 1.86 J502.ssr","id":"1gk9eX3lPEmEQv6tlef7Iawa0RcLIhvW7","b":"Huidu"},{"p":"P1.86 / P1.86","n":"P1.86 1065_32020 A519.ssr","id":"1bDELAha62EpNbdqSZczS_h7qOicAInKG","b":"Huidu"},{"p":"P1.86 / P1.86","n":"p1.86 j520.ssr","id":"1wtGyMRaip3j3QYpf2dLhVn7YPzVHYQ7J","b":"Huidu"},{"p":"P1.86 / P1.86 1065 2018 (D233)","n":"P1.86 1065 2018 (D233).ssx","id":"1E9xhZZ2iVi7fmhZ56TCyUWwZbra1nSDv","b":"Huidu"},{"p":"P1.86 / P1.86 1065L 5368 (N513)","n":"P1.86 1065L 5368 (N513).ssr","id":"1HjgYEtd8r31a6qS5q7rjfRrZxJxaxjUs","b":"Huidu"},{"p":"P10 / P10 4S E534 SM16208SF 138 - 4953","n":"P10 4S E534 SM16208SF 138 - 4953.ssr","id":"1dEnDC61SdxDmX13k9NOdysnac6sUZGxq","b":"Huidu"},{"p":"P10 / P10 4S E534 SM16208SF 138 - 4953","n":"P10 4S E534 SM16208SF 138 - 4953.ssx","id":"1Lz3Nzq_-50iDeMqSH4YvR3_kdQQCY6cJ","b":"Huidu"},{"p":"P10 / P10 4S TARAMA","n":"p10 4s.hds","id":"1OozwQnHLnh4ajinB1u31VnU0SVk3V5S5","b":"Huidu"},{"p":"P10 / P10 8S TARAMA","n":"P10 8S TARAMA.hds","id":"1m1G7ae_QHYNtsFQBeO7sYku35sdZN5D4","b":"Huidu"},{"p":"P10 / P10 8S TARAMA","n":"P10 8S.hds","id":"1rlKa6MdIL2eCR-7XKjIWsCh6ulTTVONh","b":"Huidu"},{"p":"P2 3265S 2018 KARE (J534)","n":"P2 3265S 2018 KARE (J534).ssr","id":"1ay6KfRYO1UF-VfQevtSm4p3Zn5foq-Nw","b":"Huidu"},{"p":"P2.5 / P2.5 1065L 7258 (E506)","n":"P2.5 1065L 7258 (E506).ssr","id":"11G909TUd2X6rQNsZRvcJcBin7mTn430e","b":"Huidu"},{"p":"P2.5 / P2.5 1065L 7258 (E506)","n":"P2.5 1065L 7258 (E506).ssx","id":"1RtBNXrnF5Cr2I3ySciWsr-QBKEdnFZC2","b":"Huidu"},{"p":"P2.5 / P2.5 1065S 2012 (J609)","n":"P2.5 1065 2012 (J609).ssr","id":"195r61gyEIOOWfxSLeXIuEEx5g7AuTMfA","b":"Huidu"},{"p":"P2.5 / P2.5 1065S 2012 (J609)","n":"P2.5 1065S 2012 (J609).ssr","id":"1dPJz1Yx7fFslL4YCgZLYPv_fOZcltkvV","b":"Huidu"},{"p":"P2.5 / P2.5 1065S 2012 (J609)","n":"P2.5 1065S 2012 (J609).ssx","id":"1DsbVS-hI2n5Q4TUO_XqkUMztpT5vgK8I","b":"Huidu"},{"p":"P2.5 / P2.5 12864 (A517) 1065AP 7258","n":"C16L_FPGA_V9_16_17_65.bin","id":"1k5Ox37VA8Me2sfM8ZvDCtD2w1kVidBj7","b":"Huidu"},{"p":"P2.5 / P2.5 12864 (A517) 1065AP 7258","n":"P2.5 12864 (A517) 1065AP 7258.ssr","id":"1pjlgPHun2_UrQBOV-pCfjZTrG1fcBTkr","b":"Huidu"},{"p":"P2.5 / P2.5 12864 (A517) 1065AP 7258","n":"P2.5 12864 (A517) 1065AP 7258.ssx","id":"1VsTfIIiYAkcLFdMBk66B58rB2bBPjjA2","b":"Huidu"},{"p":"P2.5 / P2.5 12864 3265S 32020 (E516)","n":"C16L_FPGA_V9_16_17_65.bin","id":"1uPfovFmBZ3NFQwMEhoKaqJrf0Jmxm3QT","b":"Huidu"},{"p":"P2.5 / P2.5 12864 3265S 32020 (E516)","n":"P2.5 12864 3265S 32020 (E516).ssr","id":"1abtRuZLRQTWjhNJOIIEAPXxyT05RbL5o","b":"Huidu"},{"p":"P2.5 / P2.5 12864 3265S 32020 (E516)","n":"P2.5 12864 3265S 32020 (E516).ssx","id":"1pSETIJW0hKdEzxGdcuwk2Ny0Qdfs1eou","b":"Huidu"},{"p":"P2.5 / P2.5 2037 138 (Z405)","n":"P2.5 2037 138 (Z405).ssr","id":"11nPDUa1bMFcWtoZziY1cNEgPE5I4VmI5","b":"Huidu"},{"p":"P2.5 / P2.5 2153 2012 (E404)","n":"P2.5 2153 2012 (E404).ssr","id":"1oxlUy6l5rJVkGvtqMm-9ZTbkwF3bR6DZ","b":"Huidu"},{"p":"P2.5 / P2.5 A550","n":"P2.5 A550 TARAMA.ssr","id":"1mVlU5rUf0avbo6iJpJ4Ab5xUKrR5tK0U","b":"Huidu"},{"p":"P2.5 / p2.5 e0450","n":"p2.5 e0450 tarama.ssr","id":"1c3KV1_MKIDViv1DQ57P5eQEP9IKW3tLR","b":"Huidu"},{"p":"P2.5 / P2.5 INDOOR (A551) (J549 ) (A521 )","n":"KKKK.ssr","id":"1zRq64KMafU3Snv2kujhOknZijNRluPxT","b":"Huidu"},{"p":"P2.5 / P2.5 INDOOR (A551) (J549 ) (A521 )","n":"p 2.5 2037.ssr","id":"1hjit6CfL6ocggqNAVT8dX2JT6PEw8P7M","b":"Huidu"},{"p":"P2.5 / P2.5 INDOOR (A551) (J549 ) (A521 )","n":"P2.5 .ssr","id":"14wghNgR2Dk9tSChhx_K7gaTZjxMhsNqC","b":"Huidu"},{"p":"P2.5 / P2.5 INDOOR (A551) (J549 ) (A521 )","n":"P2.5 GOB.ssr","id":"1bDBuQ57sRvfYBMGnSodsq5TVrv3FmGhY","b":"Huidu"},{"p":"P2.5 / P2.5 INDOOR (A551) (J549 ) (A521 )","n":"P2.5 J549.ssr","id":"1CVT4mrseVSV-HEMVKgwgClJJiEkZHF7Q","b":"Huidu"},{"p":"P2.5 / P2.5 INDOOR (A551) (J549 ) (A521 )","n":"p2ç5 esnek h007.ssr","id":"1ZCc6whunffsutvuoKjjzQWkP3Rn4iDLd","b":"Huidu"},{"p":"P2.5 / P2.5 INDOOR (A551) (J549 ) (A521 )","n":"R712_FPGA_V25.10.63.30.bin","id":"1yG0B6PYOcjoF0pE62C7Fa6I6tmnGYq7K","b":"Huidu"},{"p":"P2.5 / p2.5 outdoor e516","n":"p2.5 outdoor e516.ssx","id":"1P6MeCOyg29c26Wa4es7DQdBRDdHq6cpb","b":"Huidu"},{"p":"P2.5 / p2.5 outdoor e516","n":"p2ç5 outdoor e516.ssr","id":"1RL7OGyIkSwWdhWgPFb8gjJZwewz8dO_A","b":"Huidu"},{"p":"P2.5 / p2.5 outdoor e516","n":"R716_R732_FPGA_V25.14.65.31_MCU_V23.02.10.11.bin","id":"1AcEzJoNXDlQbuM-z0Tk-MTvMqEra0jdY","b":"Huidu"},{"p":"P2.5 / P2.5 SOFT  1065 2012 (G517)","n":"P2.5 SOFT  1065 2012 (G517).ssr","id":"1NLjGPae21FpFH_1XPFfOMWksbesp3bZd","b":"Huidu"},{"p":"P3 / P3 3265 1012 E514","n":"C16L_FPGA_V9_16_17_65.bin","id":"1NV9Xlnc-Gcw8-dZIlw7kkP-6Y8CPUMv0","b":"Huidu"},{"p":"P3 / P3 3265 1012 E514","n":"P3 3265 1012 E514.ssr","id":"1wWCJUQ7byYVzyLLUmyVE6p4EFTsBsEaZ","b":"Huidu"},{"p":"P3 / P3 3265 1012 E514","n":"P3 3265 1012 E514.ssx","id":"1V1rD42afof2XaYzEBz75OP1G3CkjKu-o","b":"Huidu"},{"p":"P3 / p3 indoor z504","n":"p3 ındoor z504 2037-2012.ssr","id":"11WQHTnGIf4SH-o2YETdZLPiaik4UL97q","b":"Huidu"},{"p":"P3 / p3 indoor z504","n":"p3 ındıır z504.ssx","id":"1WDTDr_fFGt6TTP1yrtOi9T2krUlGkDPm","b":"Huidu"},{"p":"P3 / P3 OUTDOOR _( J571)_( A577 )","n":"p3 outdoor j571.ssr","id":"1AfDohQc6JVr51tYr-zxOHL-ta2-zsBSq","b":"Huidu"},{"p":"P3 / P3 OUTDOOR _( J571)_( A577 )","n":"P3.076.ssr","id":"10Hu-sb6FII07lWFPx1bMeIaAOIUsCv4v","b":"Huidu"},{"p":"P3 / P3 OUTDOOR _( J571)_( A577 )","n":"P3.076.ssx","id":"1_XRndjfIXr0VZLBX0EYHZEZin8JVaFfK","b":"Huidu"},{"p":"P3 / p3 outdoor j571","n":"p3 outdoor j571.ssr","id":"1zkeDQ_PRcgEFMq6bouV9nPlAKusOZRwG","b":"Huidu"},{"p":"P3 / P3 U511 3265","n":"P3 U511 3265.ssr","id":"1i_nHww1TBoWNrTwxv3m4LrsRZuUMvp9_","b":"Huidu"},{"p":"P3 / P3.076 3265S 2012 (E558)","n":"P3.076 3265S 2012 (E558).ssr","id":"1Beyb-A_AS_EjONe6QNcM9gHeYkIEk9i4","b":"Huidu"},{"p":"P4 / P4 (A507) 1065L 1012","n":"C16L_FPGA_V9_16_17_65.bin","id":"1uda34GnDAFcsgPJMtbwrNpqAWpKItlew","b":"Huidu"},{"p":"P4 / P4 (A507) 1065L 1012","n":"P4 (A507) 1065L 1012.ssr","id":"1DdMsrW4jn8W29UXVUkucKv3yJ1Px8vBu","b":"Huidu"},{"p":"P4 / P4 (A507) 1065L 1012","n":"P4 (A507) 1065L 1012.ssx","id":"18wWK0Ls4jMT6q9iQmO539_BrgFO3aKWO","b":"Huidu"},{"p":"P4 / P4 16208 2018 (E502)","n":"P4 16208 2018 (E502).ssx","id":"1ue63b5LA-W-39l90BvZ46mxcjVwLzPQZ","b":"Huidu"},{"p":"P4 / P4 3265S 2018 (E501)","n":"P4 3265S 2018 (E501).ssr","id":"1HyKVF_0il4mwLumRQqGXk2EjQ4h1Ge1Z","b":"Huidu"},{"p":"P4 / P4 3265S 2018 (E589)","n":"P4 3265S 2018 (E589).ssr","id":"1_voKW302Bo1OVBG5I_7V0h8WpNR8SxlG","b":"Huidu"},{"p":"P4 / P4 5125 2012 (S533)","n":"P4 5125 2012 (S533).ssr","id":"161BK8JYWM0CbDUKGWcKRhxwQE3O3Nphf","b":"Huidu"},{"p":"P4 / P4 INDOOR A507","n":"P4 INDOOR A507.ssr","id":"1rroM5FaB8cdWPTw6UIR_GEVqzm08M1O7","b":"Huidu"},{"p":"P4 / P4 OUTDOOR_ (A569)_(J533)","n":"P4.ssr","id":"1M_Ks6Gae36m-E4fXYki5xOyEkHTySMev","b":"Huidu"},{"p":"P4 / P4 OUTDOOR_ (A569)_(J533)","n":"P4.ssx","id":"1y8TY2WXnvk70JG0pdJGZMOq_bi7NV7AE","b":"Huidu"},{"p":"P5 / P5 (U521) TARAMA","n":"P5 (U521) TARAMA.ssr","id":"1dz-f_T5yzJ32rDllWReAN9ixUxXL0n6k","b":"Huidu"},{"p":"P5 / P5 16169SH 2012 (E512)","n":"P5 16169SH 2012 (E512).ssx","id":"1eas6bdMWYwtrzlalAkqE5fKf_Ncm8U-m","b":"Huidu"},{"p":"P5 / p5 16208 1012","n":"p5 16208 1012.ssr","id":"1-dR95Wb1oWL_Rh95XLGf21_mTuqMKUdg","b":"Huidu"},{"p":"P5 / P5 3265S 2012 (E582)","n":"P5 3265S 2012 (E582).ssr","id":"1-6CkEQ76eT2j2uHyBLFHnzL6EGVEljVM","b":"Huidu"},{"p":"P5 / P5 3265S 2012 (U521)","n":"P5 3265S 2012 (U521).ssr","id":"1wPcVGqCo9xtYVI87PhqnqbqZf-qVtpn0","b":"Huidu"},{"p":"P5 / P5 6432 3265S 2012 (E519)","n":"C16L_FPGA_V9_16_17_65.bin","id":"1JL1GeOxBLoJKnyMW4BFzgfMsVJlvdxxy","b":"Huidu"},{"p":"P5 / P5 6432 3265S 2012 (E519)","n":"P5 6432 3265S 2012 (E519).ssr","id":"1PH68F0o_r11DB8DNXnSrR1ubeVhijkHj","b":"Huidu"},{"p":"P5 / P5 6432 3265S 2012 (E519)","n":"P5 6432 3265S 2012 (E519).ssx","id":"14wGoFSaQZ64Nsc1rJnJkbZxaAqdXXSyw","b":"Huidu"},{"p":"P5 / P5 OUTDOOR  A557","n":"P5.ssr","id":"15gTr_fUp51_RA2vGtOH-oBtIBX4Igmg0","b":"Huidu"},{"p":"P5 / P5 OUTDOOR  A557","n":"P5.ssx","id":"1iEQdYatg5wG0nO0xP2UDk2TkfD9nCOAv","b":"Huidu"},{"p":"P5 / p5 outdoor 2037-2012","n":"p5 outdoor 2037-2012.ssr","id":"1y7WwZyHi4zma2OtRmEZWS0G8ap7ur5mh","b":"Huidu"},{"p":"P5 / p5 outdoor a571","n":"p5.ssr","id":"1XtOLTf-yhMsHf3r0dEtYt1QKpgucmQ7n","b":"Huidu"},{"p":"P5 / p5 outdoor a571","n":"p5.ssx","id":"18JUb97H5Pdr1EZLnlnX7uiqK0FDBPM7e","b":"Huidu"},{"p":"P5 / P5-557","n":"C16L_FPGA_V9_16_14_65.bin","id":"1RiWUTZjJ46e1OlKCxkEqE7iWeUpBLg_Z","b":"Huidu"},{"p":"P5 / P5-557","n":"PM5016208SF1012.ssr","id":"19pzR6Drem9ecJg3RnDA9XdZ3sH1YRZEF","b":"Huidu"},{"p":"P6 2037 7258 8S","n":"P5 16169SH 2012 (E512).ssr","id":"11fw6xhztJB52Knnu19O9eSTeXjCiqdDD","b":"Huidu"},{"p":"P6 2037 7258 8S","n":"P6 2037 7258 8S.ssr","id":"1snvTaJtbDXrESlV_r08nq9fh8Z-B-dQS","b":"Huidu"},{"p":"P6 2037 7258 8S","n":"P6 2037 7258 8S.ssx","id":"1tyY_dpL6U10Y4-PdO4LOGFK4DnF6MSOE","b":"Huidu"},{"p":"Q1 3264 32020 CHANGLİ","n":"Q1 3264 32020 CHANGLİ.ssm","id":"1GaX7dtClN85x4v1w8BX9ZHhbpVa9R6hC","b":"Huidu"},{"b":"Colorlight","p":"","n":"p3.33 16169SH 32020.rcvbp","id":"1lnBJKxXqNC46AuIQWQmub4jMzIipZJ7Y"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"10.92.hex","id":"1nIYqLdwGNzmkVD-TqQ-ZA0xaiC_Q6E6d"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"11.03.hex","id":"13Nduy8AD7bpFbl8v75g3Dql__36ce92y"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"11.06-PWM.hex","id":"18hM69f2uL5d14uakmFoqORWESalpF1LW"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"12.16-PWM-irregular.hex","id":"1cZI29FfB674Uyh8gs4kWGJFsgM1I7vSL"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"12.35.hex","id":"1QiQX3QTz2GUeM-DxbCEzSGn5nSsJqABN"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"13.08-Norma-irregular.hex","id":"1E6L-amZ8rhQlsDWU0UYOw79AeAmCm6nl"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"13.80-Normal.fw","id":"1D4M_7bDj0jgw3Ey2_7ijfICWYCDA1br7"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"15.35.hex","id":"1UCnIfvR0aB9T_ebIOcdVg0Vc7xIUlGtr"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"16.55.hex","id":"1hiw5BcuRWSYjFYx5tG6dZAnHpHcuF-s9"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"19.10.hex","id":"1fRiI1l46zzKZvR1echhIRsJOiR5ic4YK"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"3.33.hex","id":"15bCR6Udnewj-bzFPobv1_3_qlfueYq17"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"3.52.hex","id":"1nNyQnWmiklHqouhCcabxeg1xNSeKFqjh"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"7.30.hex","id":"11LBkr079XQ-d6U-puVeBIvW8saFV0JX0"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"7.52.hex","id":"1lz3Q-enlUeZo-IVCzcxSNxP_PSYADX5v"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"8.85.fw","id":"1baCG-lgKdACq5RijkN_JSa4tLlOAb9nP"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"9.80.fw","id":"1NHlpZZyOQA2u0tDV9Ix7J4j7RZW_Ov2e"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"E320_Pro_PCB1.0_PWM_FPGA3.26_20250409_infibit5.0_ICND1068.hex","id":"1JLnqcXGDcybz6SDTlNW9gkuby7C8CKDT"},{"b":"Colorlight","p":"COLORLIGHT UPDATE DOSYALARI / COLORLIGHT","n":"K5+ 22.09.fw","id":"10Enh4Ss7wk8qi5IVLFtmucX4vK3RZjHN"},{"b":"Colorlight","p":"P0,93","n":"E320 27.01.fw","id":"16L1kum3Zg6QMgSyxdrpnORTJMrtlKXgi"},{"b":"Colorlight","p":"P0,93","n":"P.093.rcvbp","id":"1jOV5Flqeyr66gTqfVGkQ-5nMzXINXO4h"},{"b":"Colorlight","p":"P0,93","n":"P0.9375-2069-3840-2020.7.16.rcvbp","id":"1n1ov4GC0V5f4pVqM5BX1E1AMxh6bF01l"},{"b":"Colorlight","p":"p0.93 1065S 32020 E320PRO","n":"0.93-ICN1065S+DP32020.rcvbp","id":"1FP__I_TBM7mGYoVdGKpjg4x5Wrp3ecN7"},{"b":"Colorlight","p":"p0.93 1065S 32020 E320PRO","n":"E320_Pro_PCB1.0_PWM_FPGA2.19_20250911_infibit5.0_vr4.hex","id":"1oxwq6bBYD3J9BLK2Krti2Q99ERpMehVv"},{"b":"Colorlight","p":"P1.25","n":"1.25优化-1.rcvbp","id":"1SKwP61hPcuzyjlDUYZ-mDBlLpiSM6T4v"},{"b":"Colorlight","p":"P1.25","n":"p1.25 1065S 2012 C537.rcvbp","id":"1Zwt3rPg10J6zYyhso_3Tz8TOnpS3eCcj"},{"b":"Colorlight","p":"P1.25","n":"P1.25-1065S-2018-60S-480-270-3840Hz-poster.rcvbp","id":"151mH-qH0zv97CyoIo9uI3SUXttsMfRR3"},{"b":"Colorlight","p":"P1.25","n":"P1.25-1065S-2018-60S-480-270-3840Hz.rcvbp","id":"1TcruwFaiYAOeRkAiLtlaAVyH0CwJkbc5"},{"b":"Colorlight","p":"P1.25","n":"P1.25-1069-120x45-480x45.rcfgx","id":"1Bi9qRgKH-B9lFiWXv2Nhnr0ldbb0u4E9"},{"b":"Colorlight","p":"P1.53 / H1.53 52S 1065-1018 208x208px","n":"1.53-H 1065S 3840hz 20241113.rcvbp","id":"1EMwcegA1czXqSALe3FL8tWjcWN4aMyut"},{"b":"Colorlight","p":"P1.53 / H1.53 52S 1065-1018 208x208px","n":"1.53-H 1065S 75接口 6480hz 20240314.rcvbp","id":"19ktXS12DTe2PFVUfcmul_cU6vWxpzsaj"},{"b":"Colorlight","p":"P1.53 / H1.53 52S 1065-1018 208x208px","n":"E320_PCB6.0_PWM_FPGA10.81_20230907高刷芯片.hex","id":"1YYbQtw_SYcU1JLnf0kqGAtMwGyDX6dKz"},{"b":"Colorlight","p":"P1.53 / H1.53-1065S-2018-52S-U524 - J503","n":"H1.53 J503.rcvbp","id":"1KNLq1pi2_OgOS81LD8-wTEcdgV4D9v_E"},{"b":"Colorlight","p":"P1.53 / H1.53-1065S-2018-52S-U524 - J503","n":"H1.53-1065S-2018-52S.rcvbp","id":"12yGXlYLBvODR1wkxPhckSh49RsUWzhB0"},{"b":"Colorlight","p":"P1.53 / P1.53-1065-2018-52S-U403","n":"P1.53(320X160)-1065-2018-52S.rcvbp","id":"1EnVQK6o2E7D40YtBHbPoZAVntnGnGkO9"},{"b":"Colorlight","p":"P1.86","n":"128x32-32S-(ICND1065S+DP32019)-20260601090256.rcvbp","id":"1VHa6krux51MdMbvUKARBK05klc14gD2J"},{"b":"Colorlight","p":"P1.86","n":"p1.25 1065S 2012 C537.rcvbp","id":"1SdPv7BjzdzUeaDE04sWhX2H9YNJAAAVC"},{"b":"Colorlight","p":"P1.86","n":"P1.86 1065L 5368 M513 (12.35).rcvbp","id":"1mgJRiUFgZvbNalr39z-nGpnfLUcGy46l"},{"b":"Colorlight","p":"P1.86","n":"P1.86 1065S 2018 G511.rcvbp","id":"1XS1jKQNs-nfbl-SZoo4yZbylCeA4fjBR"},{"b":"Colorlight","p":"P1.86","n":"p1.86 2263 2018 (3,52).rcvbp","id":"1mDlC-CO7g-Wjv_PCxLPVbup0IQnyiUCF"},{"b":"Colorlight","p":"P1.86","n":"P1.86 3365S 32020 (15.35).rcvbp","id":"1Sftrj-EYsVq99DGD0OhhWxduB8_nSiDO"},{"b":"Colorlight","p":"P1.86","n":"P1.86 ICND1065S 5369 Z557.rcvbp","id":"1vfkcLdooMUYQl1vi9SWOAzfry-_o2wqq"},{"b":"Colorlight","p":"P1.86","n":"P1.86-1065L-32020-2018-43S-A015.rcvbp","id":"1AfpxwSiaWe4J5gItkg3H8nUdyg2yfvBb"},{"b":"Colorlight","p":"P1.86","n":"P1.86-1065L-32020-2018-43S-A015.rcvbp","id":"18fRfyDkLehrUZlCgOO0-mdkKTrfi5UMM"},{"b":"Colorlight","p":"P1.86","n":"P1.86-1065L-5368-2018-43S-GOB-U241.rcvbp","id":"1ndyIl0V1mifZ8KwjM9UIofhfpRMxTD5M"},{"b":"Colorlight","p":"P1.86","n":"P1.86-1065L-5368-2018-43S-GOB-U241.rcvbp","id":"1Uf9nx52lRoGJBoGfLXVOU8r-ujZVUNea"},{"b":"Colorlight","p":"P1.86","n":"p1.86-3365s-32020-s557.rcvbp","id":"1zXWXxE8aHHmAQEHd7RSdnhy6JcfPE0R0"},{"b":"Colorlight","p":"P1.86","n":"PH1.86(320X160)-1065+2018.rcvbp","id":"1cu7pTOVqmxsQiCM_V9u_100wqd0ckdYw"},{"b":"Colorlight","p":"P1.86","n":"户内PH1.86(320X160)-1065+2018-A卡莱特.rcvbp","id":"1_OfJYNVWR5cJ629SouS_klcEgkW5t8P1"},{"b":"Colorlight","p":"P1.86 / P1.86 J520","n":"2025-07-18 143654.rcvbp","id":"18m5e37keRMVnwCVOo6eF9JIF0W7-3Nz-"},{"b":"Colorlight","p":"P1.86 / P1.86 J520","n":"P1.86 J520.rcvbp","id":"1OFAxutGfTA20DuT8ohoSIJ2irRuGCIFc"},{"b":"Colorlight","p":"P1.86 / P1.86-1065-2018-43S-Flex-E410","n":"P1.86-1065-2018-43S-Flex-E410.rcvbp","id":"1rcaee-57DhrnKOet3-DndieNc3oj7ZJn"},{"b":"Colorlight","p":"P1.86 / P1.86-1065-2018-43S-GOB-D233-E410","n":"P1.86-1065-2018-43S-GOB-D233.rcvbp","id":"1xoqRUjjcknWMc4zHN4LqWMEygOiW_Dw3"},{"b":"Colorlight","p":"P1.86 / P1.86-1065L-32020-43S-A015","n":"P1.86-1065L-32020-2018-43S-A015.rcvbp","id":"1tOMOgfhmbBWNCTGBSEnFh2-BVi9FDU99"},{"b":"Colorlight","p":"P1.86 / P1.86-1065L-5368-2018-43S-GOB-U241","n":"P1.86-1065L-5368-2018-43S-GOB-U241.rcvbp","id":"1dYosqlGuFp6-7lgm-ilN8ID_fbpRqZ-P"},{"b":"Colorlight","p":"P1.86 / P1.86-1065S-2018-32020-43S-3840Hz-X530-X533-U525-J520 -J502 -A519","n":"P 1.86 J502.rcvbp","id":"1kr9CDbVKXq-xkBv0U7idONgdLL7gP6vb"},{"b":"Colorlight","p":"P1.86 / P1.86-1065S-2018-32020-43S-3840Hz-X530-X533-U525-J520 -J502 -A519","n":"P1.86  1065 .32020 J520.rcvbp","id":"1rgPGcKT4fBnqDZBvT12l3qoz8p_zCkHn"},{"b":"Colorlight","p":"P1.86 / P1.86-1065S-2018-32020-43S-3840Hz-X530-X533-U525-J520 -J502 -A519","n":"P1.86-172x1032-1065S_2018-43S-3840Hz-Norm..rcvbp","id":"1YUKaQ4HASWROioE3woEmHucJa0GVdRaY"},{"b":"Colorlight","p":"P1.86 / PH1.86(320X160)-1065+2018-I / PH1.86(320X160)-1065+2018","n":"E320_PCB6.1_PWM_FPGA10.56_20230106_Gkgd_ICN1065.hex","id":"10PB0iQ0ELb_-N1Y6zOr1evMLNcajSZsl"},{"b":"Colorlight","p":"P1.86 / PH1.86(320X160)-1065+2018-I / PH1.86(320X160)-1065+2018","n":"E320_PCB6.1_PWM_FPGA3.32_20240312_ICN2263ALL_FDFP_ENCRYPTION.fw","id":"1JKDxnsLDRdrLnWj6CvTh2bKC_7ildwtn"},{"b":"Colorlight","p":"P1.86 / PH1.86(320X160)-1065+2018-I / PH1.86(320X160)-1065+2018","n":"PH1.86(320X160)-1065+2018.rcvbp","id":"1uo6CWvhPpgaQfM4mkzFQWLHUbvKP0tci"},{"b":"Colorlight","p":"P1.86 / PH1.86(320X160)-1065+2018-I / Sorunlu çıkarsa","n":"E320_PCB6.1_PWM_FPGA3.33_20240524_ICN2263ALL_FDFP_ENCRYPTION.hex","id":"1II5G7RT8vSjZ169ol5ZFTT0_EeNTk11W"},{"b":"Colorlight","p":"P1.86 / PH1.86(320X160)-1065+2018-I / Sorunlu çıkarsa","n":"P1.86 -172x1032-1065_2018.rcvbp","id":"1ckFIdUbUOrWo-d3FSwmhzjs7BtcsO0Im"},{"b":"Colorlight","p":"P1.86 / PH1.86(320X160)-1065+2018-I / Sorunlu çıkarsa","n":"P1.86 -172x1032-1065_32020-20240604.rcvbp","id":"10cJuzFIgFVeI3n24lXV0LYd9Hqn-jSbK"},{"b":"Colorlight","p":"P1.86 / Q1.86-1065S-2018-43S-3840Hz-X535","n":"Q1.86-1065S-2018-43S-3840Hz-X535.rcvbp","id":"1xyMOyD1rwxiJv2jBHSl-LXmCcUJcdWGA"},{"b":"Colorlight","p":"P10","n":"P10 16208SF+4953 E534.rcvbp","id":"1-KT8_y4PhG0OO_YRe_i030RsNT7os7Pf"},{"b":"Colorlight","p":"P2","n":"PH2(320X160)-1065+2018-S.rcvbp","id":"1eYhfHpc2yehAMT6bVtZhGOsMUnAwEOgo"},{"b":"Colorlight","p":"P2","n":"PH2-1065+2018-32020-40S.rcvbp","id":"1N4qDvIc8vfId9LTcB5bfwg_TJRCAs39q"},{"b":"Colorlight","p":"P2.5","n":"P2.5  2038 138 (13.80).rcvbp","id":"1K9FMZLO5s01jIc0gKX6ehIqEai-QfPqz"},{"b":"Colorlight","p":"P2.5","n":"P2.5 1065AP 2012 (3.33).rcvbp","id":"1fWBmkfU3mU29kOcQ_RTnnUVlsNsPPw7s"},{"b":"Colorlight","p":"P2.5","n":"P2.5 1065AP 2012 (3.33).rcvbp","id":"1hMHyvmW3noJjNN_ActCWlSDUH4e746jF"},{"b":"Colorlight","p":"P2.5","n":"p2.5 1065L 7258 (12.35).rcvbp","id":"1HNqyHqCRdPC0NU1V0chvFooRdAVBGtOk"},{"b":"Colorlight","p":"P2.5","n":"p2.5 1065L 7258 (12.35).rcvbp","id":"1eMbD2gTud9Bs46aHheIngkNIL6onyGEp"},{"b":"Colorlight","p":"P2.5","n":"p2.5 1065s 2012 J609 G517 (11.06).rcvbp","id":"1q6ZR4WuHqWxGdQxqjTR42XnwH5Qph6M7"},{"b":"Colorlight","p":"P2.5","n":"p2.5 1065s 2012 J609 G517 (11.06).rcvbp","id":"1HHfG9QK1sleeeesFs8cdrsjwVvrKbbrk"},{"b":"Colorlight","p":"P2.5","n":"P2.5 1065S 32019.rcvbp","id":"1A45yyZOFhqDxX8BvT06tLhqS2RycxFvm"},{"b":"Colorlight","p":"P2.5","n":"P2.5 1065S 5369 Flexi (11.06).rcvbp","id":"13GCWmVkK3OBIaMVFd8qLbiCjDhcefIS5"},{"b":"Colorlight","p":"P2.5","n":"P2.5 1065S 5369 Flexi (11.06).rcvbp","id":"1Q6S747hAjTzVq6wrWIhfJ3PqUoBJwPi7"},{"b":"Colorlight","p":"P2.5","n":"P2.5 1065S-2012 J609.rcvbp","id":"15lTKcTJyfOxI6vty52eQiZ-W9oGgmkq_"},{"b":"Colorlight","p":"P2.5","n":"P2.5 1065S-2012 J609.rcvbp","id":"1VT4dsJe2sQCq-Wcm0EnhdSwSnHn_iq-a"},{"b":"Colorlight","p":"P2.5","n":"p2.5 16169 7258 (11.06).rcvbp","id":"10ZCZTjE8dCeF0YpGMJCcKJU2iORUVCBa"},{"b":"Colorlight","p":"P2.5","n":"p2.5 16169 7258 (11.06).rcvbp","id":"1U4EBP7sHERhHftJA1exqFBvFvQ9zkvQt"},{"b":"Colorlight","p":"P2.5","n":"p2.5 16169sh 6258(11.06).rcvbp","id":"1Dm54-zWkn3oakbje-8Fag6r6nso0ehv2"},{"b":"Colorlight","p":"P2.5","n":"p2.5 16169sh 6258.rcvbp","id":"1oBU1Nqt_d4haVMtuEYd8zBcjM3X9LRSx"},{"b":"Colorlight","p":"P2.5","n":"p2.5 3364s 32020.rcvbp","id":"1SrjZxMQjsicUDX5TrMWXqVbNZNaGtMjg"},{"b":"Colorlight","p":"P2.5","n":"P2.5 5125.rcvbp","id":"1FqPiXCQr3mB7NsQ6vU__gdeL5wBllIjF"},{"b":"Colorlight","p":"P2.5","n":"P2.5 E506 1065L.rcvbp","id":"1OmXrtA_LaswtLiCowbDPmfpoSRTOACiG"},{"b":"Colorlight","p":"P2.5","n":"P2.5 J549.rcvbp","id":"1_fx4zgdxrpkWFu3DL8npWdPb43mbk8tz"},{"b":"Colorlight","p":"P2.5","n":"P2.5 J549.rcvbp","id":"1ygAQLlSvZi-G38bj1CAd-GXdQbiDluzY"},{"b":"Colorlight","p":"P2.5","n":"P2.5-128x64-64S-9931+2018,5368-H,X.rcvbp","id":"1kkYb6Jd5UDHQGcB-Ywuj4uWAaUNUCW8m"},{"b":"Colorlight","p":"P2.5","n":"P2.5-128x64-64S-9931+2018,5368-H,X.rcvbp","id":"197YOyV3ouseIkH8kqezppxoK1ThaDWo8"},{"b":"Colorlight","p":"P2.5","n":"P2.5-3265S-32020-16S-7680Hz-yeni.rcvbp","id":"1xPlKQ1ieU6oNJEAMLEIthM653Llbvd4z"},{"b":"Colorlight","p":"P2.5","n":"户外PH2.5(320X160)-SM16169SH+1018-16S-N.rcvbp","id":"133ry04bFLfUeLJ7gbxsW69W__ZQVHpan"},{"b":"Colorlight","p":"P2.5 / H2.5-1065S-7258-32S-3840Hz-H501-X549-U513 - A551","n":"H2.5-1065S-7258-32S-3840Hz.rcvbp","id":"1cJKpseuwx8WHV_QTblNd09zDJXc3B3eD"},{"b":"Colorlight","p":"P2.5 / H2.5-1065S-7258-32S-3840Hz-H501-X549-U513 - A551","n":"P2.5 A551.rcvbp","id":"1JEsDMaik6-YwLusJc7aS4yaOA2OUIMsA"},{"b":"Colorlight","p":"P2.5 / H2.5-1065S-7258-32S-3840Hz-H501-X549-U513 - A551","n":"P2.5 J549.rcvbp","id":"1GoCIMkB7TdaiA6yEF3Cd5J0ZKu_x_qj-"},{"b":"Colorlight","p":"P2.5 / H2.5-1065S-7258-32S-3840Hz-H501-X549-U513 - A551","n":"P2.5-32x48-128-192.rcvbp","id":"1_1v122rIRW7Xbdj38j8l-dkbBgj07sCq"},{"b":"Colorlight","p":"P2.5 / H2.5-1065S-7258-32S-3840Hz-H501-X549-U513 - A551","n":"P2.5-64x48-256-192.rcvbp","id":"1CitSflzwErBDCmuiW6k6QU-0tWn2hWxs"},{"b":"Colorlight","p":"P2.5 / H2.5-1065S-7258-32S-3840Hz-H501-X549-U513 - A551","n":"P2.5-64x64-256-256.rcvbp","id":"1x-q5EdegVXIqwQo0etNftJGJEiCqkOU3"},{"b":"Colorlight","p":"P2.5 / P2.5 1065-2018-64S","n":"P2.5 1065-2018-64S.rcvbp","id":"1Zkv5hhh4o_jWtodzyXMVZLvJ2SBgQl7Z"},{"b":"Colorlight","p":"P2.5 / P2.5 1065-2018-64S","n":"p2.5 u250.rcvbp","id":"1LYdnrl5jkLrb6f5m2UaUm5zo2XWpbloT"},{"b":"Colorlight","p":"P2.5 / P2.5 1065AP-7258 A517","n":"P2.5 1065AP-7258 A517.rcvbp","id":"101CdABqPhzeNrZORhLL96bSgQ0Al7DAW"},{"b":"Colorlight","p":"P2.5 / P2.5 1065S -2012 J609","n":"P2.5 1065S-2012 J609.rcvbp","id":"1TUgOmeSgth8G36HA3rP9o-ueDteyUPmB"},{"b":"Colorlight","p":"P2.5 / p2.5 2035AP 2018","n":"p2.5 2035AP 2018 j050.rcvbp","id":"1O8D-6bgeaLh77dOgDMvqQWQCWJjUwiTH"},{"b":"Colorlight","p":"P2.5 / P2.5 3265S-32020 E516","n":"P2.5 32665S 32020 E516.rcvbp","id":"15nuaJm1FpqJY9-8oT6ReogXgbPsc36VH"},{"b":"Colorlight","p":"P2.5 / p2.5 d408 esnek","n":"2025-07-01 135350.rcvbp","id":"1RzJchquob9N3OCp0A1VeOKTy-DXcc_Fh"},{"b":"Colorlight","p":"P2.5 / P2.5-1065-2012-32S-D516-H007","n":"P2.5-1065-2012-32S.rcvbp","id":"16R3653Jle0kvLUrfMqpd_VlI_4zMQx36"},{"b":"Colorlight","p":"P2.5 / P2.5-1065-2018-64S-E026","n":"128x32-32S-(ICND1065S+DP32019)-20260601090256.rcvbp","id":"1F_6bTtA4ndsNAJkVD-mgA-UVAG8UuhMS"},{"b":"Colorlight","p":"P2.5 / P2.5-1065-2018-64S-E026","n":"P2.5-128x64-64S-1063+2018&5368-3840-H&X.rcvbp","id":"1oAVGvdC_vJPAqmrgTz5fyjDJqbAfj7s6"},{"b":"Colorlight","p":"P2.5 / P2.5-2037-2012-32S-A515","n":"P2.5-2037-2012-32S.rcvbp","id":"1sb1SY4w4AokJkf5xFpwQbqRQF52nmF93"},{"b":"Colorlight","p":"P2.5 / P2.5-3265S-2012-16S-7680Hz-D518","n":"P2.5-3265S-2012-16S-7680Hz.rcvbp","id":"15vLvCgWJTGJweYUDOYucjAvQFWnw3Fdu"},{"b":"Colorlight","p":"P2.5 / P2.5-3265S-32020-16S-7680Hz","n":"p2.5  E516.rcvbp","id":"17kz1ZZodlJphEsfvvkGPGZL7UHg7W1yX"},{"b":"Colorlight","p":"P2.5 / P2.5-3265S-32020-16S-7680Hz","n":"P2.5-3265S-32020-16S-7680Hz-yeni.rcvbp","id":"1j9O-SP9G9pySL6X1qITXo0rl90M0x_9O"},{"b":"Colorlight","p":"P2.5 / P2.5-DP3265+7258-16S","n":"P2.5-3265+7258D.3840-Stable.rcvbp","id":"1nnzg3ZfAy3UARS0Phamc61zr0wSfWoQH"},{"b":"Colorlight","p":"P2.5 / P2.5-DP3265+7258-16S","n":"户外P2.5-3265+2012-V1.0(1).rcvbp","id":"1Z8PKejLSQyEVmZ19AxJjpj6qA05VRzNy"},{"b":"Colorlight","p":"P2.5 / P2.5-V3.5 1065等2个文件","n":"p2.5 gop a517.rcvbp","id":"12Wzu4jGLVU05xlHEOVBJ7YV4kZ9-n8sg"},{"b":"Colorlight","p":"P2.5 / P2.5-V3.5 1065等2个文件","n":"P2.5-1065-2012-32S-3840Hz.rcvbp","id":"1Ibs6naNK1w4U5IlRLBsCwIliVSD6p2jB"},{"b":"Colorlight","p":"P2.5 / P2.5-V3.5 1065等2个文件","n":"P2.5-V3.5 1065.rcvbp","id":"1kGMJjAfJbMyLF1E_rSlW4-WlwgH-RBiR"},{"b":"Colorlight","p":"P2.6","n":"p2.6 90° 384x192.rcvbp","id":"1B_HpRb1fyrq2j-y7Q5QsyQXlWyXpQhiI"},{"b":"Colorlight","p":"P2.6","n":"p2.6 90° 384x192.rcvbp","id":"13v9v7WG3QalgrrB4mW-8cH7jTslFmmq_"},{"b":"Colorlight","p":"P2.6","n":"p2.6 90° 384x384.rcvbp","id":"1r4WLXxhc-B-cMbLMWJpUS6pYv_-p_t5S"},{"b":"Colorlight","p":"P2.6","n":"P2.6-384x96-3265S-2018-32S-kucuk modülle uyumlu-90-ısık.rcvbp","id":"1lA6WsldS1oyN4Z3VjTpmzAZUYSzpKwx9"},{"b":"Colorlight","p":"P2.6","n":"P2.6-480x96-3265S-2018-32S-kucuk modülle uyumlu-90-ısık.rcvbp","id":"1_AHWZtlI1w-tt4WzYogplo8chk82Kag8"},{"b":"Colorlight","p":"P2.6","n":"P2.6-96x48-1065S-5958-24S-HUB.rcvbp","id":"1f9b3yRcAge7r4U3MEHXjsjGcCSDj-kJT"},{"b":"Colorlight","p":"P2.6","n":"P2.6-96x48-1065S-5958-24S-HUB.rcvbp","id":"1ZlQ_YWHXSUZ_fzNLviB5KOE2lF43Im-y"},{"b":"Colorlight","p":"P2.6","n":"P2.6-96x48-1065S-6158-2018-24S-7680Hz-Büyük modülle uyumlu-71-ısık.rcvbp","id":"1Rb8_8uOoQpT5yiNz_RPEI62_U50NtNyP"},{"b":"Colorlight","p":"P2.6","n":"P2.6-96x48-1065S-6158-2018-24S-7680Hz.rcvbp","id":"1pEyxnjdtLs2BIh--E5IrxmSBAU4a76n0"},{"b":"Colorlight","p":"P2.6","n":"P2.604 3265S 2018.rcvbp","id":"1T3WEUA1YP4ipz8YMAx1-s8OMuipNisG3"},{"b":"Colorlight","p":"P2.6","n":"P2.604 3265S 2018.rcvbp","id":"1-BVoZrQ_Yni_164-lVYSE-Ww5d6xqH2R"},{"b":"Colorlight","p":"P2.6","n":"P2.604 3265S 5369.rcvbp","id":"1kTPYmwS4k55GidC5rTIMpPnSeO9OnOY2"},{"b":"Colorlight","p":"P2.6","n":"P2.604 3265S 5369.rcvbp","id":"18yOloWraoBY-0PzyiQ445juehRFutGg7"},{"b":"Colorlight","p":"P2.6","n":"p2.6_192x192_DP3265+ICN2018_32s_A+B+7680Hz_20240916_son.rcvbp","id":"1rXgH_wZe-3IJ6RflOONPkLh9bNWzrfpM"},{"b":"Colorlight","p":"P2.6","n":"p2.6_192x192_DP3265+ICN2018_32s_A+B+7680Hz_20240916_son.rcvbp","id":"1PaDeqtCdDBLolCJRdAgoacGQgYKM9sgs"},{"b":"Colorlight","p":"P2.6","n":"户外PH2.604-I(250X250)-3265S+2018-32S-S&S.1-软连接卡莱特.rcvbp","id":"1nAbpt4FO0qjyppJWtaA0bma8FLGh94d7"},{"b":"Colorlight","p":"P2.6 / Küçük-Büyük Uyumlu Ayarlar / Büyük Modül","n":"E320_PCB6.0_PWM_FPGA10.20_20220727_invroute.hex","id":"1RFr9DS3cijOcBPcokPnl0zs9ZOGYe_sP"},{"b":"Colorlight","p":"P2.6 / Küçük-Büyük Uyumlu Ayarlar / Büyük Modül","n":"P2.6-384x96-3265S-2018-32S-kucuk modülle uyumlu-90-ısık.rcvbp","id":"1Ft-WAVJI2rcgH3kD5AlmZw-krSmPfvMA"},{"b":"Colorlight","p":"P2.6 / Küçük-Büyük Uyumlu Ayarlar / Küçük Modül","n":"P2.6-96x48-1065S-6158-2018-24S-7680Hz-Büyük modülle uyumlu-71-ısık.rcvbp","id":"1GC1X7H_UmG2sAjGh8G6FyKHHaLwQ_tHG"},{"b":"Colorlight","p":"P2.6 / P2.6-96x48-1065S-5958-HUB-","n":"P2.6-96x48-1065S-5958-24S-HUB-2.rcvbp","id":"1RtCGxEHjK5TYA-kNvQVfw5xV6Xep2N9e"},{"b":"Colorlight","p":"P2.6 / P2.6-96x48-1065S-5958-HUB-","n":"P2.6-96x48-1065S-5958-24S-HUB.rcvbp","id":"1c-pWjp75CgKfo6Q5ejN4YTHoa2Z-erXV"},{"b":"Colorlight","p":"P2.6 / P2.6-96x48-1065S-5958-HUB-","n":"P2.6-96x96-1065S-5958-24S-HUB-3.rcvbp","id":"1Cvm2lJrAA07hOajZNwd95Hb8rDf8wCoH"},{"b":"Colorlight","p":"P2.9","n":"p2.9 3265S 32020","id":"1e6hJ-kJqPJfb7rGOBis5E_-Gxg766D1C"},{"b":"Colorlight","p":"P2.9","n":"p2.967 3265S 32020.rcvbp","id":"1CTDhziSqHTrrwQ3yY3OAbD1wSwDODhlY"},{"b":"Colorlight","p":"P3.076","n":"H3.076-3265S-2012-13S-yeni.rcvbp","id":"10teWmSUAeo-4GsZZ7qkOTIn-okjHcl8d"},{"b":"Colorlight","p":"P3.076","n":"p3.076 16169SH 1018 .rcvbp","id":"19x10_ODpNIqzA1pbom40qjAf4nDdYxzH"},{"b":"Colorlight","p":"P3.076","n":"P3.076 3265S 1018 D528.rcvbp","id":"1rUG1-Pupo1gtcxtqJSn81icMAPziLENb"},{"b":"Colorlight","p":"P3.076 / H3.076-3265S-2012-13S-7680-C249-X529-U511 - A577","n":"H3.076 - A577.rcvbp","id":"1AwU8Ip-x-hyiUX3ZVjSzhkdLCBYyByZF"},{"b":"Colorlight","p":"P3.076 / H3.076-3265S-2012-13S-7680-C249-X529-U511 - A577","n":"H3.076 J571 SON.rcvbp","id":"1KMOX1LKBeGEXsvWp6WZI1mCOznVuuXr-"},{"b":"Colorlight","p":"P3.076 / H3.076-3265S-2012-13S-7680-C249-X529-U511 - A577","n":"H3.076-3265S-2012-13S-yeni.rcvbp","id":"1NIKSsn7nJyCEDgyBwrYjvtoTxSqjJF4s"},{"b":"Colorlight","p":"P3.076 / H3.076-3265S-2012-13S-7680-C249-X529-U511 - A577","n":"H3.076-3265S-2012-13S.rcvbp","id":"1OGoEIpHIv6ueWRsXpQW_DDiwx6-t50o8"},{"b":"Colorlight","p":"P3.076 / P3.076-2037-2012-26S-E582","n":"P3.076-2037-2012-26S.rcvbp","id":"1Bv16Nx73jqtz-0YTAINNQ4T0ria9WdQZ"},{"b":"Colorlight","p":"P3.91-3265-138-165S-128-256","n":"P3.91-16S-2153-64X64-250X250-KSL-V3.1.rcvbp","id":"1qrK75icie6laPrwBUcmN-3Ok06MPukCl"},{"b":"Colorlight","p":"P3.91-3265-138-165S-128-256","n":"P3.91-16S-2153-64X64-250X250-KSL-V3.1.rcvbp","id":"1iNE9RD3237QqjlqiM6C2RO1xBID20kjb"},{"b":"Colorlight","p":"P3.91-3265-138-165S-128-256","n":"P3.91-3265-138-165S-128-256.rcvbp","id":"1KbmtuBOMtCrT_b9b29Fql3tVBXFum1PE"},{"b":"Colorlight","p":"P3.91-3265-138-165S-128-256","n":"P3.91-3265-138-165S-128-256.rcvbp","id":"1uwcifZSaRqWqRL19GW-r_sWC7xfXDUjf"},{"b":"Colorlight","p":"P4","n":"p4 16169sh 2018ü.rcvbp","id":"1Zv4CbJAdF_nG4FedEs8kA9CrYxZBBBu-"},{"b":"Colorlight","p":"P4","n":"p4 16169sh 6258.rcvbp","id":"160gA7fuMDlQX02kQHtyn8LTSLwVMnciP"},{"b":"Colorlight","p":"P4","n":"P4 16169sh 6358.rcvbp","id":"1H4gQ4LfAJrecCnPVAXgsVSXN8a8W2Z3b"},{"b":"Colorlight","p":"P4","n":"p4 16208SF 2018 E502.rcvbp","id":"19ZJIKuNtlCCWt_h7FcsrTwX0XFwLpWwD"},{"b":"Colorlight","p":"P4","n":"p4 16208SF 2018 E502.rcvbp","id":"1_Mv6AFYPkDHtQvzhuI3uvCy-a-9I0DN3"},{"b":"Colorlight","p":"P4","n":"P4 5125F 2012 S533 (13.80).rcvbp","id":"1RNINSXBwx5t5RemrDa8JhhfwjKCflJRo"},{"b":"Colorlight","p":"P4","n":"P4 5125F 2012 S533 (13.80).rcvbp","id":"1V3CrqQQoF11d_WZu3j6ZefjFnRriaBIz"},{"b":"Colorlight","p":"P4","n":"p4 indoor 5125F 2012 (13.80).rcvbp","id":"1mg15o2NOK-cbuXghaU-AqrGOJ-UCOGvb"},{"b":"Colorlight","p":"P4","n":"p4 indoor 5125F 2012 (13.80).rcvbp","id":"135kxO_j5BpVTKyVXhCTFAqpjZmibPaL5"},{"b":"Colorlight","p":"P4","n":"p4+16169sh+32020.rcvbp","id":"1_DOwjvr1FXrPfGaJmbvRp9tApWl7rUKs"},{"b":"Colorlight","p":"P4","n":"P4-1065L-2012-20S-3840Hz-A507.rcvbp","id":"1vh8hH7rYmI7doJs-eCrVNzSnEBIKGkNf"},{"b":"Colorlight","p":"P4","n":"P4-2037-2012-20S irregular.rcvbp","id":"1zEsl88-gSfo10ucK8PkvVLXZGnD2QPsT"},{"b":"Colorlight","p":"P4","n":"P4-2037-2012-20S.rcvbp","id":"1GdcH5XCMFI4Dn-RBB1ljkjfJxSldp0vW"},{"b":"Colorlight","p":"P4","n":"P4-2037-2018-10S-Front.rcvbp","id":"14S1LayqtjtnvObsTkMEs3NTGVY9kkuHa"},{"b":"Colorlight","p":"P4","n":"户外H4-O(320x160)--3265S+2018&32020&5158&5566-S.2.rcvbp","id":"1sZoqESA21dKdHFrdpFhGQ-WQGuN6U4az"},{"b":"Colorlight","p":"P4 / H4-3265S-2018-7680Hz-X523-U510 -J533 - A569","n":"H4-3265S-2018-240x320-7680Hz-X523.rcvbp","id":"1B8AvZD0Aycbj6gS_q2NEmcaH1MD-REcr"},{"b":"Colorlight","p":"P4 / P4-1065L-2012-20S-3840Hz-A507","n":"P4-1065L-2012-20S-3840Hz-A507.rcvbp","id":"1o8jsQi4V4iXV5-4BtWhQfX9avuK2ZYeW"},{"b":"Colorlight","p":"P4 / P4-3265S-2012","n":"P4-3265S-2012_240x320_3840Hz.rcvbp","id":"19IZA00uiYP3g5HPjaRjKHJSwkIJFuLfw"},{"b":"Colorlight","p":"P4 / P4-3265S-2012","n":"P4-V2.3-3265S-138译码-240x320-高刷款4320Hz.rcvbp","id":"1lnghKTM-CsJzXCQD8qwNXBRvEqJBit7L"},{"b":"Colorlight","p":"P4 / P4-3265S-2012-10S-3840Hz-C542","n":"P4-3265S-2012_240x320_3840Hz.rcvbp","id":"1XFn9qlexnJGp2jV2roi-LhyJowO_9wuK"},{"b":"Colorlight","p":"P4 / P4-SM16169-2018-10S-3840Hz-V2.0-U202","n":"P4-SM16169-2018-10S-3840Hz-V2.0.rcvbp","id":"1_30AdLfE3hqmUqc31Pvuu_jgWf6kaxKH"},{"b":"Colorlight","p":"P5","n":"h5 U521.rcvbp","id":"124JynSgmR3dVpWyLNCX5Nf0W4HHQc10v"},{"b":"Colorlight","p":"P5","n":"p5 16208sf (13.80).rcvbp","id":"1ASQ-VsVnMTEjLWMjIhOpfQlZ-21sq2Ho"},{"b":"Colorlight","p":"P5","n":"P5 3265S - 2012  -A571.rcvbp","id":"1svXVUBDV02-XgfYzs1-hGl2SH8xtCzEa"},{"b":"Colorlight","p":"P5","n":"P5 64X32 8S  16208SF 16208+2012.rcvbp","id":"1IbMJ349P_Mgx4pfS621f7FPGO_C32E-p"},{"b":"Colorlight","p":"P5","n":"P5 64X32 8S  16208SF 16208+2012.rcvbp","id":"1vpGIXZ8d_1NE49fbRJG7zFzrNOjgo1Gq"},{"b":"Colorlight","p":"P5","n":"P5-2037-2018-8S.rcvbp","id":"1mN9j7E_Z0XW2WNKNMTYHL4OSiZtvksr5"},{"b":"Colorlight","p":"P5","n":"P5-3265S-7258-256x256_3840Hz.rcvbp","id":"1LIF58kdtk4YQIDkV8Ec-tmc_15aB6GZO"},{"b":"Colorlight","p":"P5","n":"P5-V2.0-3265S-138译码-256x256-高刷款4320Hz.rcvbp","id":"1sJJe2pcQmdaLuFvCq9FycvhrsQQmvZLU"},{"b":"Colorlight","p":"P5 / P5-2037-2018-8S-1920Hz-Front","n":"P5-2037-2018-8S-1920Hz-Front.rcvbp","id":"1B3W4tQn3PAQgFgkjucznQ2KUxtIZPkfR"},{"b":"Colorlight","p":"P5 / P5-3265-2012-8S-7680Hz-G225-X538","n":"2025-06-11 141202.rcvbp","id":"1WkQpHg5MrqncTvTAavH0t0ae9YS4dJx-"},{"b":"Colorlight","p":"P5 / P5-3265-2012-8S-7680Hz-G225-X538","n":"2025-06-11 141240.rcvbp","id":"1ftQJiRhKRI0hgzExAJRys_KcLYMe9FZw"},{"b":"Colorlight","p":"P5 / P5-3265-2012-8S-7680Hz-G225-X538","n":"P5-3265S-7258-320x384_7680Hz.rcvbp","id":"16e5NsyUQfI5mHSz1N3jZuONWWxXI1xRL"},{"b":"Colorlight","p":"P5 / P5-3265-7258-8S-3840Hz-S251-1","n":"P5-3265S-7258-256x256_3840Hz.rcvbp","id":"12BBePzmOxrqmcTbEtApzsrbb08L2nM5I"},{"b":"Colorlight","p":"P5 / P5-SM16169-2012-8S-3840Hz-V2.0-A512","n":"P5-SM16169-2012-8S-3840Hz-V2.0.rcvbp","id":"1hYAMaonpJGuRaDYwh667krkFCZuNXuH1"}]</script>
 <script>
 (function () {
   var section = document.getElementById('indirme-listesi');
   if (!section) return;
+
+  var picks = section.querySelectorAll('.pi-pick');
+  var cats = section.querySelectorAll('.pi-cat');
+  var cards = section.querySelectorAll('.pi-card');
   var searchInput = section.querySelector('#ledajans-program-indir-arama');
-  var searchResults = section.querySelector('.program-download-search-results');
-  function getCards() {
-    return section.querySelectorAll('.program-download-main-grid .program-download-card');
+  var label = section.querySelector('#pi-active-label');
+  var empty = section.querySelector('#pi-empty');
+  var activeCat = 'all';
+
+  var names = {
+    all: 'Tüm programlar',
+    destek: 'Destek & Dosyalar',
+    colorlight: 'Colorlight',
+    huidu: 'Huidu / HD',
+    nova: 'Nova & TF',
+    mobil: 'Mobil'
+  };
+
+  function cardText(card) {
+    return ((card.getAttribute('data-search') || '') + ' ' + (card.textContent || '')).toLowerCase();
   }
-  function runSearch() {
-    var q = (searchInput && searchInput.value || '').trim().toLowerCase();
-    if (!searchResults) return;
-    if (!q) {
-      section.classList.remove('search-active');
-      searchResults.classList.remove('active');
-      searchResults.innerHTML = '';
+
+  var scanBox = section.querySelector('#pi-scan');
+  var scanList = section.querySelector('#pi-scan-list');
+  var scanTitle = section.querySelector('#pi-scan-title');
+  var scanFiles = [];
+  try {
+    scanFiles = JSON.parse(document.getElementById('huidu-tarama-katalogu').textContent || '[]');
+  } catch (err) {
+    scanFiles = [];
+  }
+  var extRank = { rcvbp: 0, rcfgx: 1, ssr: 2, ssx: 3, hds: 4, ssm: 5, boo: 6, hex: 7, fw: 8, bin: 9 };
+
+  function norm(s) {
+    return (s || '').toLocaleLowerCase('tr-TR')
+      .replace(/ı/g, 'i').replace(/ş/g, 's').replace(/ğ/g, 'g')
+      .replace(/ü/g, 'u').replace(/ö/g, 'o').replace(/ç/g, 'c')
+      .replace(/,/g, '.');
+  }
+
+  function pitchTokenMatch(token, q) {
+    if (token === q) return true;
+    if (token.indexOf(q) !== 0) return false;
+    var next = token.charAt(q.length);
+    if (next === '.') return true;
+    return q.indexOf('.') !== -1 && /[0-9]/.test(next);
+  }
+
+  function scanMatches(file, q) {
+    var hay = norm((file.b || '') + ' ' + file.p + ' ' + file.n);
+    if (/^p\d+(?:\.\d+)?$/.test(q)) {
+      var tokens = hay.match(/p\d+(?:\.\d+)?/g) || [];
+      return tokens.some(function (t) { return pitchTokenMatch(t, q); });
+    }
+    return hay.indexOf(q) !== -1;
+  }
+
+  function extOf(name) {
+    var i = name.lastIndexOf('.');
+    return i === -1 ? '' : name.slice(i + 1).toLowerCase();
+  }
+
+  function renderScans(matches) {
+    if (!scanList || !scanBox) return;
+    scanList.textContent = '';
+    if (!matches.length) {
+      scanBox.hidden = true;
       return;
     }
-    section.classList.add('search-active');
-    var matching = Array.prototype.filter.call(getCards(), function (c) {
-      return (c.textContent || '').toLowerCase().indexOf(q) !== -1;
-    });
-    searchResults.innerHTML = '';
-    if (matching.length) {
-      matching.forEach(function (c) { searchResults.appendChild(c.cloneNode(true)); });
-    } else {
-      var p = document.createElement('p');
-      p.className = 'program-download-search-empty';
-      p.textContent = 'Bu aramaya uygun indirme bulunamadı.';
-      searchResults.appendChild(p);
+    var brandSet = {};
+    matches.forEach(function (file) { brandSet[file.b || 'Huidu'] = true; });
+    var brandNames = Object.keys(brandSet);
+    if (scanTitle) {
+      var heading = brandNames.length === 1 ? brandNames[0] + ' tarama dosyaları' : 'Tarama dosyaları';
+      scanTitle.textContent = heading + ' (' + matches.length + ')';
     }
-    searchResults.classList.add('active');
+    matches.forEach(function (file) {
+      var row = document.createElement('div');
+      row.className = 'pi-scan-row';
+      var meta = document.createElement('div');
+      meta.className = 'pi-scan-meta';
+      var name = document.createElement('div');
+      name.className = 'pi-scan-name';
+      name.textContent = file.n;
+      var path = document.createElement('div');
+      path.className = 'pi-scan-path';
+      path.textContent = (file.b || 'Huidu') + (file.p ? ' · ' + file.p : '');
+      meta.appendChild(name);
+      meta.appendChild(path);
+      var link = document.createElement('a');
+      link.className = 'pi-btn pi-scan-dl';
+      link.href = 'https://drive.google.com/uc?export=download&id=' + encodeURIComponent(file.id);
+      link.setAttribute('download', file.n);
+      var labelEl = document.createElement('span');
+      labelEl.textContent = 'İndir';
+      link.appendChild(labelEl);
+      row.appendChild(meta);
+      row.appendChild(link);
+      scanList.appendChild(row);
+    });
+    scanBox.hidden = false;
   }
-  if (searchInput) searchInput.addEventListener('input', runSearch);
+
+  function applyFilter() {
+    var q = (searchInput && searchInput.value || '').trim().toLowerCase();
+    var visibleCards = 0;
+
+    cats.forEach(function (cat) {
+      var catKey = cat.getAttribute('data-cat');
+      var catCards = cat.querySelectorAll('.pi-card');
+      var anyVisible = false;
+
+      catCards.forEach(function (card) {
+        var catOk = activeCat === 'all' || card.getAttribute('data-cat') === activeCat;
+        var searchOk = !q || cardText(card).indexOf(q) !== -1;
+        var show = catOk && searchOk;
+        card.hidden = !show;
+        if (show) {
+          anyVisible = true;
+          visibleCards++;
+        }
+      });
+
+      var showCat = activeCat === 'all' ? anyVisible : (catKey === activeCat && anyVisible);
+      if (activeCat !== 'all' && catKey !== activeCat) showCat = false;
+      if (activeCat === 'all' && !anyVisible) showCat = false;
+      cat.hidden = !showCat;
+    });
+
+    var qn = norm(q);
+    var scans = [];
+    if (qn.length >= 2) {
+      scans = scanFiles.filter(function (file) {
+        if (activeCat === 'huidu' && (file.b || 'Huidu') !== 'Huidu') return false;
+        if (activeCat === 'colorlight' && file.b !== 'Colorlight') return false;
+        return scanMatches(file, qn);
+      });
+      scans.sort(function (a, b) {
+        var ba = (a.b || 'Huidu').localeCompare(b.b || 'Huidu', 'tr');
+        if (ba) return ba;
+        var ra = extRank.hasOwnProperty(extOf(a.n)) ? extRank[extOf(a.n)] : 9;
+        var rb = extRank.hasOwnProperty(extOf(b.n)) ? extRank[extOf(b.n)] : 9;
+        if (ra !== rb) return ra - rb;
+        return (a.p + a.n).localeCompare(b.p + b.n, 'tr');
+      });
+    }
+    renderScans(scans);
+
+    if (empty) empty.classList.toggle('is-visible', visibleCards === 0 && scans.length === 0);
+
+    if (label) {
+      var base = names[activeCat] || 'Tüm programlar';
+      var extra = scans.length ? ' · ' + scans.length + ' tarama dosyası' : '';
+      label.innerHTML = q
+        ? 'Şu an: <strong>' + base + '</strong> · arama: “' + q.replace(/</g, '') + '”' + extra
+        : 'Şu an: <strong>' + base + '</strong>';
+    }
+  }
+
+  picks.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      activeCat = btn.getAttribute('data-cat') || 'all';
+      picks.forEach(function (b) {
+        var on = b === btn;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      applyFilter();
+      var target = section.querySelector('#pi-main');
+      if (target && activeCat !== 'all') {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  if (searchInput) searchInput.addEventListener('input', applyFilter);
+  applyFilter();
 })();
 </script>
-    
