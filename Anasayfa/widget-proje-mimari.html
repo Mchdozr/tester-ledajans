@@ -1,45 +1,464 @@
-<!-- WIDGET — Proje mimarı, kısa sürüm. -->
 <style>
-  .ldj-eng { --ink:#111827; --muted:#475569; --orange:#F46F2C; --line:rgba(17,24,39,.08); color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; }
-  .ldj-eng, .ldj-eng * { box-sizing:border-box; }
-  .ldj-eng h2, .ldj-eng h3, .ldj-eng p, .ldj-eng label { margin:0; }
-  .ldj-eng a, .ldj-eng button, .ldj-eng input, .ldj-eng select { font:inherit; }
-  .ldj-tool { background:#fff; padding:clamp(1.5rem,3vw,2.6rem) 1rem 2.4rem; }
-  .ldj-tool-inner { max-width:1120px; margin:0 auto; display:grid; grid-template-columns:.9fr 1.1fr; gap:1rem; }
-  .ldj-kicker { color:var(--orange); font-size:.75rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
-  .ldj-tool h2 { margin:.35rem 0 .5rem; font-size:clamp(1.7rem,3vw,2.5rem); letter-spacing:-.04em; }
-  .ldj-copy { color:var(--muted); line-height:1.6; }
-  .ldj-fields { display:grid; grid-template-columns:1fr 1fr; gap:.65rem; margin-top:.9rem; }
-  .ldj-fields label { display:flex; flex-direction:column; gap:.3rem; font-size:.82rem; font-weight:800; color:#334155; }
-  .ldj-fields input, .ldj-fields select { border:1px solid var(--line); border-radius:.8rem; padding:.7rem .75rem; background:#f8fafc; color:var(--ink); }
-  .ldj-pitch { font-size:clamp(2.2rem,4vw,3.4rem); letter-spacing:-.05em; font-variant-numeric:tabular-nums; line-height:.95; }
-  .ldj-stats { display:grid; grid-template-columns:1fr 1fr; gap:.55rem; margin-top:.8rem; }
-  .ldj-stat { border:1px solid var(--line); border-radius:.9rem; padding:.7rem .75rem; background:#f8fafc; }
-  .ldj-stat span { display:block; color:#64748b; font-size:.72rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
-  .ldj-stat strong { display:block; margin-top:.2rem; font-variant-numeric:tabular-nums; }
-  .ldj-grids { display:grid; grid-template-columns:1fr 1fr; gap:.6rem; margin-top:.8rem; }
-  .ldj-grid { background:#0f172a; border-radius:1rem; overflow:hidden; }
-  .ldj-grid p { color:#fdba74; font-size:.78rem; font-weight:800; padding:.55rem .7rem 0; }
-  .ldj-grid canvas { display:block; width:100%; height:168px; }
-  .ldj-fine { color:#64748b; font-size:.82rem; line-height:1.45; margin-top:.45rem; }
-  .ldj-actions { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.9rem; }
-  .ldj-actions a { text-decoration:none; border-radius:999px; padding:.75rem 1rem; font-weight:800; }
-  .ldj-actions a.pri { background:#F46F2C; color:#fff; }
-  .ldj-actions a.alt { border:1px solid var(--line); color:#111827; }
-  @media (max-width:860px) {
-    .ldj-tool-inner, .ldj-fields, .ldj-stats, .ldj-grids { grid-template-columns:1fr; }
+
+  html, body { overflow-x: clip; }
+  /* Çözüm paneliyle aynı çerçeve. Kurallar yalnız anasayfaya bakar. */
+  body.page-id-1248 #ldj-ux-solutions,
+  body.page-id-1248 #ldj-cozum {
+    box-sizing: border-box;
+    width: min(74rem, 100%);
+    margin: clamp(1rem, 2vw, 1.5rem) auto;
+    background: #eef4fb;
+    border: 1px solid #9bb6d6;
+    border-radius: 12px;
   }
+  body.page-id-1248 #ldj-mimari [hidden] { display: none !important; }
+  body.page-id-1248 .ldj-eng.ldj-frame {
+    box-sizing: border-box;
+    width: min(74rem, 100%);
+    max-width: 100%;
+    margin: clamp(1rem, 2vw, 1.5rem) auto;
+    padding: clamp(2.5rem, 5vw, 4.75rem) clamp(1rem, 4vw, 3rem);
+    background: #eef4fb;
+    border: 1px solid #9bb6d6;
+    border-radius: 12px;
+    color: #1b2232;
+    overflow-x: clip;
+  }
+  body.page-id-1248 .ldj-eng.ldj-imza.ldj-frame {
+    padding: clamp(2.5rem, 5vw, 4.75rem) clamp(1rem, 4vw, 3rem);
+    background: #eef4fb;
+    color: #1b2232;
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame,
+  body.page-id-1248 .ldj-eng.ldj-frame * { box-sizing: border-box; }
+  body.page-id-1248 .ldj-eng.ldj-frame :is(.ldj-class-inner, .ldj-export-inner, .ldj-met-inner, .ldj-tool-inner, .ldj-imza-nav, .ldj-imza-rail) {
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame .ldj-class {
+    margin-top: 1.75rem;
+    padding: 0;
+    background: transparent;
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame .ldj-ux-kicker {
+    display: inline-flex;
+    margin: 0;
+    color: #a94118;
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame :is(h2, h3) {
+    color: #1e2a4a;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.18;
+    text-wrap: balance;
+  }
+  body.page-id-1248.ldj-r1 #wp-main-content .ldj-eng.ldj-frame :is(h2, h3) {
+    color: #1e2a4a !important;
+    line-height: 1.18 !important;
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame > h2 {
+    margin: 15px 0 20px;
+    max-width: 28ch;
+    font-size: clamp(1.75rem, 1rem + 2.2vw, 3rem);
+  }
+  body.page-id-1248.ldj-r1 #wp-main-content .ldj-eng.ldj-frame > h2 {
+    font-size: clamp(1.75rem, 1rem + 2.2vw, 3rem) !important;
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame :is(.ldj-lead, .ldj-copy) {
+    max-width: 60ch;
+    margin: 0 0 1.15rem;
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame .ldj-class h3 {
+    margin: 0 0 .45rem;
+    font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+  }
+  body.page-id-1248 #ldj-imza .ldj-imza-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem 1.25rem;
+    justify-content: flex-start;
+    margin: 0 0 1rem;
+    padding: 0;
+  }
+  body.page-id-1248 #ldj-imza .ldj-imza-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #a94118;
+    font-size: .95rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  body.page-id-1248 #ldj-imza .ldj-imza-nav a:hover { text-decoration: underline; text-underline-offset: .18em; }
+  body.page-id-1248 #ldj-imza .ldj-imza-rail {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    overflow: visible;
+    padding: 0;
+    scroll-snap-type: none;
+  }
+  body.page-id-1248 #ldj-imza .ldj-imza-slide {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #dce1e8;
+    border-radius: 16px;
+    background: #f7f8fa;
+    color: #1b2232;
+    scroll-margin-top: 6.5rem;
+  }
+  body.page-id-1248 #ldj-imza .ldj-imza-shot {
+    display: block;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+  body.page-id-1248 #ldj-imza .ldj-imza-shot img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    max-width: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
+    border-radius: 0;
+    background: #fff;
+  }
+  body.page-id-1248 #ldj-imza .ldj-imza-shot figcaption {
+    margin: 0;
+    padding: .55rem 1.2rem 0;
+    border: 0;
+    background: #f7f8fa;
+    color: #4b5563;
+    font-size: .78rem;
+    letter-spacing: .04em;
+  }
+  body.page-id-1248 #ldj-imza .ldj-imza-copy { padding: .8rem 1.2rem 1.2rem; }
+  body.page-id-1248 #ldj-imza .ldj-imza-copy h3 {
+    margin: 0;
+    max-width: none;
+    color: #1b2232;
+    font-size: 1.05rem;
+  }
+  body.page-id-1248 #ldj-imza .ldj-imza-copy p {
+    margin: .4rem 0 0;
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  body.page-id-1248 #ldj-imza .ldj-imza-copy .ldj-ux-kicker { margin: 0 0 .3rem; }
+  body.page-id-1248 .ldj-eng.ldj-frame :is(.ldj-cards, .ldj-nodes, .ldj-gauges) {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame :is(.ldj-cards, .ldj-nodes) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame .ldj-gauges {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame :is(.ldj-card, .ldj-node, .ldj-gauge) {
+    display: grid;
+    gap: .35rem;
+    align-content: start;
+    min-width: 0;
+    padding: 1.2rem;
+    border: 1px solid #dce1e8;
+    border-radius: 16px;
+    background: #f7f8fa;
+    box-shadow: none;
+    color: #1b2232;
+    text-decoration: none;
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame .ldj-card:hover { border-color: #ac421a; transform: none; }
+  body.page-id-1248 .ldj-eng.ldj-frame :is(.ldj-card strong, .ldj-node h3) {
+    margin: 0;
+    color: #1b2232;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame :is(.ldj-card span, .ldj-node p) {
+    margin: 0;
+    color: #4b5563;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.5;
+    text-transform: none;
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame :is(.ldj-card b, a.ldj-go, .ldj-actions a, .ldj-export-links a, .ldj-imza-nav a) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #a94118;
+    font-size: .9rem;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0;
+    text-decoration: none;
+    text-transform: none;
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame .ldj-node > span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.5rem;
+    margin-top: .15rem;
+    color: #a94118;
+    font-size: .9rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: none;
+  }
+  body.page-id-1248 #ldj-mimari .ldj-tool-inner {
+    display: grid;
+    grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+    gap: 1rem;
+    margin-top: .35rem;
+  }
+  body.page-id-1248 #ldj-mimari .ldj-tool-inner > div {
+    min-width: 0;
+    padding: 1.2rem;
+    border: 1px solid #dce1e8;
+    border-radius: 16px;
+    background: #f7f8fa;
+    box-shadow: none;
+    color: #1b2232;
+  }
+  body.page-id-1248 #ldj-mimari .ldj-tool-inner > [aria-live],
+  body.page-id-1248 #ldj-mimari [aria-live] {
+    color: #1b2232;
+    background: #f7f8fa;
+    border: 1px solid #dce1e8;
+  }
+  body.page-id-1248 #ldj-mimari [aria-live] :is(.ldj-copy, .ldj-fine, .ldj-stat span) { color: #4b5563; }
+  body.page-id-1248 #ldj-mimari .ldj-pitch,
+  body.page-id-1248 #ldj-mimari [aria-live] .ldj-pitch {
+    margin: 0;
+    color: #1e2a4a;
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    font-variant-numeric: tabular-nums;
+  }
+  body.page-id-1248 #ldj-mimari .ldj-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .75rem;
+    margin-top: 0;
+  }
+  body.page-id-1248 #ldj-mimari .ldj-fields label {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+    min-width: 0;
+    margin: 0;
+    color: #1e2a4a;
+    font-size: .82rem;
+    font-weight: 800;
+  }
+  body.page-id-1248 #ldj-mimari .ldj-fields :is(input, select) {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: .6rem .75rem;
+    border: 1px solid #dce1e8;
+    border-radius: 12px;
+    background: #fff;
+    color: #1b2232;
+    font-size: 16px;
+  }
+  body.page-id-1248 #ldj-mimari .ldj-fine {
+    margin: .7rem 0 0;
+    color: #4b5563;
+    font-size: .85rem;
+    line-height: 1.45;
+  }
+  body.page-id-1248 #ldj-mimari .ldj-stats,
+  body.page-id-1248 #ldj-mimari .ldj-grids {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .65rem;
+    margin-top: .85rem;
+  }
+  body.page-id-1248 #ldj-mimari [aria-live] .ldj-stat {
+    min-width: 0;
+    padding: .7rem .8rem;
+    border: 1px solid #dce1e8;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: none;
+  }
+  body.page-id-1248 #ldj-mimari [aria-live] .ldj-stat strong,
+  body.page-id-1248 #ldj-mimari .ldj-stat strong {
+    display: block;
+    margin-top: .2rem;
+    color: #1e2a4a;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+    font-variant-numeric: tabular-nums;
+  }
+  body.page-id-1248 #ldj-mimari [aria-live] .ldj-stat span {
+    display: block;
+    color: #4b5563;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+  body.page-id-1248 #ldj-mimari [aria-live] .ldj-grid {
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid #dce1e8;
+    border-radius: 12px;
+    background: #f7f8fa;
+  }
+  body.page-id-1248 #ldj-mimari [aria-live] .ldj-grid p {
+    margin: 0;
+    padding: .55rem .7rem .35rem;
+    color: #1e2a4a;
+    font-size: .78rem;
+    font-weight: 800;
+  }
+  body.page-id-1248 #ldj-mimari [aria-live] .ldj-grid canvas {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 176px;
+    background: #171b24;
+  }
+  body.page-id-1248 #ldj-mimari .ldj-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .15rem 1.25rem;
+    margin-top: .45rem;
+  }
+  body.page-id-1248 #ldj-mimari [aria-live] .ldj-actions a,
+  body.page-id-1248 #ldj-mimari [aria-live] .ldj-actions a.alt,
+  body.page-id-1248 #ldj-mimari [aria-live] .ldj-actions a.pri {
+    background: transparent;
+    border: 0;
+    color: #a94118;
+  }
+  body.page-id-1248 #ldj-metrikler .ldj-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: .15rem 0 1rem;
+  }
+  body.page-id-1248 #ldj-metrikler .ldj-tabs button {
+    min-height: 44px;
+    padding: .45rem .95rem;
+    border: 1px solid #dce1e8;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: none;
+    color: #1b2232;
+    font-family: inherit;
+    font-size: .95rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  body.page-id-1248 #ldj-metrikler .ldj-tabs button[aria-selected="true"] {
+    background: #1e2a4a;
+    border-color: #1e2a4a;
+    box-shadow: none;
+    color: #fff;
+  }
+  body.page-id-1248 #ldj-metrikler .ldj-gauge span {
+    display: block;
+    color: #4b5563;
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+  body.page-id-1248 #ldj-metrikler .ldj-gauge strong {
+    display: block;
+    margin: 0;
+    color: #1b2232;
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+    overflow-wrap: anywhere;
+    font-variant-numeric: tabular-nums;
+  }
+  body.page-id-1248 #ldj-metrikler .ldj-track {
+    height: 6px;
+    overflow: hidden;
+    border-radius: 99px;
+    background: #e2e8f0;
+  }
+  body.page-id-1248 #ldj-metrikler .ldj-track i {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: #a94118;
+  }
+  body.page-id-1248 #ldj-metrikler .ldj-note {
+    max-width: 60ch;
+    margin: .85rem 0 0;
+    color: #4b5563;
+    font-size: .9rem;
+    line-height: 1.5;
+  }
+  body.page-id-1248 #ldj-ihracat .ldj-export-links,
+  body.page-id-1248 #ldj-metrikler .ldj-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .15rem 1.25rem;
+    margin-top: .85rem;
+  }
+  body.page-id-1248 .ldj-eng.ldj-frame :is(a, button, input, select):focus-visible {
+    outline: 2px solid #ac421a;
+    outline-offset: 3px;
+  }
+  @media (max-width: 800px) {
+    body.page-id-1248 #ldj-imza .ldj-imza-rail,
+    body.page-id-1248 .ldj-eng.ldj-frame :is(.ldj-cards, .ldj-nodes, .ldj-gauges),
+    body.page-id-1248 #ldj-mimari :is(.ldj-tool-inner, .ldj-fields, .ldj-stats, .ldj-grids) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    body.page-id-1248 #ldj-mimari .ldj-fields :is(input, select) { font-size: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    body.page-id-1248 .ldj-eng.ldj-frame :is(.ldj-card, .ldj-track i) { transition: none; }
+  }
+
 </style>
-<section class="ldj-eng ldj-tool" id="ldj-mimari" data-ldj-mimari="compact" aria-labelledby="ldj-mimari-title">
+<!-- WIDGET — Proje mimarı, kısa sürüm. Çerçeve çözüm paneliyle aynı. -->
+<section class="ldj-eng ldj-tool ldj-frame" id="ldj-mimari" data-ldj-mimari="compact" aria-labelledby="ldj-mimari-title">
+  <p class="ldj-ux-kicker">Proje mimarı</p>
+  <h2 id="ldj-mimari-title">Bu mesafeden hangi pitch</h2>
+  <p class="ldj-lead">Konfor mesafesi yaklaşık olarak pitch kadar metredir. Araç, mesafeyi karşılayan en kaba katalog pitch’ini seçer. Satın alma için TL yazılmaz.</p>
   <div class="ldj-tool-inner">
     <div>
-      <p class="ldj-kicker">Proje mimarı</p>
-      <h2 id="ldj-mimari-title">Bu mesafeden hangi pitch</h2>
-      <p class="ldj-copy">Konfor mesafesi yaklaşık olarak pitch kadar metredir. Araç, mesafeyi karşılayan en kaba katalog pitch’ini seçer. Satın alma için TL yazılmaz.</p>
       <div class="ldj-fields">
-        <label>Genişlik (m)<input data-in="gen" type="number" min="0.4" max="40" step="0.1" value="4"></label>
-        <label>Yükseklik (m)<input data-in="yuk" type="number" min="0.3" max="20" step="0.1" value="2"></label>
-        <label>İzleme mesafesi (m)<input data-in="mesafe" type="number" min="0.5" max="80" step="0.1" value="3"></label>
+        <label>Genişlik (m)<input data-in="gen" type="number" inputmode="decimal" min="0.4" max="40" step="0.1" value="4"></label>
+        <label>Yükseklik (m)<input data-in="yuk" type="number" inputmode="decimal" min="0.3" max="20" step="0.1" value="2"></label>
+        <label>İzleme mesafesi (m)<input data-in="mesafe" type="number" inputmode="decimal" min="0.5" max="80" step="0.1" value="3"></label>
         <label>Ortam
           <select data-in="ortam">
             <option value="ic">İç mekan</option>
@@ -60,19 +479,20 @@
         <div class="ldj-stat"><span>Güç</span><strong data-out="power">—</strong><p class="ldj-fine" data-out="powerNote"></p></div>
         <div class="ldj-stat"><span>Bütçe bandı</span><strong data-out="band">Orta–üst</strong><p class="ldj-fine" data-out="bandNote"></p></div>
       </div>
-      <div class="ldj-stat" data-out="money" hidden style="margin-top:.55rem;">
+      <div class="ldj-stat" data-out="money" hidden>
         <span>Kiralama bandı</span>
         <strong data-out="moneyValue"></strong>
         <p class="ldj-fine" data-out="moneyNote"></p>
       </div>
       <div class="ldj-grids">
-        <figure class="ldj-grid"><p data-grid-label="0">P2,5 · önerilen</p><canvas data-grid width="320" height="168"></canvas></figure>
-        <figure class="ldj-grid"><p data-grid-label="1">P3,076 · bir kademe kaba</p><canvas data-grid width="320" height="168"></canvas></figure>
+        <figure class="ldj-grid"><p data-grid-label="0">P2,5 · önerilen</p><canvas data-grid width="320" height="176"></canvas></figure>
+        <figure class="ldj-grid"><p data-grid-label="1">P3,076 · bir kademe kaba</p><canvas data-grid width="320" height="176"></canvas></figure>
       </div>
+      <p class="ldj-fine">Aynı örnek görüntü. İnce pitch daha sık piksel, kaba pitch daha iri blok. Kabin çizgisi, bu ailenin yayımlanan kabin ölçüsünden gelir.</p>
       <p class="ldj-fine" data-out="bright"></p>
       <div class="ldj-actions">
-        <a class="pri" data-out="quote" href="/iletisim/?gen=4&yuk=2&mesafe=3&ortam=dis&pitch=2.5&kullanim=cephe&isik=orta">Bu ölçüyle teklif iste</a>
-        <a class="alt" href="/proje-mimari/">Tam araç</a>
+        <a class="pri" data-out="quote" href="/iletisim/?gen=4&amp;yuk=2&amp;mesafe=3&amp;ortam=dis&amp;pitch=2.5&amp;kullanim=cephe&amp;isik=orta">Bu ölçüyle teklif iste →</a>
+        <a class="alt" href="/proje-mimari/">Tam araç →</a>
       </div>
     </div>
   </div>

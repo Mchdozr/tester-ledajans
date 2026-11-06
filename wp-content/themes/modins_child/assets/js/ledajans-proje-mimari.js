@@ -175,57 +175,145 @@
     return [range[0] * area, range[1] * area];
   }
 
-  function cellSize(pitch, distance) {
-    var ratio = pitch / Math.max(distance, 0.35);
-    return Math.max(4, Math.min(28, ratio * 16));
+  var SAMPLE = null;
+
+  function sampleImage() {
+    if (SAMPLE) return SAMPLE;
+    var c = root.document.createElement("canvas");
+    c.width = 480;
+    c.height = 270;
+    var g = c.getContext("2d");
+    var sky = g.createLinearGradient(0, 0, 0, 168);
+    sky.addColorStop(0, "#6eafdc");
+    sky.addColorStop(1, "#e7f3fb");
+    g.fillStyle = sky;
+    g.fillRect(0, 0, 480, 270);
+    g.fillStyle = "#f3d48a";
+    g.beginPath();
+    g.arc(400, 52, 26, 0, Math.PI * 2);
+    g.fill();
+    g.fillStyle = "#8fbf74";
+    g.beginPath();
+    g.moveTo(0, 176);
+    g.quadraticCurveTo(90, 132, 180, 170);
+    g.quadraticCurveTo(270, 206, 360, 156);
+    g.quadraticCurveTo(430, 124, 480, 162);
+    g.lineTo(480, 270);
+    g.lineTo(0, 270);
+    g.fill();
+    g.fillStyle = "#6ea15a";
+    g.fillRect(0, 198, 480, 72);
+    g.fillStyle = "#d9d3c6";
+    g.fillRect(176, 96, 128, 132);
+    g.fillStyle = "#5d6b78";
+    g.fillRect(226, 176, 30, 52);
+    g.fillStyle = "#7eafd0";
+    var wy, wx;
+    for (wy = 0; wy < 3; wy++) {
+      for (wx = 0; wx < 3; wx++) {
+        g.fillRect(190 + wx * 36, 110 + wy * 24, 20, 14);
+      }
+    }
+    g.fillStyle = "#6a4b32";
+    g.fillRect(86, 168, 12, 42);
+    g.fillStyle = "#3e7a46";
+    g.beginPath();
+    g.arc(92, 156, 28, 0, Math.PI * 2);
+    g.fill();
+    g.fillStyle = "#c4b7a2";
+    g.fillRect(318, 150, 46, 48);
+    g.fillStyle = "#8fb4cc";
+    g.fillRect(326, 158, 14, 12);
+    g.fillRect(344, 158, 14, 12);
+    SAMPLE = g.getImageData(0, 0, 480, 270);
+    return SAMPLE;
   }
 
-  function paint(canvas, pitch, distance, light) {
+  function boxColor(img, u0, v0, u1, v1) {
+    var x0 = clamp(Math.floor(u0), 0, img.width - 1);
+    var y0 = clamp(Math.floor(v0), 0, img.height - 1);
+    var x1 = clamp(Math.ceil(u1), x0 + 1, img.width);
+    var y1 = clamp(Math.ceil(v1), y0 + 1, img.height);
+    var stepX = Math.max(1, Math.floor((x1 - x0) / 5));
+    var stepY = Math.max(1, Math.floor((y1 - y0) / 5));
+    var r = 0;
+    var g = 0;
+    var b = 0;
+    var n = 0;
+    var y, x, i;
+    for (y = y0; y < y1; y += stepY) {
+      for (x = x0; x < x1; x += stepX) {
+        i = (y * img.width + x) * 4;
+        r += img.data[i];
+        g += img.data[i + 1];
+        b += img.data[i + 2];
+        n++;
+      }
+    }
+    if (!n) return [30, 36, 48];
+    return [r / n, g / n, b / n];
+  }
+
+  function paint(canvas, pitch, distance, light, mod) {
     if (!canvas || !canvas.getContext) return;
-    var dpr = Math.min((root.devicePixelRatio || 1), 2);
+    void distance;
+    var dpr = Math.min(root.devicePixelRatio || 1, 2);
     var w = canvas.clientWidth || 320;
-    var h = canvas.clientHeight || 180;
+    var h = canvas.clientHeight || 168;
     canvas.width = Math.max(1, Math.round(w * dpr));
     canvas.height = Math.max(1, Math.round(h * dpr));
     var ctx = canvas.getContext("2d");
-    var off = root.document.createElement("canvas");
-    off.width = canvas.width;
-    off.height = canvas.height;
-    var o = off.getContext("2d");
-    o.scale(dpr, dpr);
-    o.fillStyle = "#ffffff";
-    o.font = "800 " + Math.round(Math.min(h * 0.46, w / 3.2)) + "px system-ui,sans-serif";
-    o.textAlign = "center";
-    o.textBaseline = "middle";
-    o.fillText("LED", w / 2, h / 2);
-    var img = o.getImageData(0, 0, canvas.width, canvas.height);
-    var cell = cellSize(pitch, distance);
-    var contrast = light === "karsi" ? 0.42 : light === "orta" ? 0.72 : 1;
-    var wash = light === "karsi" ? 96 : light === "orta" ? 42 : 0;
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.fillStyle = "#0f172a";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    var img = sampleImage();
+    var cropW = 420;
+    var cropH = cropW * (h / w);
+    var pixW = Math.max(8, Math.round(cropW / pitch));
+    var pixH = Math.max(6, Math.round(cropH / pitch));
+    var cellW = w / pixW;
+    var cellH = h / pixH;
+    var gap = Math.max(0.4, Math.min(cellW, cellH) * 0.16);
+    var wash = light === "karsi" ? 0.34 : light === "orta" ? 0.1 : 0;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    var y, x, sx, sy, i, on, r, g, b;
-    for (y = 0; y < h; y += cell) {
-      for (x = 0; x < w; x += cell) {
-        sx = Math.min(canvas.width - 1, Math.floor((x + cell / 2) * dpr));
-        sy = Math.min(canvas.height - 1, Math.floor((y + cell / 2) * dpr));
-        i = (sy * canvas.width + sx) * 4;
-        on = img.data[i] > 140;
-        if (on) {
-          r = Math.round(244 * contrast + wash);
-          g = Math.round(111 * contrast + wash);
-          b = Math.round(44 * contrast + wash * 0.6);
-        } else {
-          r = Math.round(30 * contrast + wash * 0.35);
-          g = Math.round(41 * contrast + wash * 0.35);
-          b = Math.round(59 * contrast + wash * 0.45);
-        }
-        ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-        ctx.fillRect(x + 0.5, y + 0.5, Math.max(1, cell - 1.2), Math.max(1, cell - 1.2));
+    ctx.fillStyle = "#171b24";
+    ctx.fillRect(0, 0, w, h);
+    var row, col, u0, v0, u1, v1, rgb, rr, gg, bb;
+    for (row = 0; row < pixH; row++) {
+      v0 = (row / pixH) * img.height;
+      v1 = ((row + 1) / pixH) * img.height;
+      for (col = 0; col < pixW; col++) {
+        u0 = (col / pixW) * img.width;
+        u1 = ((col + 1) / pixW) * img.width;
+        rgb = boxColor(img, u0, v0, u1, v1);
+        rr = Math.round(rgb[0] * (1 - wash) + 244 * wash);
+        gg = Math.round(rgb[1] * (1 - wash) + 236 * wash);
+        bb = Math.round(rgb[2] * (1 - wash) + 220 * wash);
+        ctx.fillStyle = "rgb(" + rr + "," + gg + "," + bb + ")";
+        ctx.fillRect(col * cellW + gap * 0.5, row * cellH + gap * 0.5, Math.max(0.6, cellW - gap), Math.max(0.6, cellH - gap));
       }
     }
+    if (mod && mod.w) {
+      var originX = mod.w - cropW * 0.38;
+      var originY = (mod.h || mod.w) - cropH * 0.46;
+      ctx.strokeStyle = "rgba(8, 10, 14, 0.72)";
+      ctx.lineWidth = Math.max(1, Math.min(2.5, cellW * 0.35));
+      var seam, px, py;
+      for (seam = Math.ceil(originX / mod.w) * mod.w; seam < originX + cropW - 0.5; seam += mod.w) {
+        px = ((seam - originX) / cropW) * w;
+        ctx.beginPath();
+        ctx.moveTo(px, 0);
+        ctx.lineTo(px, h);
+        ctx.stroke();
+      }
+      if (mod.h) {
+        for (seam = Math.ceil(originY / mod.h) * mod.h; seam < originY + cropH - 0.5; seam += mod.h) {
+          py = ((seam - originY) / cropH) * h;
+          ctx.beginPath();
+          ctx.moveTo(0, py);
+          ctx.lineTo(w, py);
+          ctx.stroke();
+        }
+      }
+    }
+    canvas.setAttribute("data-pitch-px", String(pixW));
   }
 
   function readState(rootEl) {
@@ -328,12 +416,12 @@
     var leftPitch = out.rec.best;
     var rightPitch = out.pair == null ? out.rec.best : out.pair;
     if (canvases[0]) {
-      paint(canvases[0], leftPitch, state.mesafe, state.isik);
-      canvases[0].setAttribute("aria-label", formatPitch(leftPitch) + " ızgara, " + trNum(state.mesafe, 1) + " metre");
+      paint(canvases[0], leftPitch, state.mesafe, state.isik, out.mod);
+      canvases[0].setAttribute("aria-label", formatPitch(leftPitch) + " örnek görüntü ızgarası, " + trNum(state.mesafe, 1) + " metre");
     }
     if (canvases[1]) {
-      paint(canvases[1], rightPitch, state.mesafe, state.isik);
-      canvases[1].setAttribute("aria-label", formatPitch(rightPitch) + " ızgara, " + trNum(state.mesafe, 1) + " metre");
+      paint(canvases[1], rightPitch, state.mesafe, state.isik, out.mod);
+      canvases[1].setAttribute("aria-label", formatPitch(rightPitch) + " örnek görüntü ızgarası, " + trNum(state.mesafe, 1) + " metre");
     }
     setText(rootEl.querySelector("[data-grid-label='0']"), formatPitch(leftPitch) + " · önerilen");
     setText(rootEl.querySelector("[data-grid-label='1']"), formatPitch(rightPitch) + " · " + pairRole);
