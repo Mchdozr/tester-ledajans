@@ -2,6 +2,9 @@
     .ledajans-reviews {
       padding: 4rem 1rem;
       background-color: #f9fafb;
+      color: #111827;
+      max-width: 100%;
+      overflow-x: clip;
     }
   
     .ledajans-reviews-inner {
@@ -45,8 +48,8 @@
   
     .ledajans-reviews-slider-wrap {
       position: relative;
-      overflow: visible;
-      min-height: 420px;
+      overflow: hidden;
+      min-height: 0;
     }
   
     .ledajans-reviews-slider-wrap:hover .ledajans-reviews-prev,
@@ -59,14 +62,14 @@
       grid-template-columns: 1fr;
       gap: 1.5rem;
       margin-bottom: 2rem;
-      min-height: 380px;
-      padding: 0 3rem;
+      min-height: 0;
+      align-items: stretch;
+      padding: 0 2.75rem;
     }
   
     @media (min-width: 768px) {
       .ledajans-reviews-grid {
         grid-template-columns: repeat(3, 1fr);
-        min-height: 380px;
         padding: 0 3.5rem;
       }
     }
@@ -77,7 +80,8 @@
       border-radius: 1rem;
       padding: 1.5rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
-      height: 380px;
+      height: auto;
+      min-height: 0;
       display: flex;
       flex-direction: column;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -115,29 +119,10 @@
     }
   
     .ledajans-review-text-wrap {
-      flex: 1;
-      overflow-y: auto;
-      padding-right: 0.5rem;
+      flex: 1 1 auto;
+      overflow: visible;
       margin-bottom: 1.25rem;
       min-height: 0;
-    }
-  
-    .ledajans-review-text-wrap::-webkit-scrollbar {
-      width: 6px;
-    }
-  
-    .ledajans-review-text-wrap::-webkit-scrollbar-track {
-      background: #f3f4f6;
-      border-radius: 3px;
-    }
-  
-    .ledajans-review-text-wrap::-webkit-scrollbar-thumb {
-      background: #d1d5db;
-      border-radius: 3px;
-    }
-  
-    .ledajans-review-text-wrap::-webkit-scrollbar-thumb:hover {
-      background: #F46F2C;
     }
   
     .ledajans-review-text {
@@ -145,6 +130,7 @@
       color: #374151;
       line-height: 1.7;
       margin: 0;
+      overflow-wrap: break-word;
     }
   
     .ledajans-review-footer {
@@ -181,7 +167,7 @@
   
     .ledajans-review-position {
       font-size: 0.8125rem;
-      color: #6b7280;
+      color: #4b5563;
       margin: 0;
     }
   
@@ -299,6 +285,88 @@
         border-width: 8px;
         margin-left: 8px;
       }
+      .ledajans-reviews {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+    }
+
+    /* ld3-dark acik baslik/metin rengini bu acik zemin uzerine basmasin. */
+    .elementor-element-4d4078c.ld3-dark,
+    .ledajans-reviews-host.ld3-dark,
+    .elementor-element-4d4078c.ld3-alt,
+    .ledajans-reviews-host.ld3-alt {
+      background-color: #f9fafb !important;
+      background-image: none !important;
+      color: #111827 !important;
+    }
+
+    .elementor-element-4d4078c.ld3-sec,
+    .ledajans-reviews-host.ld3-sec {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    .elementor-element-4d4078c,
+    .ledajans-reviews-host {
+      overflow-x: clip;
+      max-width: 100%;
+    }
+
+    .elementor-element-4d4078c.ld3-glow::after,
+    .ledajans-reviews-host.ld3-glow::after,
+    .elementor-element-4d4078c.ld3-sec > .elementor-container::before,
+    .ledajans-reviews-host.ld3-sec > .elementor-container::before {
+      content: none !important;
+      display: none !important;
+    }
+
+    .ld3-dark .ledajans-reviews,
+    .elementor-element-4d4078c .ledajans-reviews,
+    .ledajans-reviews-host .ledajans-reviews {
+      background-color: #f9fafb !important;
+      color: #111827 !important;
+    }
+
+    .ld3-dark .ledajans-reviews-title,
+    .elementor-element-4d4078c .ledajans-reviews-title,
+    .ledajans-reviews .ledajans-reviews-title {
+      color: #111827 !important;
+    }
+
+    .ld3-dark .ledajans-reviews-subtitle,
+    .elementor-element-4d4078c .ledajans-reviews-subtitle,
+    .ledajans-reviews .ledajans-reviews-subtitle {
+      color: #4b5563 !important;
+    }
+
+    .ld3-dark .ledajans-review-text,
+    .elementor-element-4d4078c .ledajans-review-text,
+    .ledajans-reviews .ledajans-review-text {
+      color: #374151 !important;
+    }
+
+    .ld3-dark .ledajans-review-name,
+    .elementor-element-4d4078c .ledajans-review-name,
+    .ledajans-reviews .ledajans-review-name {
+      color: #111827 !important;
+    }
+
+    .ld3-dark .ledajans-review-position,
+    .elementor-element-4d4078c .ledajans-review-position,
+    .ledajans-reviews .ledajans-review-position {
+      color: #4b5563 !important;
+    }
+
+    .ld3-dark .ledajans-review-card,
+    .ledajans-reviews .ledajans-review-card {
+      background: #ffffff !important;
+      color: #374151 !important;
+    }
+
+    .ledajans-reviews .ledajans-review-stars svg {
+      fill: #F46F2C !important;
+      color: #F46F2C !important;
     }
   </style>
   
@@ -329,12 +397,29 @@
   
   <script>
   (function() {
+    function shieldReviewsHost() {
+      var root = document.querySelector('.ledajans-reviews');
+      if (!root) return;
+      var host = root.closest('.elementor-top-section') || root.closest('section');
+      if (!host) return;
+      host.classList.add('ledajans-reviews-host');
+      host.classList.remove('ld3-dark', 'ld3-glow', 'ld3-g2');
+    }
+
+    shieldReviewsHost();
+    document.addEventListener('DOMContentLoaded', function() {
+      shieldReviewsHost();
+      setTimeout(shieldReviewsHost, 0);
+      setTimeout(shieldReviewsHost, 120);
+    });
+
     var reviews = [
       { name: '33 MY TECH', position: '33 MY TECH', initials: 'YM', text: "Başta Kezban Hanım ve Bekir abimiz'den çok memnundum şimdi Oğuzhan Bey ve Halil Bey var onlardan da çok memnunum Kezban Hanım'dan Allah razı olsun hiçbir zaman desteklerini esirgemediler. LED ajan ailesini 33 MY TECH ailesi olarak tebrik ediyoruz işlerimizin huzurumuzun daimi olmasını niyaz ediyorum Yasin Bey size de ayrıca teşekkür ediyorum çok başarılı çalışanlarınız var iş hayatınızda başarılarınızın devamını ve daha güzel işlerde beraber yol yürümeyi diliyorum hayırlı günler." },
       { name: 'Atlas Konferans', position: 'Atlas Konferans', initials: 'AK', text: "Atlas Konferans ailesi olarak başarılar dileriz." },
       { name: 'Polatlı LED Tabela', position: 'Polatlı LED Tabela', initials: 'PL', text: "Polatlı LED Tabela olarak sizlerle çalışmaktan çok memnunum." },
       { name: 'Anonim', position: 'Müşteri', initials: 'A', text: "Memnun olduğumuz için sizi diğer rakiplerimize önermek istemeyiz :)" },
       { name: 'Fethiye Reklam', position: 'Fethiye Reklam', initials: 'FR', text: "Uzun süredir kendileri ile çalışıyorum. kaliteli ürün ve kaliteli hizmet veriyorlar.. Sattıkları ürünün arkasında duruyorlar ve çözüm odaklı çalışıyorlar.. Led panel konusunda sorunsuz çalışılabilecek firma.. teknik servis konusunda her zaman yardımcı oluyorlar.. Ledajans ailesine teşekkür ederiz." },
+      { name: 'Metin Demir', position: 'Müşteri', initials: 'MD', text: "Sektörde konuya sonuna kadar hakim,ürün kalitesinden ödün vermeyen, satış öncesi ve sonrası aynı nezaketle çözüm üretebilen profesyonel ekip ruhu ile çalışan ,Türkiye'de sektörde öncü bir firma diyebilirim. Gönül rahatlığı içerisinde alış veriş yapabilirsiniz. Ledajans'ı tavsiye ederim." },
       { name: 'Kuzey Reklam', position: 'Kuzey Reklam', initials: 'KR', text: "Kuzey Reklam olarak yaklaşık 7-8 yıldır LED Ajans firması ile kesintisiz şekilde iş birliği yürütmekteyiz. Bu süre zarfında ürün kalitesi, teknik destek ve satış sonrası hizmetler konusunda hiçbir olumsuz deneyim yaşamamış olmamız, firmanın iş disiplinini ve güvenilirliğini açıkça ortaya koymaktadır." },
       { name: 'Turk Pazarlama', position: 'Turk Pazarlama', initials: 'TP', text: "6. yılım oldu Ledajansla çalışalı çözüm odaklı hiçbir sıkıntı yaşamadım tebrik eder başarılar dilerim" },
       { name: 'Gökhan Soytürk', position: 'Müşteri', initials: 'GS', text: "Kalite ve güler yüzlü personelleri ile kalitede öncü teşekkürler Ledajans." }
@@ -407,13 +492,16 @@
         }
       }
   
-      document.querySelector('.ledajans-reviews-prev').addEventListener('click', function() {
+      var section = grid.closest('.ledajans-reviews') || document;
+      var prevBtn = section.querySelector('.ledajans-reviews-prev');
+      var nextBtn = section.querySelector('.ledajans-reviews-next');
+      if (prevBtn) prevBtn.addEventListener('click', function() {
         var n = perPage();
         current = (current - n + total) % total;
         if (current < 0) current = 0;
         updateVisible();
       });
-      document.querySelector('.ledajans-reviews-next').addEventListener('click', function() {
+      if (nextBtn) nextBtn.addEventListener('click', function() {
         var n = perPage();
         current = (current + n) % total;
         if (current + n > total) current = Math.max(0, total - n);
@@ -451,7 +539,7 @@
         startAutoPlay();
       }
   
-      var wrap = document.querySelector('.ledajans-reviews-slider-wrap');
+      var wrap = (grid.closest('.ledajans-reviews') || document).querySelector('.ledajans-reviews-slider-wrap');
       if (wrap) {
         wrap.addEventListener('mouseenter', stopAutoPlay);
         wrap.addEventListener('mouseleave', function() {
