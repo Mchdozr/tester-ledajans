@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Tek blog HTML'ini WP post olarak yayınla (Rank Math meta dahil).
 
+Yazma hedefi her zaman https://tester.ledajans.com. Ortam değişkenindeki
+adres yok sayılır. Üretim sitesine istek atılmaz.
+
 Kullanım:
   python scripts/publish-blog-post.py Blog/slug.html --dry-run
   python scripts/publish-blog-post.py Blog/slug.html --publish
@@ -9,19 +12,24 @@ HTML yorumları:
   <!-- SEO Meta Description: ... -->
   <!-- SEO Focus Keyword: led ekran, cob led ekran -->
   <!-- SEO Title: ... -->  (opsiyonel; yoksa H2 veya dosya adı)
+  <!-- SEO Featured Media: 123 -->  (kütüphanedeki mevcut ek)
+  <!-- SEO Category: 1 -->
 """
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import re
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 import requests
 
 ROOT = Path(__file__).resolve().parents[1]
 UA = "LEDAJANS-Publish-Blog/1.0"
+TESTER_ORIGIN = "https://tester.ledajans.com"
 
 
 def load_env() -> tuple[str, str, str]:
@@ -34,11 +42,11 @@ def load_env() -> tuple[str, str, str]:
                 continue
             k, _, v = line.partition("=")
             data[k.strip()] = v.strip().strip("\"'")
-    site = (
-        os.environ.get("WP_SITE_URL")
-        or data.get("WP_SITE_URL")
-        or "https://ledajans.com"
-    ).rstrip("/")
+    env_site = (os.environ.get("WP_SITE_URL") or data.get("WP_SITE_URL") or "").rstrip("/")
+    env_host = urlparse(env_site).netloc.lower() if env_site else ""
+    if env_host and env_host != "tester.ledajans.com":
+        print("env_site_ignored", "non-tester")
+    site = TESTER_ORIGIN
     user = os.environ.get("WP_USERNAME") or data.get("WP_USERNAME") or ""
     pw = (os.environ.get("WP_APP_PASSWORD") or data.get("WP_APP_PASSWORD") or "").replace(
         " ", ""
@@ -46,9 +54,29 @@ def load_env() -> tuple[str, str, str]:
     return site, user, pw
 
 
+def assert_tester(site: str) -> str:
+    site = site.rstrip("/")
+    host = urlparse(site).netloc.lower()
+    if host != "tester.ledajans.com" or site != TESTER_ORIGIN:
+        print("HATA: yayın hedefi tester.ledajans.com olmalı")
+        return ""
+    return site
+
+
+def guard_response(response: requests.Response, *args: object, **kwargs: object) -> None:
+    host = urlparse(response.url).netloc.lower()
+    if host != "tester.ledajans.com":
+        raise requests.RequestException("tester dışı adres")
+
+
 def extract(html: str, name: str) -> str:
     m = re.search(rf"<!-- SEO {name}:\s*(.+?)\s*-->", html)
     return m.group(1).strip() if m else ""
+
+
+def extract_int_comment(html: str, name: str) -> int | None:
+    m = re.search(rf"<!-- SEO {name}:\s*(\d+)\s*-->", html)
+    return int(m.group(1)) if m else None
 
 
 def extract_h2_title(html: str) -> str:
@@ -72,6 +100,7 @@ def find_post(session: requests.Session, site: str, slug: str) -> dict | None:
         f"{site}/wp-json/wp/v2/posts",
         params={"slug": slug, "status": "any", "per_page": 1},
         timeout=60,
+        allow_redirects=False,
     )
     if r.status_code != 200:
         return None
@@ -80,8 +109,6 @@ def find_post(session: requests.Session, site: str, slug: str) -> dict | None:
 
 
 def mark_queue_published(slug: str) -> None:
-    import json
-
     qpath = ROOT / "Blog" / "keyword-queue.json"
     if not qpath.is_file():
         return
@@ -121,6 +148,9 @@ def main() -> int:
     if "ledajans-seo-article" not in html:
         print("HATA: ledajans-seo-article yok — blog şablonuna uymuyor")
         return 1
+    if re.search(r"https?://(?!tester\.ledajans\.com)(?:www\.)?ledajans\.com", html, re.I):
+        print("HATA: HTML üretim adresine bağlanıyor")
+        return 1
 
     meta = extract(html, "Meta Description")
     focus = extract(html, "Focus Keyword")
@@ -130,16 +160,25 @@ def main() -> int:
     status = "publish" if args.publish else "draft"
 
     site, user, pw = load_env()
+    site = assert_tester(site)
+    if not site:
+        return 1
     if not user or not pw:
         print("HATA: WP_USERNAME / WP_APP_PASSWORD (.env) gerekli")
         return 1
 
+    featured = extract_int_comment(html, "Featured Media")
+    category = extract_int_comment(html, "Category")
+
+    print("site", site)
     print("file", path.relative_to(ROOT) if path.is_relative_to(ROOT) else path)
     print("slug", slug)
     print("title", title)
     print("focus", focus[:80] if focus else "(yok)")
     print("meta", meta[:100] if meta else "(yok)")
     print("status", status)
+    if meta and (len(meta) < 150 or len(meta) > 160):
+        print("UYARI: meta karakter", len(meta))
 
     if args.dry_run:
         print("DRY_RUN OK")
@@ -148,6 +187,7 @@ def main() -> int:
     session = requests.Session()
     session.auth = (user, pw)
     session.headers.update({"User-Agent": UA, "Content-Type": "application/json"})
+    session.hooks["response"].append(guard_response)
 
     payload: dict = {
         "title": title,
@@ -161,28 +201,39 @@ def main() -> int:
     if meta:
         meta_obj["rank_math_description"] = meta
     if focus:
-        # İlk virgülden önceki odak + tam liste
         meta_obj["rank_math_focus_keyword"] = focus
     if title:
-        # Rank Math SEO title: odak kelime başta kalsın diye title kullan
         meta_obj["rank_math_title"] = title
     if meta_obj:
         payload["meta"] = meta_obj
+    if featured:
+        payload["featured_media"] = featured
+    if category:
+        payload["categories"] = [category]
 
     existing = find_post(session, site, slug)
     if existing:
         url = f"{site}/wp-json/wp/v2/posts/{existing['id']}"
-        r = session.post(url, json=payload, timeout=120)
+        r = session.post(url, json=payload, timeout=120, allow_redirects=False)
         action = "update"
     else:
-        r = session.post(f"{site}/wp-json/wp/v2/posts", json=payload, timeout=120)
+        r = session.post(
+            f"{site}/wp-json/wp/v2/posts",
+            json=payload,
+            timeout=120,
+            allow_redirects=False,
+        )
         action = "create"
 
     print(action, r.status_code, r.text[:300])
     if r.status_code not in (200, 201):
         return 1
 
-    link = r.json().get("link")
+    link = r.json().get("link") or ""
+    link_host = urlparse(link).netloc.lower()
+    if link_host != "tester.ledajans.com":
+        print("HATA: dönen bağlantı tester değil")
+        return 1
     print("link", link)
     if args.publish and not args.no_queue_update:
         mark_queue_published(slug)

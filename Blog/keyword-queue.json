@@ -30,7 +30,8 @@
     "ic-mekan-led-ekran-fiyatlari-2026",
     "led-ekran-fiyatlari-2026",
     "led-ekran-nasil-secilir-rehber",
-    "rental-led-ekran-kiralama-fiyatlari-2026"
+    "rental-led-ekran-kiralama-fiyatlari-2026",
+    "yurt-disi-led-ekran-tedarik-rehberi"
   ],
   "topics": [
     {
@@ -232,6 +233,16 @@
       "slug": "belediye-led-ekran-bilgilendirme",
       "angle": "Kamu: şartname, dayanıklılık, içerik",
       "status": "pending"
+    },
+    {
+      "id": "t21",
+      "priority": 21,
+      "focus_keyword": "yurt dışı led ekran",
+      "rankmath_keywords": "led ekran, yurt dışı led ekran, uluslararası led ekran tedarik, led ekran pitch",
+      "title": "Yurt Dışı LED Ekran Tedariği: Pitch, Ölçü ve Hizmet Noktası",
+      "slug": "yurt-disi-led-ekran-tedarik-rehberi",
+      "angle": "Çok ülkeli tedarik: pitch, katalog ölçüsü, üç hizmet noktası, ihracat kapsamı. Uydurma ülke projesi yok.",
+      "status": "published"
     }
   ]
 }
