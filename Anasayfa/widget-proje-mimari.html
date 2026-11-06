@@ -2,17 +2,14 @@
 
   html, body { overflow-x: clip; }
   /* Çözüm paneliyle aynı çerçeve. Kurallar yalnız anasayfaya bakar. */
-  body.page-id-1248 #ldj-ux-solutions {
+  body.page-id-1248 #ldj-ux-solutions,
+  body.page-id-1248 #ldj-cozum {
     box-sizing: border-box;
     width: min(74rem, 100%);
     margin: clamp(1rem, 2vw, 1.5rem) auto;
     background: #eef4fb;
     border: 1px solid #9bb6d6;
     border-radius: 12px;
-  }
-  body.page-id-1248 #ldj-cozum,
-  body.page-id-1248 .elementor-top-section:has(#ldj-cozum) {
-    display: none !important;
   }
   body.page-id-1248 #ldj-mimari [hidden] { display: none !important; }
   body.page-id-1248 .ldj-eng.ldj-frame {
@@ -337,12 +334,12 @@
     overflow: hidden;
     border: 1px solid #dce1e8;
     border-radius: 12px;
-    background: #1b2232;
+    background: #f7f8fa;
   }
   body.page-id-1248 #ldj-mimari [aria-live] .ldj-grid p {
     margin: 0;
-    padding: .5rem .7rem 0;
-    color: #e7b49a;
+    padding: .55rem .7rem .35rem;
+    color: #1e2a4a;
     font-size: .78rem;
     font-weight: 800;
   }
@@ -350,7 +347,8 @@
     display: block;
     width: 100%;
     max-width: 100%;
-    height: 132px;
+    height: 176px;
+    background: #171b24;
   }
   body.page-id-1248 #ldj-mimari .ldj-actions {
     display: flex;
@@ -487,9 +485,10 @@
         <p class="ldj-fine" data-out="moneyNote"></p>
       </div>
       <div class="ldj-grids">
-        <figure class="ldj-grid"><p data-grid-label="0">P2,5 · önerilen</p><canvas data-grid width="320" height="132"></canvas></figure>
-        <figure class="ldj-grid"><p data-grid-label="1">P3,076 · bir kademe kaba</p><canvas data-grid width="320" height="132"></canvas></figure>
+        <figure class="ldj-grid"><p data-grid-label="0">P2,5 · önerilen</p><canvas data-grid width="320" height="176"></canvas></figure>
+        <figure class="ldj-grid"><p data-grid-label="1">P3,076 · bir kademe kaba</p><canvas data-grid width="320" height="176"></canvas></figure>
       </div>
+      <p class="ldj-fine">Aynı örnek görüntü. İnce pitch daha sık piksel, kaba pitch daha iri blok. Kabin çizgisi, bu ailenin yayımlanan kabin ölçüsünden gelir.</p>
       <p class="ldj-fine" data-out="bright"></p>
       <div class="ldj-actions">
         <a class="pri" data-out="quote" href="/iletisim/?gen=4&amp;yuk=2&amp;mesafe=3&amp;ortam=dis&amp;pitch=2.5&amp;kullanim=cephe&amp;isik=orta">Bu ölçüyle teklif iste →</a>

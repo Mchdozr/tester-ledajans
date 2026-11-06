@@ -2,17 +2,14 @@
 
   html, body { overflow-x: clip; }
   /* Çözüm paneliyle aynı çerçeve. Kurallar yalnız anasayfaya bakar. */
-  body.page-id-1248 #ldj-ux-solutions {
+  body.page-id-1248 #ldj-ux-solutions,
+  body.page-id-1248 #ldj-cozum {
     box-sizing: border-box;
     width: min(74rem, 100%);
     margin: clamp(1rem, 2vw, 1.5rem) auto;
     background: #eef4fb;
     border: 1px solid #9bb6d6;
     border-radius: 12px;
-  }
-  body.page-id-1248 #ldj-cozum,
-  body.page-id-1248 .elementor-top-section:has(#ldj-cozum) {
-    display: none !important;
   }
   body.page-id-1248 #ldj-mimari [hidden] { display: none !important; }
   body.page-id-1248 .ldj-eng.ldj-frame {
@@ -337,12 +334,12 @@
     overflow: hidden;
     border: 1px solid #dce1e8;
     border-radius: 12px;
-    background: #1b2232;
+    background: #f7f8fa;
   }
   body.page-id-1248 #ldj-mimari [aria-live] .ldj-grid p {
     margin: 0;
-    padding: .5rem .7rem 0;
-    color: #e7b49a;
+    padding: .55rem .7rem .35rem;
+    color: #1e2a4a;
     font-size: .78rem;
     font-weight: 800;
   }
@@ -350,7 +347,8 @@
     display: block;
     width: 100%;
     max-width: 100%;
-    height: 132px;
+    height: 176px;
+    background: #171b24;
   }
   body.page-id-1248 #ldj-mimari .ldj-actions {
     display: flex;

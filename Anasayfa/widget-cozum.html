@@ -1,16 +1,72 @@
-<!-- Çözüm seçici, site geneli panelle çift olduğu için anasayfada gizli. -->
+<!-- Çözüm seçici. Site geneli panel durur; bu blok da görünür. -->
 <style>
   html, body { overflow-x: clip; }
-  body.page-id-1248 #ldj-cozum,
-  body.page-id-1248 .elementor-top-section:has(#ldj-cozum) { display: none !important; }
+  body.page-id-1248 #ldj-cozum {
+    display: block !important;
+    box-sizing: border-box;
+    width: min(74rem, 100%);
+    max-width: 100%;
+    margin: clamp(1rem, 2vw, 1.5rem) auto;
+    padding: clamp(2.5rem, 5vw, 4.75rem) clamp(1rem, 4vw, 3rem);
+    background: #eef4fb;
+    border: 1px solid #9bb6d6;
+    border-radius: 12px;
+    color: #1b2232;
+  }
+  body.page-id-1248 #ldj-cozum .ldj-ux-kicker {
+    display: inline-flex;
+    margin: 0;
+    color: #a94118;
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+  body.page-id-1248 #ldj-cozum h2 {
+    margin: 15px 0 20px;
+    max-width: 22ch;
+    color: #1e2a4a;
+    font-size: clamp(1.75rem, 1rem + 2.2vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.18;
+  }
+  body.page-id-1248 #ldj-cozum > p {
+    max-width: 60ch;
+    margin: 0 0 1.15rem;
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  body.page-id-1248 #ldj-cozum .ldj-cozum-quote {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    margin-top: .35rem;
+    padding: 0 1.2rem;
+    border-radius: 999px;
+    background: #F46F2C;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+  body.page-id-1248 #ldj-cozum .ldj-cozum-quote:hover { background: #a94118; }
+  body.page-id-1248 #ldj-cozum :is(a, button):focus-visible {
+    outline: 2px solid #ac421a;
+    outline-offset: 3px;
+  }
 </style>
-<section class="ldj-ux-solutions" id="ldj-cozum" hidden aria-labelledby="ldj-cozum-title">
+<section class="ldj-ux-solutions" id="ldj-cozum" aria-labelledby="ldj-cozum-title">
   <p class="ldj-ux-kicker">Çözüm seçin</p>
-  <h2 id="ldj-cozum-title">İhtiyaca göre LED ekran</h2>
-  <p>İç mekan, dış mekan veya rental. Ürünü inceleyin ya da ölçüyle teklif isteyin.</p>
+  <h2 id="ldj-cozum-title">Kullanım alanınıza uygun LED ekranı bulun</h2>
+  <p>Ekranın duracağı yeri seçin. Ürün sayfasına geçin ya da ölçüyle teklif isteyin.</p>
   <div class="ldj-ux-solution-grid">
-    <a href="/ic-mekan-led-ekran/"><strong>İç mekan</strong><span>Mağaza, toplantı odası, showroom</span><b>Ürünleri incele →</b></a>
-    <a href="/dis-mekan-led-ekran/"><strong>Dış mekan</strong><span>Cephe ve açık alan</span><b>Ürünleri incele →</b></a>
-    <a href="/rental-ekran/"><strong>Rental</strong><span>Fuar, sahne, kısa süreli iş</span><b>Ürünleri incele →</b></a>
+    <a href="/ic-mekan-led-ekran/"><strong>İç mekan</strong><span>Mağaza vitrini, showroom ve toplantı odası. Yakın izleme için ürün ailesi.</span><b>Çözümü incele →</b></a>
+    <a href="/dis-mekan-led-ekran/"><strong>Dış mekan</strong><span>Bina cephesi, açık alan ve reklam panosu. Gündüz okunurluğu keşifte netleşir.</span><b>Çözümü incele →</b></a>
+    <a href="/rental-ekran/"><strong>Kiralama</strong><span>Fuar, sahne ve kısa süreli etkinlik. Süre ile ölçü teklifte yazılır.</span><b>Çözümü incele →</b></a>
   </div>
+  <p><a class="ldj-cozum-quote" href="/iletisim/">Fiyat teklifi al</a></p>
 </section>
