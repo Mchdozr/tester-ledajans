@@ -248,6 +248,69 @@ add_action('wp_enqueue_scripts', function () {
     }
 }, 10000);
 
+add_action('wp_enqueue_scripts', function () {
+    $tool = is_front_page() || is_page(array('proje-mimari', 'muhendislik-metrikleri'));
+    if (!$tool) {
+        return;
+    }
+    $rel = '/assets/js/ledajans-proje-mimari.js';
+    $path = get_stylesheet_directory() . $rel;
+    if (!file_exists($path)) {
+        return;
+    }
+    wp_enqueue_script(
+        'ledajans-proje-mimari',
+        get_stylesheet_directory_uri() . $rel,
+        array(),
+        (string) filemtime($path),
+        array('in_footer' => true, 'strategy' => 'defer')
+    );
+}, 10001);
+
+add_filter('wp_nav_menu_objects', function ($items, $args) {
+    if (is_admin() || empty($items)) {
+        return $items;
+    }
+    $parent = 0;
+    $blob = '';
+    foreach ($items as $item) {
+        $blob .= ' ' . (isset($item->url) ? $item->url : '');
+        $title = trim(wp_strip_all_tags($item->title));
+        if ($title === 'Kurumsal') {
+            $parent = (int) $item->ID;
+        }
+    }
+    if (!$parent || strpos($blob, 'imza-projeler') !== false) {
+        return $items;
+    }
+    $add = array(
+        array('İmza Projeler', '/imza-projeler/'),
+        array('Mühendislik Metrikleri', '/muhendislik-metrikleri/'),
+        array('Proje Mimarı', '/proje-mimari/'),
+    );
+    $seed = $items[0];
+    $i = -1;
+    foreach ($add as $row) {
+        $obj = clone $seed;
+        $obj->ID = $i;
+        $obj->db_id = $i;
+        $obj->title = $row[0];
+        $obj->url = home_url($row[1]);
+        $obj->menu_item_parent = $parent;
+        $obj->classes = array('menu-item', 'menu-item-type-custom');
+        $obj->current = false;
+        $obj->current_item_parent = false;
+        $obj->current_item_ancestor = false;
+        $obj->target = '';
+        $obj->attr_title = '';
+        $obj->xfn = '';
+        $obj->description = '';
+        $items[] = $obj;
+        $i--;
+    }
+    return $items;
+}, 20, 2);
+
 add_filter('body_class', function ($classes) {
     $classes[] = 'ldj-r1';
     return $classes;

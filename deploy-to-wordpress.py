@@ -46,6 +46,10 @@ WP_APP_PASSWORD = os.environ.get("WP_APP_PASSWORD", "").replace(" ", "")
 
 DRY_RUN = "--dry-run" in sys.argv  # Test modu: gerçekten yayınlamadan kontrol eder
 BLOG_ONLY = "--blog-only" in sys.argv  # Yalnızca Blog/* post kayıtları
+ONLY_SLUGS = []
+for _arg in sys.argv:
+    if _arg.startswith("--only="):
+        ONLY_SLUGS = [s.strip() for s in _arg.split("=", 1)[1].split(",") if s.strip()]
 
 API_BASE = f"{WP_SITE_URL}/wp-json/wp/v2"
 
@@ -53,6 +57,9 @@ PAGES_TO_DEPLOY = [
     # (dosya_yolu, slug, başlık, tip: "page" veya "post")
     # === ANA SAYFA / HUB ===
     ("Anasayfa/widget-7-projeler.html",                            "projeler",                   "LED Ekran Projeleri",                             "page"),
+    ("Kurumsal/Imza-Projeler/imza-projeler.html",                  "imza-projeler",              "İmza LED Ekran Projeleri",                        "page"),
+    ("Muhendislik/muhendislik-metrikleri.html",                    "muhendislik-metrikleri",     "Mühendislik Metrikleri",                          "page"),
+    ("Muhendislik/proje-mimari.html",                              "proje-mimari",               "LED Ekran Proje Mimarı",                          "page"),
 
     # === TEMEL REHBERLER ===
     ("SEO-Icerik-Widgets/temel-rehberler/led-ekran-nedir.html",         "led-ekran-nedir",            "LED Ekran Nedir? Kapsamlı Rehber",                "page"),
@@ -229,6 +236,8 @@ def publish_all_drafts():
     print("=" * 60)
 
     publish_list = [p for p in PAGES_TO_DEPLOY if p[3] == "post"] if BLOG_ONLY else PAGES_TO_DEPLOY
+    if ONLY_SLUGS:
+        publish_list = [p for p in publish_list if p[1] in ONLY_SLUGS]
     for _, slug, title, post_type in publish_list:
         existing = check_existing(slug, post_type)
         if existing and existing.get("status") == "draft":
@@ -308,6 +317,8 @@ def main():
         return
 
     deploy_list = [p for p in PAGES_TO_DEPLOY if p[3] == "post"] if BLOG_ONLY else PAGES_TO_DEPLOY
+    if ONLY_SLUGS:
+        deploy_list = [p for p in deploy_list if p[1] in ONLY_SLUGS]
 
     # Ana deploy
     print("\n" + "=" * 60)

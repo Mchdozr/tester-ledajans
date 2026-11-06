@@ -1,0 +1,112 @@
+<!-- SEO Meta Description: LEDAJANS mühendislik metrikleri: COB, GOB, dış mekan ve rental için yayınlanmış pitch, Hz, nit, IP ve W/m² değerleri. Laboratuvar raporu değildir. -->
+<!-- SEO Focus Keyword: LED ekran teknik değerleri -->
+<style>
+  .ldj-eng { --ink:#111827; --muted:#475569; --orange:#F46F2C; --line:rgba(17,24,39,.08); color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; background:#f8fafc; }
+  .ldj-eng, .ldj-eng * { box-sizing:border-box; }
+  .ldj-eng h1, .ldj-eng h2, .ldj-eng h3, .ldj-eng p { margin:0; }
+  .ldj-eng button, .ldj-eng a { font:inherit; }
+  .ldj-page { max-width:1120px; margin:0 auto; padding:clamp(1.2rem,3vw,2.2rem) 1rem 3rem; }
+  .ldj-kicker { color:var(--orange); font-size:.75rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+  .ldj-page h1 { margin:.4rem 0 .6rem; font-size:clamp(2rem,4vw,3.3rem); letter-spacing:-.045em; line-height:.98; }
+  .ldj-lead { max-width:68ch; color:var(--muted); line-height:1.65; }
+  .ldj-tabs, .ldj-cals { display:flex; flex-wrap:wrap; gap:.45rem; margin:1rem 0; }
+  .ldj-tabs button, .ldj-cals button { border:1px solid var(--line); background:#fff; border-radius:999px; padding:.55rem .85rem; font-weight:750; cursor:pointer; }
+  .ldj-tabs button[aria-selected="true"], .ldj-cals button[aria-pressed="true"] { background:#111827; color:#fff; border-color:#111827; }
+  .ldj-gauges, .ldj-split, .ldj-energy { display:grid; gap:.75rem; }
+  .ldj-gauges { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .ldj-gauge, .ldj-panel, .ldj-row { background:#fff; border:1px solid var(--line); border-radius:1rem; padding:1rem; }
+  .ldj-gauge span, .ldj-row span { display:block; color:#64748b; font-size:.75rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+  .ldj-gauge strong { display:block; margin:.35rem 0 .55rem; font-size:1.2rem; letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+  .ldj-track { height:7px; border-radius:99px; background:#e2e8f0; overflow:hidden; }
+  .ldj-track i, .ldj-row i { display:block; height:100%; width:0; background:linear-gradient(90deg,#F46F2C,#fb923c); transition:width .7s ease; }
+  .ldj-row { display:grid; grid-template-columns:140px 1fr auto; gap:.7rem; align-items:center; }
+  .ldj-row .ldj-track { height:10px; }
+  .ldj-split { grid-template-columns:1.1fr .9fr; margin-top:1rem; }
+  .ldj-panel h2, .ldj-block h2 { font-size:1.35rem; letter-spacing:-.03em; margin-bottom:.45rem; }
+  .ldj-panel p, .ldj-block p, .ldj-note { color:var(--muted); line-height:1.6; }
+  .ldj-note { margin-top:.7rem; font-size:.92rem; }
+  .ldj-block { margin-top:1.2rem; }
+  .ldj-three { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.7rem; margin-top:.7rem; }
+  .ldj-iso { background:#111827; color:#fff; border-radius:1.2rem; padding:1.1rem 1.15rem; }
+  .ldj-iso p { color:#cbd5e1; margin-top:.45rem; }
+  .ldj-page a.ldj-go { display:inline-flex; margin-top:1rem; background:#F46F2C; color:#fff; text-decoration:none; font-weight:800; border-radius:999px; padding:.75rem 1rem; }
+  @media (max-width:800px) {
+    .ldj-gauges, .ldj-split, .ldj-three { grid-template-columns:1fr; }
+    .ldj-row { grid-template-columns:1fr; }
+  }
+  @media (prefers-reduced-motion:reduce) { .ldj-track i, .ldj-row i { transition:none; } }
+</style>
+<article class="ldj-eng">
+  <div class="ldj-page">
+    <p class="ldj-kicker">Yayınlanmış teknik değerler</p>
+    <h1>Mühendislik metrikleri</h1>
+    <p class="ldj-lead">Her çubuk bir ürün tablosuna bağlıdır. Başlık laboratuvar raporu değil. Eksik satır boş bırakılır; karbon yüzdesi ve delta-E uydurulmaz.</p>
+
+    <section data-ldj-metrics>
+      <div class="ldj-tabs" role="tablist" aria-label="Ürün ailesi">
+        <button type="button" data-family-btn="cob" aria-selected="true">İç mekan COB</button>
+        <button type="button" data-family-btn="gob" aria-selected="false">İç mekan GOB</button>
+        <button type="button" data-family-btn="outdoor" aria-selected="false">Dış mekan</button>
+        <button type="button" data-family-btn="rental" aria-selected="false">Rental</button>
+      </div>
+      <div class="ldj-gauges">
+        <article class="ldj-gauge"><span>Pitch</span><strong data-field="pitch">1,25 – 1,87 mm</strong></article>
+        <article class="ldj-gauge"><span>Yenileme</span><strong data-field="refresh">≥3840 Hz</strong><div class="ldj-track"><i data-bar="refresh"></i></div></article>
+        <article class="ldj-gauge"><span>Parlaklık</span><strong data-field="bright">0–1000 cd/m²</strong><div class="ldj-track"><i data-bar="bright"></i></div></article>
+        <article class="ldj-gauge"><span>Koruma</span><strong data-field="ip">Ön bakım kabin</strong></article>
+        <article class="ldj-gauge"><span>Güç</span><strong data-field="power">140 / 300 W/m²</strong><div class="ldj-track"><i data-bar="power"></i></div></article>
+        <article class="ldj-gauge"><span>Ömür</span><strong data-field="life">Şemada ≥100.000 saat</strong><div class="ldj-track"><i data-bar="life"></i></div></article>
+      </div>
+      <p class="ldj-note" data-field="barNote"></p>
+      <p class="ldj-note" data-field="powerNote">P1.56 CFC156 tablosu. Diğer COB pitch satırlarında aynı watt değeri yok.</p>
+      <p class="ldj-note" data-field="source">COB model kartları ve P1.56 CFC156 tablosu.</p>
+
+      <div class="ldj-block">
+        <h2>Ortalama güç</h2>
+        <p>Çubuk, ailenin yayınlanmış ortalama W/m² ortasına göre ölçeklenir. GOB satırı boştur.</p>
+        <div class="ldj-energy" style="margin-top:.7rem;">
+          <div class="ldj-row" data-energy-row="cob"><span>COB</span><div class="ldj-track"><i data-energy-bar></i></div><strong data-energy-label>140 / 300 W/m²</strong></div>
+          <div class="ldj-row" data-energy-row="gob"><span>GOB</span><div class="ldj-track"><i data-energy-bar></i></div><strong data-energy-label>yok</strong></div>
+          <div class="ldj-row" data-energy-row="outdoor"><span>Dış mekan</span><div class="ldj-track"><i data-energy-bar></i></div><strong data-energy-label>280–308 W/m²</strong></div>
+          <div class="ldj-row" data-energy-row="rental"><span>Rental</span><div class="ldj-track"><i data-energy-bar></i></div><strong data-energy-label>173–220 W/m²</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ldj-block">
+      <h2>COB, GOB, SMD</h2>
+      <div class="ldj-three">
+        <article class="ldj-panel"><h3>COB</h3><p>Çip kartın üzerinde, epoksi ile korunur. Yakın izleme ve 0–1000 cd/m² iç mekan aralığı ürün kartlarında.</p></article>
+        <article class="ldj-panel"><h3>GOB</h3><p>Epoksi ve vakum kapsül. İç mekan kartlarında IP65 ve ≥6000 Hz seçenekleri var. Dayanıklılık videosu diye sunulmaz.</p></article>
+        <article class="ldj-panel"><h3>SMD</h3><p>Dış mekan H serisinde ≥4500 cd/m² ve ≥7680 Hz. OFC serisinde yenileme ≥3840 Hz.</p></article>
+      </div>
+    </section>
+
+    <div class="ldj-split">
+      <section class="ldj-panel" data-ldj-cal>
+        <h2>Yenileme neden değişir</h2>
+        <div class="ldj-cals">
+          <button type="button" data-cal="kamera" aria-pressed="true">Kamera</button>
+          <button type="button" data-cal="video" aria-pressed="false">Hızlı video</button>
+          <button type="button" data-cal="tabela" aria-pressed="false">Tabela</button>
+        </div>
+        <p data-cal-out>Kamera ve stüdyo çekiminde COB tablosu ≥3840 Hz sınıfını, çekimde daha temiz kare için anıyor. Bu bir kalibrasyon sertifikası değil.</p>
+      </section>
+      <aside class="ldj-iso">
+        <p class="ldj-kicker">ISO 14064-1:2019</p>
+        <h2>Sera gazı çerçevesi</h2>
+        <p>Belge no ICB.90238.ISO.56428. İlk belgelendirme 15.01.2026, geçerlilik 14.01.2027. Kuruluş düzeyinde sera gazı hesaplama çerçevesidir. Karbon nötr belgesi değildir ve bu sayfada ayak izi yüzdesi yoktur.</p>
+      </aside>
+    </div>
+    <a class="ldj-go" href="/proje-mimari/">Bu değerlerle ölçü dene</a>
+  </div>
+</article>
+<script src="/wp-content/themes/modins_child/assets/js/ledajans-proje-mimari.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "LEDAJANS mühendislik metrikleri",
+  "description": "COB, GOB, dış mekan ve rental aileleri için yayınlanmış teknik değerler. Bağımsız laboratuvar raporu değildir."
+}
+</script>
