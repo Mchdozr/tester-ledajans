@@ -83,6 +83,7 @@ add_action('wp_head', static function () {
 .ledajans-project-image-wrap > .ldj-ux-poster { position: absolute; inset: 0; object-fit: cover; }
 .ledajans-modal__media-wrap > .ldj-ux-poster-label { width: 100%; }
 .ledajans-modal__media-wrap > img.ldj-ux-poster { object-fit: contain; }
+body .ledajans-project-card .ledajans-project-link { color: #a94118; font-weight: 700; }
 .page-id-1248 .ledajans-projects-seo-block { display: none; }
 .page-id-5001 .la-hero-actions > a.la-btn-outline { border-color: transparent; background: transparent; padding-inline: .7rem; min-height: 44px; text-decoration: underline; text-underline-offset: .23em; }
 .page-id-5001 .la-hero-actions > a.la-btn-outline:hover { color: #ffc6a4; }
@@ -118,7 +119,10 @@ add_action('wp_head', static function () {
     .page-id-5001 .la-card-title { min-block-size: 0; }
     .page-id-5001 .la-hero-actions { gap: .35rem .65rem; }
     .page-id-5001 .la-hero-actions > a.la-btn-primary { width: 100%; justify-content: center; }
-    .ledajans-projects-filters > button, #ledajans-iletisim-form button { min-height: 44px; }
+    .ledajans-projects-filters > button, .ledajans-project-card .ledajans-project-link,
+    #ledajans-iletisim-form button { min-height: 44px; }
+    .ledajans-footer-socials { flex-wrap: wrap; }
+    .ledajans-footer-socials a { min-width: 44px; min-height: 44px; }
     .page-id-1262 #ledajans-iletisim-form :is(input,select,textarea) { max-width: 100%; font-size: 16px; }
     .page-id-7171 .ldj-eng .ldj-fields :is(input,select) { max-width: 100%; font-size: 16px; }
     .ldj-ux-featured { padding-inline: 1rem; }
