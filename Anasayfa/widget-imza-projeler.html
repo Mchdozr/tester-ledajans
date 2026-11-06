@@ -4,18 +4,22 @@
   .ldj-eng, .ldj-eng * { box-sizing:border-box; }
   .ldj-eng h2, .ldj-eng h3, .ldj-eng p { margin:0; }
   .ldj-eng a { color:inherit; }
-  .ldj-imza { background:#0b1220; color:#fff; }
+  .ldj-imza { background:#f8fafc; color:#111827; }
+  .ldj-imza-nav a { color:#9a3412; border-color:rgba(17,24,39,.12); background:#fff; }
+  .ldj-imza h2, .ldj-imza-copy p { color:#111827; }
+  .ldj-imza-copy p { color:#475569; }
+  .ldj-kicker { color:#F46F2C; }
   .ldj-imza-nav { display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; padding:1rem 1rem 0; }
-  .ldj-imza-nav a { color:#fed7aa; border:1px solid rgba(255,255,255,.16); border-radius:999px; padding:.45rem .8rem; font-size:.82rem; font-weight:700; text-decoration:none; }
+  .ldj-imza-nav a { color:#9a3412; border:1px solid rgba(17,24,39,.12); background:#fff; border-radius:999px; padding:.45rem .8rem; font-size:.82rem; font-weight:700; text-decoration:none; }
   .ldj-imza-rail { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; }
-  .ldj-imza-slide { flex:0 0 100%; scroll-snap-align:start; display:grid; grid-template-columns:1.05fr .95fr; min-height:min(72vh,640px); background:#0b1220; }
+  .ldj-imza-slide { flex:0 0 100%; scroll-snap-align:start; display:grid; grid-template-columns:1.05fr .95fr; min-height:0; background:#fff; border-bottom:1px solid rgba(17,24,39,.06); }
   .ldj-imza-copy { padding:clamp(1.5rem,4vw,3.2rem); display:flex; flex-direction:column; justify-content:flex-end; }
   .ldj-imza-shot { margin:0; display:flex; flex-direction:column; justify-content:center; padding:1.2rem 1.2rem 1.2rem 0; }
-  .ldj-imza-shot img { width:100%; height:min(52vh,420px); object-fit:contain; background:#05070c; border-radius:1.2rem; }
-  .ldj-imza-shot figcaption { margin-top:.45rem; color:#94a3b8; font-size:.78rem; letter-spacing:.04em; }
-  .ldj-kicker { display:inline-flex; margin-bottom:.7rem; color:#fdba74; font-size:.75rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
-  .ldj-imza h2 { font-size:clamp(2rem,5vw,4.2rem); line-height:.95; letter-spacing:-.04em; max-width:14ch; }
-  .ldj-imza-copy p { margin-top:1rem; max-width:46ch; color:#e2e8f0; line-height:1.6; font-size:1.02rem; }
+  .ldj-imza-shot img { width:100%; height:min(42vh,360px); object-fit:contain; background:#0f172a; border-radius:1.2rem; }
+  .ldj-imza-shot figcaption { margin-top:.45rem; color:#64748b; font-size:.78rem; letter-spacing:.04em; }
+  .ldj-kicker { display:inline-flex; margin-bottom:.7rem; color:#F46F2C; font-size:.75rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+  .ldj-imza h2 { font-size:clamp(1.8rem,4vw,3rem); line-height:1; letter-spacing:-.04em; max-width:16ch; color:#111827; }
+  .ldj-imza-copy p { margin-top:1rem; max-width:46ch; color:#475569; line-height:1.6; font-size:1.02rem; }
   .ldj-class { background:var(--paper); color:var(--ink); padding:clamp(1.5rem,3vw,2.5rem) 1rem 2.5rem; }
   .ldj-class-inner, .ldj-wrap { max-width:1120px; margin:0 auto; }
   .ldj-class h3 { font-size:clamp(1.4rem,2.5vw,2rem); letter-spacing:-.03em; }

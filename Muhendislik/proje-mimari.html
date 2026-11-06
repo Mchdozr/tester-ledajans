@@ -26,6 +26,8 @@
   .ldj-grid canvas { display:block; width:100%; height:190px; }
   .ldj-actions { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
   .ldj-actions a { text-decoration:none; border-radius:999px; padding:.8rem 1.05rem; font-weight:800; background:#F46F2C; color:#fff; }
+  .ldj-fields input, .ldj-fields select { width:100%; min-height:44px; }
+  body.page-id-7171 :is(h1.title, .heading-title) { display:none; }
   @media (max-width:860px) {
     .ldj-layout, .ldj-fields, .ldj-stats, .ldj-grids { grid-template-columns:1fr; }
     .ldj-wide { grid-column:auto; }
@@ -35,7 +37,7 @@
   <div class="ldj-page" data-ldj-mimari="full">
     <p class="ldj-kicker">Proje mimarı</p>
     <h1>Ölçüyü pitch’e çevir</h1>
-    <p class="ldj-lead">Genişlik, yükseklik, izleme mesafesi, ortam ve ışık açısı. Aynı cümle iki ızgarada yan yana durur. Yakın mesafe pikseli büyütür, karşı ışık kontrastı düşürür. Sonuç ön seçimdir; yazılı teklif değildir.</p>
+    <p class="ldj-lead">Ölçüyü girin. Araç pitch, alan, kabin ve güç aralığını yayınlanmış değerlere göre gösterir. Sonuç ön seçimdir.</p>
     <div class="ldj-layout">
       <form class="ldj-panel" action="/iletisim/" method="get">
         <div class="ldj-fields">
